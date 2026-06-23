@@ -278,8 +278,64 @@ export async function createStageAction(matchId: string, formData: FormData) {
       return { error: insertError.message }
     }
 
+    // Handle Stage Plan File Upload
+    const file = formData.get('stage_plan_file') as File | null
+    if (file && file.size > 0) {
+      const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf']
+      if (!allowedTypes.includes(file.type)) {
+        // Rollback stage creation to keep state clean
+        await supabase.from('stages').delete().eq('id', stage.id)
+        return { error: 'Invalid file type. Only JPG, PNG, and PDF files are allowed.' }
+      }
+      if (file.size > 5 * 1024 * 1024) {
+        // Rollback stage creation
+        await supabase.from('stages').delete().eq('id', stage.id)
+        return { error: 'File size too large. Maximum size allowed is 5MB.' }
+      }
+
+      const fileExt = file.name.split('.').pop() || 'file'
+      const cleanName = `${Date.now()}_stage_${stage_number}.${fileExt}`.replace(/[^a-zA-Z0-9.-]/g, '_')
+      const storagePath = `matches/${matchId}/stages/${stage.id}/${cleanName}`
+
+      const arrayBuffer = await file.arrayBuffer()
+      const buffer = Buffer.from(arrayBuffer)
+
+      const { error: uploadError } = await supabase.storage
+        .from('assets')
+        .upload(storagePath, buffer, {
+          contentType: file.type,
+          upsert: true
+        })
+
+      if (uploadError) {
+        // Rollback stage creation
+        await supabase.from('stages').delete().eq('id', stage.id)
+        return { error: `Failed to upload stage brief: ${uploadError.message}` }
+      }
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('assets')
+        .getPublicUrl(storagePath)
+
+      const { error: updateUrlError } = await supabase
+        .from('stages')
+        .update({ stage_plan_url: publicUrl })
+        .eq('id', stage.id)
+
+      if (updateUrlError) {
+        return { error: `Failed to save stage plan URL: ${updateUrlError.message}` }
+      }
+    }
+
+    // Fetch the absolute final stage object to return complete data
+    const { data: finalStage } = await supabase
+      .from('stages')
+      .select('*')
+      .eq('id', stage.id)
+      .single()
+
     revalidatePath(`/matches/${matchId}/manage`)
-    return { success: true, stage }
+    return { success: true, stage: finalStage || stage }
   } catch (err: any) {
     return { error: err?.message || 'An unexpected error occurred' }
   }
@@ -321,15 +377,53 @@ export async function updateStageAction(matchId: string, stageId: string, formDa
       return { error: `Another stage already uses number ${stage_number}` }
     }
 
+    const updatePayload: any = {
+      name: name.trim(),
+      stage_number,
+      description: description?.trim() || null,
+      required_hits_per_paper_target,
+      required_hits_per_steel_target
+    }
+
+    // Handle Stage Plan File Upload
+    const file = formData.get('stage_plan_file') as File | null
+    if (file && file.size > 0) {
+      const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf']
+      if (!allowedTypes.includes(file.type)) {
+        return { error: 'Invalid file type. Only JPG, PNG, and PDF files are allowed.' }
+      }
+      if (file.size > 5 * 1024 * 1024) {
+        return { error: 'File size too large. Maximum size allowed is 5MB.' }
+      }
+
+      const fileExt = file.name.split('.').pop() || 'file'
+      const cleanName = `${Date.now()}_stage_${stage_number}.${fileExt}`.replace(/[^a-zA-Z0-9.-]/g, '_')
+      const storagePath = `matches/${matchId}/stages/${stageId}/${cleanName}`
+
+      const arrayBuffer = await file.arrayBuffer()
+      const buffer = Buffer.from(arrayBuffer)
+
+      const { error: uploadError } = await supabase.storage
+        .from('assets')
+        .upload(storagePath, buffer, {
+          contentType: file.type,
+          upsert: true
+        })
+
+      if (uploadError) {
+        return { error: `Failed to upload stage brief: ${uploadError.message}` }
+      }
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('assets')
+        .getPublicUrl(storagePath)
+
+      updatePayload.stage_plan_url = publicUrl
+    }
+
     const { error: updateError } = await supabase
       .from('stages')
-      .update({
-        name: name.trim(),
-        stage_number,
-        description: description?.trim() || null,
-        required_hits_per_paper_target,
-        required_hits_per_steel_target
-      })
+      .update(updatePayload)
       .eq('id', stageId)
 
     if (updateError) {

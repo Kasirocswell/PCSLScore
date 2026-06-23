@@ -52,6 +52,7 @@ export default async function ManageMatchPage({ params }: Props) {
         name,
         stage_number,
         description,
+        stage_plan_url,
         required_hits_per_paper_target,
         required_hits_per_steel_target,
         max_points,

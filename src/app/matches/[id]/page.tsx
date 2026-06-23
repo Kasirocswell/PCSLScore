@@ -50,6 +50,7 @@ export default async function MatchDetailRoute({
         name,
         stage_number,
         description,
+        stage_plan_url,
         required_hits_per_paper_target,
         required_hits_per_steel_target,
         max_points

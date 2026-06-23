@@ -26,7 +26,10 @@ import {
   DollarSign,
   Award,
   BookOpen,
-  UserCheck
+  UserCheck,
+  FileText,
+  Image,
+  ExternalLink
 } from 'lucide-react'
 
 interface Stage {
@@ -34,6 +37,7 @@ interface Stage {
   name: string
   stage_number: number
   description: string | null
+  stage_plan_url?: string | null
   required_hits_per_paper_target: number
   required_hits_per_steel_target: number
   max_points: number
@@ -388,6 +392,43 @@ export default function MatchRegistrationClient({
                             <p className="text-slate-400 text-xs mt-1.5 leading-relaxed italic">
                               "{stage.description}"
                             </p>
+                          )}
+                          {stage.stage_plan_url && (
+                            <div className="mt-3 pt-2.5 border-t border-white/5">
+                              {stage.stage_plan_url.toLowerCase().endsWith('.pdf') ? (
+                                <a
+                                  href={stage.stage_plan_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 border border-indigo-500/20 text-xs font-semibold transition-all cursor-pointer"
+                                >
+                                  <FileText className="w-3.5 h-3.5 text-indigo-400" />
+                                  View Stage Brief PDF
+                                  <ExternalLink className="w-3.5 h-3.5 text-indigo-400/80" />
+                                </a>
+                              ) : (
+                                <div className="space-y-2">
+                                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-500">Stage Brief Diagram</span>
+                                  <div className="relative group max-w-sm rounded-xl overflow-hidden border border-white/5 bg-slate-950/40 p-1">
+                                    <img
+                                      src={stage.stage_plan_url}
+                                      alt={`${stage.name} Diagram`}
+                                      className="object-contain max-h-[160px] rounded-lg w-auto"
+                                    />
+                                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                                      <a
+                                        href={stage.stage_plan_url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-1.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition-all shadow-lg cursor-pointer"
+                                      >
+                                        <ExternalLink className="w-3.5 h-3.5" />
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              )}
+                            </div>
                           )}
                         </div>
 

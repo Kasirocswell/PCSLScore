@@ -31,7 +31,11 @@ import {
   Target,
   CheckCircle,
   AlertTriangle,
-  Trophy
+  Trophy,
+  Upload,
+  FileText,
+  Image,
+  ExternalLink
 } from 'lucide-react'
 
 interface TargetItem {
@@ -46,6 +50,7 @@ interface StageItem {
   name: string
   stage_number: number
   description: string | null
+  stage_plan_url?: string | null
   required_hits_per_paper_target: number
   required_hits_per_steel_target: number
   max_points: number
@@ -439,7 +444,7 @@ export default function MatchWorkspace({ match }: MatchWorkspaceProps) {
                   <h3 className="font-bold text-sm text-slate-200 uppercase tracking-wider">
                     {stageFormMode === 'create' ? 'Create New Stage' : 'Edit Stage Configuration'}
                   </h3>
-                  <form onSubmit={handleSaveStage} className="space-y-4">
+                  <form onSubmit={handleSaveStage} encType="multipart/form-data" className="space-y-4">
                     <div>
                       <label className="block text-[10px] font-bold uppercase text-slate-400 mb-1">Stage Number</label>
                       <input
@@ -474,6 +479,24 @@ export default function MatchWorkspace({ match }: MatchWorkspaceProps) {
                         onChange={(e) => setStageDesc(e.target.value)}
                         className="w-full px-3 py-2 bg-slate-950 border border-white/10 rounded-lg text-xs text-slate-200 focus:outline-none focus:border-indigo-500/50 resize-none"
                       />
+                    </div>
+                    <div>
+                      <label className="block text-[10px] font-bold uppercase text-slate-400 mb-1">
+                        Stage Brief File / Diagram (JPG, PNG, PDF)
+                      </label>
+                      <div className="relative group border border-dashed border-white/10 hover:border-indigo-500/50 bg-slate-950 rounded-xl transition-all duration-300">
+                        <input
+                          type="file"
+                          name="stage_plan_file"
+                          accept=".jpg,.jpeg,.png,.pdf"
+                          className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                        />
+                        <div className="p-4 flex flex-col items-center justify-center text-center gap-1.5">
+                          <Upload className="w-5 h-5 text-indigo-400 group-hover:scale-110 transition-transform duration-200" />
+                          <span className="text-xs font-semibold text-slate-300">Choose file or drag here</span>
+                          <span className="text-[10px] text-slate-500">Max size: 5MB • JPG, PNG, PDF</span>
+                        </div>
+                      </div>
                     </div>
                     <div className="grid grid-cols-2 gap-3">
                       <div>
@@ -606,6 +629,57 @@ export default function MatchWorkspace({ match }: MatchWorkspaceProps) {
                       <p className="text-sm text-slate-300 bg-slate-950/40 p-3 rounded-lg leading-relaxed border border-white/5">
                         {selectedStage.description}
                       </p>
+                    )}
+
+                    {selectedStage.stage_plan_url && (
+                      <div className="pt-3 border-t border-white/5 space-y-2">
+                        <span className="block text-[10px] font-bold uppercase text-slate-400">
+                          Stage Brief / Diagram
+                        </span>
+                        {selectedStage.stage_plan_url.toLowerCase().endsWith('.pdf') ? (
+                          <div className="flex items-center justify-between p-3.5 bg-slate-950/60 rounded-xl border border-white/5 hover:border-indigo-500/30 transition-all duration-300">
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
+                                <FileText className="w-5 h-5" />
+                              </div>
+                              <div>
+                                <h4 className="text-xs font-bold text-slate-200">Stage Brief Document</h4>
+                                <p className="text-[10px] text-slate-500">PDF Document</p>
+                              </div>
+                            </div>
+                            <a
+                              href={selectedStage.stage_plan_url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-white/10 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
+                            >
+                              <ExternalLink className="w-3.5 h-3.5" />
+                              View PDF
+                            </a>
+                          </div>
+                        ) : (
+                          <div className="relative group overflow-hidden rounded-xl border border-white/5 bg-slate-950/60 p-2 hover:border-indigo-500/30 transition-all duration-300">
+                            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-slate-950 flex items-center justify-center">
+                              <img
+                                src={selectedStage.stage_plan_url}
+                                alt={`${selectedStage.name} Brief`}
+                                className="object-contain w-full h-full max-h-[220px] group-hover:scale-102 transition-transform duration-500"
+                              />
+                              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
+                                <a
+                                  href={selectedStage.stage_plan_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="p-2 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg transition-transform duration-200 hover:scale-110 cursor-pointer"
+                                  title="View full resolution"
+                                >
+                                  <ExternalLink className="w-4 h-4" />
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     )}
 
                     <div className="grid grid-cols-2 gap-4 pt-2 text-xs text-slate-400">
