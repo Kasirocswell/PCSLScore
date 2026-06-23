@@ -389,7 +389,7 @@ create trigger on_auth_user_created
     after insert on auth.users
     for each row execute function public.handle_new_user();
 
--- Configure 'assets' storage bucket and RLS policies with safe UUID casting
+-- Configure 'assets' storage bucket and RLS policies using safe text comparison to prevent UUID casting errors
 
 -- 1. Insert 'assets' bucket if it does not exist, setting public to true
 INSERT INTO storage.buckets (id, name, public)
@@ -401,56 +401,45 @@ CREATE POLICY "Allow public read access to assets" ON storage.objects
     FOR SELECT TO public
     USING (bucket_id = 'assets');
 
--- 3. Create policy to allow Match Directors to upload/insert assets for their own matches (with safe UUID casting)
+-- 3. Create policy to allow Match Directors to upload/insert assets for their own matches (safe text comparison)
 CREATE POLICY "Allow directors to upload assets" ON storage.objects
     FOR INSERT TO authenticated
     WITH CHECK (
         bucket_id = 'assets' AND
         split_part(name, '/', 1) = 'matches' AND
-        CASE 
-            WHEN split_part(name, '/', 2) ~* '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$' 
-            THEN EXISTS (
-                SELECT 1 FROM public.matches m
-                WHERE m.id = (split_part(name, '/', 2))::uuid
-                  AND m.created_by = auth.uid()
-            )
-            ELSE FALSE
-        END
+        EXISTS (
+            SELECT 1 FROM public.matches m
+            WHERE m.id::text = split_part(name, '/', 2)
+              AND m.created_by = auth.uid()
+        )
     );
 
--- 4. Create policy to allow Match Directors to update assets for their own matches (with safe UUID casting)
+-- 4. Create policy to allow Match Directors to update assets for their own matches (safe text comparison)
 CREATE POLICY "Allow directors to update assets" ON storage.objects
     FOR UPDATE TO authenticated
     USING (
         bucket_id = 'assets' AND
         split_part(name, '/', 1) = 'matches' AND
-        CASE 
-            WHEN split_part(name, '/', 2) ~* '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$' 
-            THEN EXISTS (
-                SELECT 1 FROM public.matches m
-                WHERE m.id = (split_part(name, '/', 2))::uuid
-                  AND m.created_by = auth.uid()
-            )
-            ELSE FALSE
-        END
+        EXISTS (
+            SELECT 1 FROM public.matches m
+            WHERE m.id::text = split_part(name, '/', 2)
+              AND m.created_by = auth.uid()
+        )
     );
 
--- 5. Create policy to allow Match Directors to delete assets for their own matches (with safe UUID casting)
+-- 5. Create policy to allow Match Directors to delete assets for their own matches (safe text comparison)
 CREATE POLICY "Allow directors to delete assets" ON storage.objects
     FOR DELETE TO authenticated
     USING (
         bucket_id = 'assets' AND
         split_part(name, '/', 1) = 'matches' AND
-        CASE 
-            WHEN split_part(name, '/', 2) ~* '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$' 
-            THEN EXISTS (
-                SELECT 1 FROM public.matches m
-                WHERE m.id = (split_part(name, '/', 2))::uuid
-                  AND m.created_by = auth.uid()
-            )
-            ELSE FALSE
-        END
+        EXISTS (
+            SELECT 1 FROM public.matches m
+            WHERE m.id::text = split_part(name, '/', 2)
+              AND m.created_by = auth.uid()
+        )
     );
+
 
 
 
