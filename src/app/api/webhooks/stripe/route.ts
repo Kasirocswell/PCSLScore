@@ -23,7 +23,18 @@ export async function POST(req: Request) {
       // Safe developer bypass for local testing using raw JSON post payload
       event = JSON.parse(body)
     } else {
-      event = stripe.webhooks.constructEvent(body, sig, webhookSecret)
+      try {
+        event = stripe.webhooks.constructEvent(body, sig, webhookSecret)
+      } catch (err: any) {
+        if (process.env.NODE_ENV === 'development') {
+          console.warn('\n⚠️ [STRIPE WEBHOOK WARNING] Stripe webhook signature verification failed!')
+          console.warn(`Error details: ${err.message}`)
+          console.warn('This usually occurs if the STRIPE_WEBHOOK_SECRET in your .env.local does not match the secret from your running Stripe CLI.')
+          console.warn('To fix this, check your Stripe CLI terminal (where you ran "stripe listen"), locate the secret starting with "whsec_...", and update STRIPE_WEBHOOK_SECRET in your .env.local with it.')
+          console.warn('Remember to stop and restart your Next.js server (npm run dev) after updating .env.local to apply changes.\n')
+        }
+        throw err
+      }
     }
   } catch (err: any) {
     console.error('Stripe webhook verification failed:', err.message)
@@ -101,22 +112,45 @@ export async function POST(req: Request) {
       case 'customer.subscription.updated': {
         const customerId = session.customer
         const status = session.status
+        const metadata = session.metadata || {}
+        const profileId = metadata.profile_id
 
         if (status === 'active') {
-          const { error } = await supabaseAdmin
-            .from('profiles')
-            .update({
-              subscription_active: true,
-              updated_at: new Date().toISOString(),
-            })
-            .eq('stripe_customer_id', customerId)
+          if (profileId) {
+            // Direct match by Profile ID (propagated via subscription_data metadata)
+            // This is extremely robust and saves the stripe_customer_id in case checkout.session.completed runs later
+            const { error } = await supabaseAdmin
+              .from('profiles')
+              .update({
+                subscription_active: true,
+                stripe_customer_id: customerId as string,
+                updated_at: new Date().toISOString(),
+              })
+              .eq('id', profileId)
 
-          if (error) {
-            console.error('Failed to update active subscription:', error.message)
-            return NextResponse.json({ error: error.message }, { status: 500 })
+            if (error) {
+              console.error('Failed to update active subscription by profile ID:', error.message)
+              return NextResponse.json({ error: error.message }, { status: 500 })
+            }
+
+            console.log(`Successfully activated MD Subscription & saved Customer ID via Subscription Metadata for profile: ${profileId}`)
+          } else {
+            // Fallback match by Stripe Customer ID
+            const { error } = await supabaseAdmin
+              .from('profiles')
+              .update({
+                subscription_active: true,
+                updated_at: new Date().toISOString(),
+              })
+              .eq('stripe_customer_id', customerId)
+
+            if (error) {
+              console.error('Failed to update active subscription by customer ID:', error.message)
+              return NextResponse.json({ error: error.message }, { status: 500 })
+            }
+
+            console.log(`Subscription active sync via Customer ID fallback: ${customerId}`)
           }
-
-          console.log(`Subscription active sync for Stripe Customer ID: ${customerId}`)
         }
         break
       }

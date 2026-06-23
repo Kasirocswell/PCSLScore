@@ -831,6 +831,12 @@ export async function createSubscriptionSessionAction() {
         type: 'director_subscription',
         profile_id: user.id,
       },
+      subscription_data: {
+        metadata: {
+          type: 'director_subscription',
+          profile_id: user.id,
+        },
+      },
     })
 
     return { success: true, url: session.url }
