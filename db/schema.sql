@@ -30,6 +30,7 @@ create table public.clubs (
     id uuid primary key default gen_random_uuid(),
     name text not null,
     location text not null,
+    zip_code text,
     description text,
     created_by uuid references public.profiles(id) on delete cascade not null,
     created_at timestamptz not null default now(),

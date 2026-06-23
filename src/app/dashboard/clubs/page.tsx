@@ -114,7 +114,7 @@ export default async function ClubsPage() {
                     {/* Location */}
                     <div className="flex items-start gap-2 text-sm text-slate-300">
                       <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                      <span>{club.location}</span>
+                      <span>{club.location}{club.zip_code ? ` (${club.zip_code})` : ''}</span>
                     </div>
 
                     {/* Description */}

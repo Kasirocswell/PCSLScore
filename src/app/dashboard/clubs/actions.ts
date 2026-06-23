@@ -6,6 +6,7 @@ import { revalidatePath } from 'next/cache'
 export async function createClubAction(formData: FormData) {
   const name = formData.get('name') as string
   const location = formData.get('location') as string
+  const zipCode = formData.get('zip_code') as string
   const description = formData.get('description') as string
 
   if (!name || name.trim() === '') {
@@ -39,6 +40,7 @@ export async function createClubAction(formData: FormData) {
       .insert({
         name: name.trim(),
         location: location.trim(),
+        zip_code: zipCode?.trim() || null,
         description: description?.trim() || null,
         created_by: user.id
       })
@@ -57,6 +59,7 @@ export async function createClubAction(formData: FormData) {
 export async function updateClubAction(clubId: string, formData: FormData) {
   const name = formData.get('name') as string
   const location = formData.get('location') as string
+  const zipCode = formData.get('zip_code') as string
   const description = formData.get('description') as string
 
   if (!name || name.trim() === '') {
@@ -105,6 +108,7 @@ export async function updateClubAction(clubId: string, formData: FormData) {
       .update({
         name: name.trim(),
         location: location.trim(),
+        zip_code: zipCode?.trim() || null,
         description: description?.trim() || null,
         updated_at: new Date().toISOString()
       })

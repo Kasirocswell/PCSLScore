@@ -30,7 +30,7 @@ interface MatchWithRelations {
   price: number
   is_published: boolean
   created_by: string
-  clubs: { id: string; name: string } | null
+  clubs: { id: string; name: string; zip_code: string | null } | null
   stages: { id: string }[] | null
   squads: { id: string }[] | null
   registrations: { id: string; profile_id: string }[] | null
@@ -43,6 +43,7 @@ export default async function MatchesPage({
 }) {
   const params = await searchParams
   const searchQuery = typeof params.q === 'string' ? params.q.trim() : ''
+  const zipQuery = typeof params.zip === 'string' ? params.zip.trim() : ''
   const filterType = typeof params.type === 'string' ? params.type : 'all'
 
   const supabase = await createClient()
@@ -76,7 +77,8 @@ export default async function MatchesPage({
       created_by,
       clubs (
         id,
-        name
+        name,
+        zip_code
       ),
       stages (
         id
@@ -114,7 +116,18 @@ export default async function MatchesPage({
         match.name.toLowerCase().includes(searchLower) ||
         match.location.toLowerCase().includes(searchLower) ||
         (match.description && match.description.toLowerCase().includes(searchLower)) ||
-        (match.clubs && match.clubs.name.toLowerCase().includes(searchLower))
+        (match.clubs && (
+          match.clubs.name.toLowerCase().includes(searchLower) ||
+          (match.clubs.zip_code && match.clubs.zip_code.toLowerCase().includes(searchLower))
+        ))
+    )
+  }
+
+  // Apply dedicated ZIP query
+  if (zipQuery) {
+    const zipLower = zipQuery.toLowerCase()
+    matches = matches.filter(
+      match => match.clubs && match.clubs.zip_code && match.clubs.zip_code.toLowerCase().includes(zipLower)
     )
   }
 
@@ -169,7 +182,7 @@ export default async function MatchesPage({
         {/* Filter Toolbar */}
         <form method="GET" className="grid grid-cols-1 md:grid-cols-12 gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
           {/* Search Input */}
-          <div className="md:col-span-6 relative group">
+          <div className="md:col-span-4 relative group">
             <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-indigo-400 transition-colors">
               <Search className="w-4 h-4" />
             </span>
@@ -177,13 +190,27 @@ export default async function MatchesPage({
               type="text"
               name="q"
               defaultValue={searchQuery}
-              placeholder="Search by match name, location, range, or club..."
+              placeholder="Match name, range, club..."
+              className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all text-sm"
+            />
+          </div>
+
+          {/* ZIP Code Input */}
+          <div className="md:col-span-3 relative group">
+            <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-indigo-400 transition-colors">
+              <MapPin className="w-4 h-4" />
+            </span>
+            <input
+              type="text"
+              name="zip"
+              defaultValue={zipQuery}
+              placeholder="Filter by ZIP..."
               className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all text-sm"
             />
           </div>
 
           {/* Match Type Filter */}
-          <div className="md:col-span-4 relative group">
+          <div className="md:col-span-3 relative group">
             <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-indigo-400 transition-colors">
               <Filter className="w-4 h-4" />
             </span>
@@ -268,7 +295,10 @@ export default async function MatchesPage({
                         {match.name}
                       </h3>
                       <p className="text-xs text-slate-400 mt-1">
-                        Hosted by <span className="font-semibold text-slate-300">{match.clubs?.name || 'Independent Club'}</span>
+                        Hosted by <span className="font-semibold text-slate-300">
+                          {match.clubs?.name || 'Independent Club'}
+                          {match.clubs?.zip_code ? ` (${match.clubs.zip_code})` : ''}
+                        </span>
                       </p>
                     </div>
 

@@ -10,6 +10,7 @@ interface Club {
   id: string
   name: string
   location: string
+  zip_code: string | null
   description: string | null
 }
 
@@ -177,23 +178,45 @@ export default function EditClubForm({ club }: EditClubFormProps) {
               </div>
             </div>
 
-            {/* Location */}
-            <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                Range / Location <span className="text-emerald-400 font-bold">*</span>
-              </label>
-              <div className="relative group">
-                <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-indigo-400 transition-colors duration-200">
-                  <MapPin className="w-4 h-4" />
-                </span>
-                <input
-                  type="text"
-                  name="location"
-                  required
-                  defaultValue={club.location}
-                  placeholder="e.g. 123 Gun Range Road, Boulder, CO"
-                  className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all duration-200 text-sm"
-                />
+            {/* Location & ZIP Code */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="md:col-span-2">
+                <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                  Range / Location <span className="text-emerald-400 font-bold">*</span>
+                </label>
+                <div className="relative group">
+                  <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-indigo-400 transition-colors duration-200">
+                    <MapPin className="w-4 h-4" />
+                  </span>
+                  <input
+                    type="text"
+                    name="location"
+                    required
+                    defaultValue={club.location}
+                    placeholder="e.g. 123 Gun Range Road, Boulder, CO"
+                    className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all duration-200 text-sm"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                  ZIP Code
+                </label>
+                <div className="relative group">
+                  <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-indigo-400 transition-colors duration-200">
+                    <MapPin className="w-4 h-4" />
+                  </span>
+                  <input
+                    type="text"
+                    name="zip_code"
+                    defaultValue={club.zip_code || ''}
+                    placeholder="e.g. 80302"
+                    pattern="[a-zA-Z0-9\s\-]*"
+                    maxLength={10}
+                    className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all duration-200 text-sm"
+                  />
+                </div>
               </div>
             </div>
 
