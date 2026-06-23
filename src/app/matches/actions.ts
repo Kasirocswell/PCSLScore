@@ -1,6 +1,7 @@
 'use server'
 
 import { createClient } from '@/utils/supabase/server'
+import { createServiceClient } from '@/utils/supabase/service'
 import { revalidatePath } from 'next/cache'
 import { stripe } from '@/utils/stripe'
 import { headers } from 'next/headers'
@@ -300,7 +301,9 @@ export async function createStageAction(matchId: string, formData: FormData) {
       const arrayBuffer = await file.arrayBuffer()
       const buffer = Buffer.from(arrayBuffer)
 
-      const { error: uploadError } = await supabase.storage
+      // Use service role client for storage upload to avoid owner_id UUID errors
+      const serviceClient = createServiceClient()
+      const { error: uploadError } = await serviceClient.storage
         .from('assets')
         .upload(storagePath, buffer, {
           contentType: file.type,
@@ -403,7 +406,9 @@ export async function updateStageAction(matchId: string, stageId: string, formDa
       const arrayBuffer = await file.arrayBuffer()
       const buffer = Buffer.from(arrayBuffer)
 
-      const { error: uploadError } = await supabase.storage
+      // Use service role client for storage upload to avoid owner_id UUID errors
+      const serviceClient = createServiceClient()
+      const { error: uploadError } = await serviceClient.storage
         .from('assets')
         .upload(storagePath, buffer, {
           contentType: file.type,

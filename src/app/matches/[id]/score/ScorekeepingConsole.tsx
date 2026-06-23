@@ -100,8 +100,15 @@ function calculateTargetScoreLocal(
   hits_c: number,
   hits_d: number,
   hits_m: number,
-  hits_ns: number
+  hits_ns: number,
+  excludeUnsatisfiedMisses: boolean = false
 ): number {
+  // If no hits of any kind are logged, return 0 as the default unscored state
+  const totalRawHits = (hits_t || 0) + (hits_a || 0) + (hits_c || 0) + (hits_d || 0) + (hits_m || 0) + (hits_ns || 0)
+  if (totalRawHits === 0) {
+    return 0
+  }
+
   let score = 0
   let needed = requiredHits
   let t_avail = hits_t || 0
@@ -121,7 +128,7 @@ function calculateTargetScoreLocal(
       score = 5 * hitsToScore
       needed -= hitsToScore
     }
-    if (needed > 0) {
+    if (needed > 0 && !excludeUnsatisfiedMisses) {
       score -= (needed * 10) // Remaining needed hits are misses
     }
     return score + ns_penalty
@@ -161,16 +168,8 @@ function calculateTargetScoreLocal(
     d_avail -= 1
   }
 
-  // 5. Explicit Mikes
-  if (hits_m > 0) {
-    // If the scorekeeper added explicit mikes, we deduct but don't double penalize
-    // Actually, in PCSL, any remaining required hits are automatic Mikes.
-    // If we have explicit mikes, let's see. If needed is already 0, and they entered mikes,
-    // they don't get double penalized. The code logic floors remaining needed hits as mikes.
-  }
-
   // remaining unsatisfied hits are counted as Mikes (-10 points per miss)
-  if (needed > 0) {
+  if (needed > 0 && !excludeUnsatisfiedMisses) {
     score -= (needed * 10)
   }
 
@@ -405,25 +404,68 @@ export default function ScorekeepingConsole({
 
   // Live Score Calculator for the Summary Panel
   const liveSummary = useMemo(() => {
-    if (!activeStage) return { rawPoints: 0, proceduralPoints: 0, totalPoints: 0, hitFactor: 0.0000 }
+    if (!activeStage) {
+      return {
+        rawPoints: 0,
+        proceduralPoints: 0,
+        noShootPoints: 0,
+        missPoints: 0,
+        totalPenalties: 0,
+        totalPoints: 0,
+        hitFactor: 0.0000
+      }
+    }
 
-    let rawPoints = 0
+    let rawPoints = 0      // Gross points from hits
+    let noShootPoints = 0  // No-shoot penalties
+    let missPoints = 0     // Miss penalties (explicit and unsatisfied)
+
     activeStage.targets?.forEach(target => {
       const ts = targetScores[target.id] || { hits_t: 0, hits_a: 0, hits_c: 0, hits_d: 0, hits_m: 0, hits_ns: 0 }
-      rawPoints += calculateTargetScoreLocal(
-        target.target_type,
-        target.required_hits,
-        ts.hits_t,
-        ts.hits_a,
-        ts.hits_c,
-        ts.hits_d,
-        ts.hits_m,
-        ts.hits_ns
-      )
+      const totalRawHits = (ts.hits_t || 0) + (ts.hits_a || 0) + (ts.hits_c || 0) + (ts.hits_d || 0) + (ts.hits_m || 0) + (ts.hits_ns || 0)
+
+      if (totalRawHits > 0) {
+        // Calculate target's net score (including unsatisfied misses)
+        const targetNet = calculateTargetScoreLocal(
+          target.target_type,
+          target.required_hits,
+          ts.hits_t,
+          ts.hits_a,
+          ts.hits_c,
+          ts.hits_d,
+          ts.hits_m,
+          ts.hits_ns,
+          false
+        )
+
+        // Calculate target's gross score (excluding unsatisfied misses)
+        const targetGrossWithNoShoots = calculateTargetScoreLocal(
+          target.target_type,
+          target.required_hits,
+          ts.hits_t,
+          ts.hits_a,
+          ts.hits_c,
+          ts.hits_d,
+          ts.hits_m,
+          ts.hits_ns,
+          true
+        )
+
+        const nsPenalty = (ts.hits_ns || 0) * -10
+        const targetGross = targetGrossWithNoShoots - nsPenalty
+
+        rawPoints += targetGross
+        noShootPoints += (ts.hits_ns || 0) * 10
+        
+        // missPenalties = targetGross - targetNet - noShootPenalties
+        const targetMissPenalties = targetGross - targetNet - ((ts.hits_ns || 0) * 10)
+        missPoints += Math.max(0, targetMissPenalties)
+      }
     })
 
     const proceduralPoints = proceduralPenalties * 10
-    const totalPoints = Math.max(0, rawPoints - proceduralPoints)
+    const totalPenalties = proceduralPoints + noShootPoints + missPoints
+    const totalPoints = Math.max(0, rawPoints - totalPenalties)
     const runTime = parseFloat(time) || 0
 
     let hitFactor = 0.0000
@@ -434,6 +476,9 @@ export default function ScorekeepingConsole({
     return {
       rawPoints,
       proceduralPoints,
+      noShootPoints,
+      missPoints,
+      totalPenalties,
       totalPoints,
       hitFactor: parseFloat(hitFactor.toFixed(4))
     }
@@ -810,8 +855,9 @@ export default function ScorekeepingConsole({
                       activeStage.targets.map(target => {
                         const score = targetScores[target.id] || { hits_t: 0, hits_a: 0, hits_c: 0, hits_d: 0, hits_m: 0, hits_ns: 0 }
                         const isPaper = target.target_type === 'paper'
+                        const totalRawHits = (score.hits_t || 0) + (score.hits_a || 0) + (score.hits_c || 0) + (score.hits_d || 0) + (score.hits_m || 0) + (score.hits_ns || 0)
                         
-                        // Live calculate single target score
+                        // Live calculate single target score with unsatisfied misses
                         const targetPoints = calculateTargetScoreLocal(
                           target.target_type,
                           target.required_hits,
@@ -820,16 +866,31 @@ export default function ScorekeepingConsole({
                           score.hits_c,
                           score.hits_d,
                           score.hits_m,
-                          score.hits_ns
+                          score.hits_ns,
+                          false
                         )
 
-                        // Calculate total hits logged
-                        const totalHitsLogged = isPaper 
-                          ? (score.hits_t * 2) + score.hits_a + score.hits_c + score.hits_d
-                          : score.hits_a // Steel hits counts hits_a as success
+                        // Live calculate gross score (excluding unsatisfied misses) for editing feedback
+                        const targetGrossPoints = calculateTargetScoreLocal(
+                          target.target_type,
+                          target.required_hits,
+                          score.hits_t,
+                          score.hits_a,
+                          score.hits_c,
+                          score.hits_d,
+                          score.hits_m,
+                          score.hits_ns,
+                          true
+                        )
 
-                        const isSatisfied = totalHitsLogged >= target.required_hits
-                        const isUnderShot = totalHitsLogged < target.required_hits
+                        // Calculate total shots logged (including explicit Mikes) to see if we met required hits
+                        const totalShotsLogged = isPaper 
+                          ? (score.hits_t * 2) + score.hits_a + score.hits_c + score.hits_d + score.hits_m
+                          : score.hits_a + score.hits_m
+
+                        const isSatisfied = totalShotsLogged >= target.required_hits
+                        const isUnderShot = totalShotsLogged < target.required_hits
+                        const missingShots = isUnderShot ? Math.max(0, target.required_hits - totalShotsLogged) : 0
 
                         return (
                           <div
@@ -853,23 +914,40 @@ export default function ScorekeepingConsole({
 
                               {/* Running single target score */}
                               <div className="flex items-center gap-1.5">
-                                <span className={`text-xs font-bold font-mono px-2 py-0.5 rounded ${
-                                  targetPoints > 0 
-                                    ? 'bg-emerald-950/40 border border-emerald-500/20 text-emerald-400' 
-                                    : targetPoints < 0 
-                                      ? 'bg-red-950/40 border border-red-500/20 text-red-400' 
-                                      : 'bg-slate-850 border border-transparent text-slate-500'
-                                }`}>
-                                  {targetPoints > 0 ? `+${targetPoints}` : targetPoints} pts
-                                </span>
+                                {totalRawHits === 0 ? (
+                                  <span className="text-xs font-bold font-mono px-2 py-0.5 rounded bg-slate-850 border border-transparent text-slate-500">
+                                    0 pts
+                                  </span>
+                                ) : isUnderShot ? (
+                                  <>
+                                    <span className={`text-xs font-bold font-mono px-2 py-0.5 rounded ${
+                                      targetGrossPoints > 0 
+                                        ? 'bg-emerald-950/40 border border-emerald-500/20 text-emerald-400' 
+                                        : 'bg-slate-850 border border-transparent text-slate-500'
+                                    }`}>
+                                      {targetGrossPoints > 0 ? `+${targetGrossPoints}` : targetGrossPoints} pts
+                                    </span>
+                                    <span className="text-[10px] font-bold font-mono px-1.5 py-0.5 rounded bg-red-950/50 border border-red-500/20 text-red-400" title="Missing hit penalty">
+                                      -{missingShots * 10} miss
+                                    </span>
+                                  </>
+                                ) : (
+                                  <span className={`text-xs font-bold font-mono px-2 py-0.5 rounded ${
+                                    targetPoints > 0 
+                                      ? 'bg-emerald-950/40 border border-emerald-500/20 text-emerald-400' 
+                                      : targetPoints < 0 
+                                        ? 'bg-red-950/40 border border-red-500/20 text-red-400' 
+                                        : 'bg-slate-850 border border-transparent text-slate-500'
+                                  }`}>
+                                    {targetPoints > 0 ? `+${targetPoints}` : targetPoints} pts
+                                  </span>
+                                )}
                                 <span className={`text-[10px] px-1.5 py-0.5 rounded font-bold font-mono ${
                                   isSatisfied 
                                     ? 'bg-emerald-950/20 text-emerald-500' 
-                                    : isUnderShot 
-                                      ? 'bg-amber-950/20 text-amber-500' 
-                                      : 'bg-slate-950/50 text-slate-500'
+                                    : 'bg-amber-950/20 text-amber-500'
                                 }`}>
-                                  Logged: {totalHitsLogged} / {target.required_hits}
+                                  Logged: {totalShotsLogged} / {target.required_hits}
                                 </span>
                               </div>
                             </div>
@@ -1102,11 +1180,11 @@ export default function ScorekeepingConsole({
                       <p className="text-lg font-bold font-mono text-white mt-1">{liveSummary.rawPoints}</p>
                     </div>
 
-                    {/* Procedural deduction */}
+                    {/* Deductions (Penalties & Misses) */}
                     <div className="bg-slate-950 border border-slate-850/60 p-3 rounded-xl text-center">
-                      <p className="text-[10px] font-bold text-slate-500 tracking-wider uppercase">Penalties</p>
-                      <p className={`text-lg font-bold font-mono mt-1 ${liveSummary.proceduralPoints > 0 ? 'text-red-400' : 'text-slate-400'}`}>
-                        -{liveSummary.proceduralPoints}
+                      <p className="text-[10px] font-bold text-slate-500 tracking-wider uppercase">Penalties & Misses</p>
+                      <p className={`text-lg font-bold font-mono mt-1 ${liveSummary.totalPenalties > 0 ? 'text-red-400' : 'text-slate-400'}`}>
+                        -{liveSummary.totalPenalties}
                       </p>
                     </div>
 
