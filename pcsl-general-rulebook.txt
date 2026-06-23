@@ -1,0 +1,2444 @@
+
+
+
+PCSL General Rulebook
+Official rules and guidelines for the Practical Competition Shooting League
+
+Practical Competition Shooting League 2026-05-05
+
+Table of contents
+
+PCSL Rules	6
+1 Range Safety & Procedures	7
+1.1 Follow the four rules of firearms safety at all times	7
+1.2 Cold Range	7
+1.3 Handling of firearms while on the range	7
+1.4 Loaded, Unloaded, and Inert Firearms	7
+1.5 Empty Chamber Indicators (ECIs)/Chamber Flags	8
+1.6 Eye & Ear Protection	8
+1.7 Function Fire or Practice Areas	8
+1.8 Minimum Target Engagement Distance for Steel Targets	9
+1.9 Failure to adhere	9
+2 Competitor Equipment	10
+2.1 Belt and Holster	10
+2.2 Magazines and Magazine Pouches	10
+2.3 Sling	10
+2.4 Types of firearms and their definitions	10
+2.5 Firearm, caliber, and equipment changes throughout the match	11
+2.6 Safe Conditions Defined by Firearm Type	12
+2.7 Prohibited Firearms and Accessories	12
+2.8 Ammunition Restrictions	12
+2.9 Firearms with magazine disconnects	13
+2.10 Concealment	13
+3 Match Types and Levels	15
+3.1 PCSL Division Types	15
+3.2 Match Type: PCSL Pistol	15
+3.3 Match Type: PCSL Rifle	15
+3.4 Match Type: PCSL 2-Gun	15
+3.5 Match Type: PCSL Pistol Caliber 2-Gun	15
+3.6 Match Type: PCSL Shotgun	16
+3.7 Match Type: PCSL 3-Gun	16
+PCSL Match Level Schedule	16
+4 Match Procedures	18
+4.1 Fixed Squadding Matches	18
+4.2 Open Squadding Matches	18
+4.3 Match timing	18
+4.4 Stage Inspection/Walkthroughs	18
+4.5 Chronograph & Power Factor	19
+4.6 Suspending shooting activities	19
+4.7 Final Results	19
+4.8 Unaddressed situations	19
+5 Range Commands	20
+5.1 Range Commands	20
+6 Coaching & Coachable Competitors	22
+6.1 Coaching & Coachable Competitors	22
+6.2 RO/Competitor interaction during static rifle steel engagement	22
+6.3 Coachable Competitors	22
+2
+6.4 Special event types that wish to allow unlimited coaching	22
+7 Stage Procedures	24
+7.1 Written Stage Brief (WSB)	24
+7.2 Pre-Loading Areas	24
+7.3 Competitor & Firearm Start Conditions	25
+7.4 Re-holstering	26
+7.5 Drop-Mag Target (DMT) Procedure	26
+7.6 Prone with a holstered handgun	26
+7.7 Abandoning/Dumping of Firearms	27
+7.8 Grounding of Firearms	27
+7.9 Bracing on stage props, walls, and other equipment	27
+7.10 Malfunctions	28
+7.11 Squibs	28
+7.12 Disallowed Actions	29
+7.13 False Starts and Creeping	29
+7.14 Clearing of firearms by an RO during the Course of Fire	29
+8 Re-Shoots	30
+8.1 Re-Shoots	30
+8.2 Prematurely reset targets	30
+8.3 RO Interference	30
+8.4 Range Equipment Failure (REF)	30
+8.5 Loss of eye/ear protection	30
+8.6 Altered Presentation of a Stage	31
+8.7 Suspected squib resulting in a "Stop!" call, where no obstruction is found	31
+9 Stage Design & Construction	32
+9.1 Stage Equipment	32
+9.2 Stage Design & Construction Criteria	33
+10 Targets	37
+10.1 PCSL Paper Targets	37
+10.2 PCSL Paper Target Zones and Target Color	37
+10.3 Paper Penalty Targets (No-Shoots)	37
+10.4 Falling & Reactive Steel	37
+10.5 Static Steel	38
+10.6 Color of Steel Targets	38
+10.7 Frangible Targets	38
+10.8 Steel or Frangible Penalty Targets (No-Shoots)	38
+10.9 Maximum Target Distances, and Minimum Target Sizes	38
+10.10 Non-standard target types	39
+11 Scoring Types & Procedures	40
+11.1 Acceptable scoring types by match type	40
+11.2 Hit Factor Scoring Type	40
+11.3 Hit Factor target & penalty values	40
+11.4 Scoring Procedure	41
+11.5 Pass-throughs	42
+11.6 Hit Calls on Static Steel	42
+11.7 Hit Calls on Frangible Targets	43
+11.8 Calibration of Steel/Calling Hits on Falling Steel	43
+11.9 Par Times & Overtime Shot Scoring Procedures	43
+11.10 Time-Plus Points Scoring Type	44
+11.11 Time-Plus Points Neutralization Criteria and Penalties	44
+11.12 Video Evidence	45
+
+
+
+
+3
+
+12 Procedural Penalties	46
+12.1 Foot Fault and Firing Shots While Outside A Shooting Area	46
+12.2 Bracing on an object outside the shooting area	46
+12.3 Failure to Engage	46
+12.4 Engaging targets with the wrong firearm	47
+12.5 Engaging targets from the wrong position	48
+12.6 Failing to activate a moving target before engaging	48
+12.7 Abandoning a firearm not in its defined Safe Condition	49
+12.8 Using a magazine that has been loaded in excess of the divisional limit	49
+12.9 Custom Penalties	49
+12.10 Disobeying stage procedures specified by the WSB	49
+13 Two-Strike System	50
+13.1 Suspected Cheating or Unsportsmanlike Conduct	50
+13.2 Unapproved handling of firearms	50
+14 Stage Disqualifications	51
+14.1 Engaging steel targets at unsafe distances	51
+14.2 Dropping an unloaded or inert firearm	51
+14.3 Holstering a loaded handgun not in a Safe Condition	51
+14.4 Keeping a finger inside the trigger guard while clearly not engaging targets	51
+14.5 Prone with a holstered handgun without a verified unloaded handgun	51
+14.6 Engaging targets while handling multiple firearms simultaneously	51
+14.7 Engaging targets while a firearm is grounded or leaving the vicinity of a grounded firearm	51
+14.8 Improper abandonment of an unloaded firearm	51
+14.9 Committing a disallowed action	51
+14.10 Using a prohibited firearm or accessory	51
+14.11 Physically displacing stage props to reveal unintended or previously unavailable shooting opportunities	52
+14.12 Refusing to conduct a mandatory re-shoot	52
+15 Match Disqualifications	53
+15.1 Accidental discharge (AD)	53
+15.2 Dropping a loaded firearm	53
+15.3 Flagging/Sweeping	53
+15.4 Breaking the 180 or other modified safety angle for the course of fire	53
+15.5 Intoxication or being under the influence of mentally or physically impairing substances	54
+15.6 Violation of the cold range policy	54
+15.7 Blatant unsportsmanlike conduct, attempts to cheat, or aggressive behavior	54
+15.8 Improper abandonment of a loaded firearm	54
+15.9 Receiving two Strikes	54
+15.10 Receiving two Stage DQs	54
+15.11 Using prohibited ammunition	54
+16 Arbitration	55
+16.1 Occasional disputes are inevitable	55
+16.2 Arbitration Committee	55
+16.3 Arbitration Fee	55
+16.4 Arbitration Form	55
+17 Glossary	56
+17.1 Glossary	56
+Appendices	58
+A Pistol Divisions Appendix	58
+A.1 PCSL Pistol - Core Divisions	58
+4
+
+A.2 PCSL Pistol - Recognized Divisions	60
+B Rifle Divisions Appendix	61
+B.1 PCSL Rifle - Core Divisions	61
+B.2 PCSL Rifle - Recognized Divisions	62
+C Shotgun Divisions Appendix	63
+C.1 PCSL Shotgun - Core Divisions	63
+C.2 PCSL Shotgun - Recognized Divisions	63
+D 3Gun-Specific Division Modifications	65
+D.1 Modified (MOD) Rifle	65
+D.2 Modified (MOD) Handgun	65
+D.3 Tactical Optics (TAC) Rifle	65
+D.4 Tactical Optics (TAC) Handgun	65
+E Changelog	66
+E.1 Rule Changes and Updates	66
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5
+
+/!.(I!TIONSiHOO'TINGLLEAGUE
+
+
+PCSL Rules
+Official rules and guidelines for the Practical Competition	League
+
+
+View changelog online: https://rules.pcsleague.com/changelog.html
+
+
+Version 2026-05-05 - Effective when published
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6
+
+1 Range Safety & Procedures
+1.1 Follow the four rules of firearms safety at all times
+1.1.1 Rule 1 Know and be able to justify the condition of your firearms at all times.
+1.1.2 Rule 2 Keep your firearm pointed in a safe direction.
+1.1.3 Rule 3 Keep your finger out of the trigger guard when not actively engaging targets.
+1.1.4 Rule 4 Know your target, its background, and its foreground before engagement.
+1.2 Cold Range
+PCSL matches operate as cold range events. This means that all firearms must remain free of all live ammunition in their chambers, actions, and inserted or attached magazines or cylinders unless under the direct supervision of an RO, or safely handled while at a designated function fire area (Section 1.7). Violations shall result in a Match DQ (Section 15.6).
+1.3 Handling of firearms while on the range
+    1.3.1 Approved handling conditions Any direct handling of firearms outside of their respective bags, scabbards that completely cover the muzzle, barrel, action, and trigger (for long guns), carts that hold long guns with their muzzles in a safe direction as to not flag any competitor, cases, or worn holsters (for handguns) must occur under one of the following conditions:
+        1.3.1.1 On a course of fire Under direct supervision of an RO being issued the "Make Ready" command and before the "Range Is Clear" command.
+        1.3.1.2 Near side berm or safe area Within 6 feet of a side berm or at a designated safe area, only while pointing the firearms directly at the berm or designated backstop (per Section 17.1.3), and as long as the competitor remains reasonably uprange of the rearmost section of the active course of fire on that bay, if any exists.
+        1.3.1.3 Long gun carry For a long gun: carried with the muzzle vertically up or down, to or from a course of fire.
+        1.3.1.4 Slung long gun A long gun may be carried slung by a competitor throughout the match only if it is unloaded as defined by Section 1.4, and the competitor maintains proper muzzle discipline at all times, such as when sitting or bending over.
+         1.3.1.5 Detachable holster A detachable holster carrying a competitor's handgun may be detached from the competitor's belt if the competitor is in compliance with Section 1.3.1.2 and keeps the holstered muzzle pointed in a safe direction at all times.
+        1.3.1.6 Function fire area At a designated function fire area, following the safety procedures outlined in Section 1.7.
+    1.3.2 Consequences See Section 13.2 for consequences of unsafe handling of firearms. If the offending individual is a spectator or other non-competitor, they may be warned or ejected from the range property by match officials.
+1.4 Loaded, Unloaded, and Inert Firearms
+1.4.1 Loaded firearms Loaded firearms meet any of these conditions:
+        1.4.1.1 Chambered cartridge A cartridge is chambered, or otherwise inside the magwell or action of the gun in any condition (such as after a malfunction).
+
+
+7
+
+        1.4.1.2 Brass casing present A brass casing, whether fired or unfired, is inside the magwell or action of the gun in any condition (such as after a malfunction).
+        1.4.1.3 Magazine inserted A magazine or other ammunition feeding device is inserted, even partially, into the firearm, even if the ammunition feeding device is free of ammunition. A shotgun with a shell held in the matchsaver is not considered a loaded firearm.
+1.4.1.3.1 Exception for fixed tubes Does not apply to shotguns with fixed magazine tubes.
+    1.4.2 Inert Firearms Inert Firearms can only be long guns and must meet one of the following two conditions:
+        1.4.2.1 Unloaded and slung The long gun starts unloaded and slung as specifically required by the stage's WSB and the RO has verified the long gun's unloaded condition as part of the make ready process.
+        1.4.2.2 DMT process (Rifle Only) The rifle has been unloaded via the proper DMT process as specifically required by the stage's WSB.
+        1.4.2.3 Flagging/180 exceptions For inert & slung firearms only, Section 15.3 and Section 15.4 do not apply.
+    1.4.3 Unloaded firearms Any firearm outside of the scope of Section 1.4.1 is considered Unloaded. "Completely Unloaded" and "Unloaded" may be used interchangeably. No distinction is made between these terms.
+1.4.3.1 Inert definition Inert firearms are unloaded by definition.
+1.5 Empty Chamber Indicators (ECIs)/Chamber Flags
+ECIs are not required unless the host range chooses to require them. In this case, all long guns transported outside of a case or bag that completely covers and secures the entire action and trigger of the firearm must have an ECI inserted in the action in such a way that the ECI is clearly visible, and the action of the firearm is held open.
+    1.5.1 Prohibited ECIs Live rounds or spent casings/shells shall never be permitted as an acceptable ECI.
+1.6 Eye & Ear Protection
+    1.6.1 Eye protection Eye protection must be worn by every individual (even non-competitors) at all times while on the range during shooting hours.
+    1.6.2 Ear protection Ear protection must be worn by each competitor as they are shooting, and is highly recommended to be worn by any individual on the range during shooting hours.
+1.6.3 Loss mid-stage Unintentionally losing eye or ear protection mid-stage - See Section 8.5
+1.7 Function Fire or Practice Areas
+    1.7.1 Designation A function fire or practice area may be designated for competitor use throughout the operating hours of the match.
+    1.7.2 Range officers These areas may have dedicated range officers appointed to them - this is up to the match director and range specific procedures.
+    1.7.3 Firing positions The only acceptable firing positions will be along a firing line designated by markers or tables.
+    1.7.4 Safe direction While handling firearms on the firing line, the only safe direction is considered squarely downrange with 30 degrees of tolerance to both the left and right.
+    1.7.5 Ceasefire requests Any competitor may ask for a ceasefire in order to set or repair targets, or to move past the firing line for another reason (such as to retrieve an item).
+
+8
+
+        1.7.5.1 Ceasefire procedures Before a ceasefire commences, and until the range is cleared hot again, on the designated firing line no firearms may be handled, remain loaded in any condition, or left pointing down range or in any other unsafe direction. Instead they must be bagged, holstered, or repositioned to face into and be within 6ft of a side berm or backstop.
+1.8 Minimum Target Engagement Distance for Steel Targets
+    1.8.1 Rifle calibers and slugs For rifle calibers and shotgun slugs, no steel target shall be engaged within 50 yards or 40 yards for targets with a minimum 15 degree forward cant toward the shooting position.
+    1.8.2 Pistol calibers or buckshot For pistol calibers or buckshot, no steel target shall be engaged within 7 yards.
+1.8.3 Birdshot For shotgun birdshot, no steel target shall be engaged within 5 yards.
+1.9 Failure to adhere
+Failure to adhere to the Range Safety rules outlined in Section 1.1 by any person (competitor, spectator, or otherwise) shall result in appropriate consequences as outlined in Chapter 13 (Strikes), Chapter 14 (Stage DQs), and Chapter 15 (Match DQs). The RM must be called to directly handle these cases.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9
+
+2 Competitor Equipment
+2.1 Belt and Holster
+Required for all stages where the competitor is shooting a handgun, unless otherwise specified by the WSB.
+2.1.1 Belt at waist level The competitor's belt must be worn at waist level.
+2.1.2 Holster secured to belt The holster must be secured to the competitor's belt.
+        2.1.2.1 Leg-strap holsters Holsters that have an additional leg-strap for stabilization are specifi-cally allowed, as long as the belt attachment that holds the holster is reasonably rigid and keeps the handgun secured to the competitor's body during vigorous movement even when the accompanying leg strap is not in use.
+    2.1.3 Trigger guard coverage The holster must completely cover the trigger guard of the competitor's holstered handgun.
+    2.1.4 Holster Position The holster must be positioned on the belt between the competitor's 12 and 4 o'clock positions for right handed competitors, or 12 and 8 o'clock positions for left handed competitors. There are no restrictions on the cant and orientation of the holster as long as the handgun can always be drawn safely, and the handgun is held such that the muzzle does not point further than 3 feet from the midpoint of the competitor's feet when the competitor is standing relaxed.
+    2.1.5 Malfunctions of belt and/or holster If a competitor's belt and/or holster becomes unsecured from their person, the 180 rule (Section 15.4) applies to the holstered handgun with a 3 ft exclusion radius from the midpoint of the competitor's feet. Competitors have the option to correct these issues on the clock as long as the holstered handgun remains under direct physical control of the competitor continuing to adhere to the 180 rule, otherwise a "Stop!" call shall be made and the situation must either be handled via Section 15.2 (loaded firearm) or Section 14.2 (unloaded firearm).
+2.2 Magazines and Magazine Pouches
+    2.2.1 Pouches not required While recommended, magazine pouches are not required. Competitors may elect to carry magazines on their person (such as in a pocket).
+    2.2.2 Starting position At the start of a stage, all magazines to be used other than the initial mags loaded in the firearms per the WSB must be secured somewhere on the competitor's person, and NOT held in any way (unless otherwise specified by the WSB).
+    2.2.3 No spare magazines mounted to firearms No spare magazines may start directly mounted to competitor's firearms in any way such as in stocks, chassis, or attachments that hold a spare magazine on the gun (e.g. Flux Raider). Coupled (side by side, or end-to-end) magazines are not considered to be mounted to the firearm.
+2.3 Sling
+Some stages may require the use of a sling.
+    2.3.1 Slings not required throughout match Slings are not required to stay on the firearm(s) for the duration of the match.
+    2.3.2 Removing sling mid-stage If the WSB requires a sling as part of a start condition, the competitor may elect to remove and abandon the sling mid-stage as long as all other rules and procedures outlined in the WSB are followed.
+2.4 Types of firearms and their definitions
+2.4.1 Handgun
+
+10
+
+2.4.1.1 Magazine in grip or revolver Must accept its magazine inside its grip or be a revolver.
+        2.4.1.2 Single grip only Must only have a single grip. A handguard, foregrip, shroud, or other related hardware designed for gripping the firearm in a location other than the primary grip are not allowed.
+         2.4.1.3 No stocks or stabilizing devices Must not have any stock or stabilizing device that allows the firearm to be fired from the shoulder or stabilized using any part of the body other than the hands forward of the wrists.
+    
+
+rules.
+2.4.1.4 
+Acceptable caliber Must be chambered in an acceptable pistol caliber per the divisional
+    
+2.4.2 Rifle
+        2.4.2.1 Stock or stabilizing device required Must have a stock, brace, or stabilizing device that may be used to fire the firearm from the shoulder. A buffer tube is not considered to be a shoulderable stabilizing device.
+        2.4.2.2 Acceptable caliber Must be chambered in an acceptable rifle or pistol caliber per the divisional rules.
+2.4.3 Shotgun
+        2.4.3.1 Stock or stabilizing device required Must have a stock, brace, or stabilizing device that may be used to fire the firearm from the shoulder.
+        2.4.3.2 Acceptable caliber Must be chambered in an acceptable shotgun caliber per the divisional rules. A buffer tube is not considered to be a shoulderable stabilizing device.
+2.5 Firearm, caliber, and equipment changes throughout the match
+Competitors may swap out or reconfigure any of their equipment, including firearms, in between stages, provided that at all times during a course of fire all the competitor's equipment meets the criteria for the competitor's declared division, and the following conditions are followed:
+    2.5.1 Caliber swaps on rifle platforms Caliber swaps specifically on the rifle platforms may only be made within the same caliber class as defined below:
+2.5.1.1 Light Calibers 5.7x28/5.45x39/5.56x45/all pistol calibers up to .45 ACP
+        2.5.1.2 Medium/Special Calibers 7.62x39, .300 Blackout, 6.5 Grendel, .224 Valkyrie, 6.8 SPC, 6mm ARC, and similar. This category also includes all calibers with projectiles larger than .224" diameter that can be fired out of the small frame AR platform or similar firearms.
+        2.5.1.3 Heavy Calibers 6.5CM, .308 Win, etc, or larger. Calibers designed for large frame AR-10s and similar or larger firearms.
+        2.5.1.4 Match Director exception Match Directors may elect to allow unlimited swaps between caliber classes if they determine that there is no advantage to be gained at their specific event. This adjustment shall be communicated to all participating competitors before the match starts.
+    2.5.2 Division compliance If any firearms or equipment that a competitor uses on a course of fire no longer meets the criteria of their division, they will either be moved to Competition Division (for PCSL 2-Gun, Pistol Caliber 2-Gun, Rifle, or Pistol formats), Open Division (for PCSL Shotgun or 3-Gun formats), or in the case that the firearms or equipment used are not legal within any available division, the competitor's scores shall be removed from the match results.
+    2.5.3 One of each firearm type per stage Competitors may only use one of each required firearm type on each course of fire.
+        2.5.3.1 Stage guns "Stage Guns" that may be integrated into the course of fire are considered separate from the competitor's firearms for the stage.
+
+
+
+
+11
+
+2.6 Safe Conditions Defined by Firearm Type
+    2.6.1 Long Guns The firearm is unloaded, or the manual safety is applied, or the external hammer is decocked.
+2.6.2 Handguns The handgun is unloaded or one of the following:
+        2.6.2.1 SAO or DA/SA handguns A SAO or DA/SA handgun with the manual safety applied or hammer decocked.
+2.6.2.2 Striker-Fired/Safe Action handguns  A Striker-Fired/Safe Action handgun.
+            2.6.2.2.1 Manual safety not required Handguns with internal safe action mechanisms that also have an external manual safety do not need to have the manual safety applied to be in a safe condition.
+            2.6.2.2.2 Safe Action defined "Safe Action" refers to handguns with a system of internal safeties to prevent accidental firing, rather than an external manual safety lever. These safeties disengage automatically with the trigger pull, such as a trigger safety lever (a small lever on the trigger face that is depressed as the trigger is being pulled) or other internal mechanisms.
+2.7 Prohibited Firearms and Accessories
+If used, see Section 14.10.
+    2.7.1 No manual safety present without a decocker Any long gun that lacks a manual safety, unless the long gun has an external hammer that can be manually decocked.
+    2.7.2 Broken or disabled safety Any firearm which has a broken or disabled manual safety that allows the trigger to be pulled even while applied.
+    2.7.3 Multiple rounds per trigger pull Any firearm that may fire multiple rounds with a single pull of the trigger, whether intentionally or unintentionally.
+    2.7.4 Multiple barrels Any rifle or handgun with more than one barrel, regardless of each barrel's caliber.
+    2.7.5 Full-auto or burst-capable firearms Any fully automatic or burst-capable firearm used in full-auto or burst mode.
+        2.7.5.1 Match Director exception MDs may elect to allow fully automatic or burst-capable firearms on a per-match basis, provided the match is not a Level 1 or higher PCSL Pistol, Rifle, or 2-Gun event.
+    2.7.6 Simulated full-auto accessories Any accessory that allows the firearm to simulate full-auto fire or provides a mechanically enhanced fire rate such as but not limited to:
+        2.7.6.1 Forced reset devices Any forced reset type device used in forced reset mode (such as a forced reset trigger, Hoffman Super Safety, etc)
+2.7.6.2 Binary triggers All binary type triggers, regardless of mode used
+2.7.6.3 Bump stocks Bump stocks
+         2.7.6.4 Match Director exception for simulated full-auto MDs may elect to allow accessories that simulate full-auto fire on a per-match basis, provided the match is not a Level 1 or higher PCSL Pistol, Rifle, or 2-Gun event
+    2.7.7 Full-auto and simulated full-auto Strike Violating the full-auto or simulated full-auto prohibitions shall also receive a Strike (Section 13.1.4)
+2.8 Ammunition Restrictions
+If used, see Section 15.11.
+    2.8.1 Prohibited ammunition types Steel core, penetrating, tracer, specialty incendiary, and other non-ball types of ammunition are prohibited.
+
+12
+
+
+basis.
+2.8.1.1 
+M855 exception  MDs may allow M855 (Green Tip) ammunition to be used on a per-match
+    
+    2.8.2 Multiple projectiles per shot prohibited Any rifle or pistol ammunition that allows the firing of more than one projectile per shot is prohibited.
+2.8.3 Shotgun Ammunition
+2.8.3.1 Minimum shell length Shotshells must be a minimum of 2-3/4" OAL.
+2.8.3.2 Non-lead prohibited Steel, tungsten, and other non-lead ammunition is prohibited.
+2.8.3.3 Birdshot size Birdshot must be #6 shot or smaller.
+    2.8.4 Large caliber exception MDs may elect to allow pistol calibers larger than .45 ACP and/or rifle calibers larger than .308/7.62x51 (such as .30-06) on a per-match basis.
+    2.8.5 Specialty ammo for Stage Guns MDs may, upon taking careful risk decisions, allow specialty ammo prohibited herein for Stage Guns.
+2.9 Firearms with magazine disconnects
+Firearms that do not fire without a magazine inserted may present issues during the unload and show clear process (Section 5.1.5) or the engagement of DMT targets (Section 7.5). Reference the following procedures for these scenarios with this type of firearm:
+2.9.1 Show Clear process for firearms with a magazine disconnect
+1. Clear firearm of all live ammunition
+2. Insert an empty magazine, if not already inserted
+3. Lock action back to allow RO to visually inspect a clear action
+4. Close action on top of empty magazine
+5. Pull the trigger with firearm pointed in a safe direction
+6. Remove magazine, then resume standard procedures
+2.9.2 DMT process for firearms with a magazine disconnect
+1. Drop magazine and insert an empty magazine
+2. Engage DMT with remaining chambered round, resulting in slide/bolt lock
+3. Close action on top of empty magazine
+4. Pull the trigger with firearm pointed in a safe direction
+5. Remove magazine, then resume standard procedures
+2.10 Concealment
+When required by a division or category, equipment must remain concealed prior to the start signal (not directly visible, including through mesh fabric) from all directions when the competitor is standing normally with their arms raised parallel with the ground.
+2.10.1 WSB override The WSB may override this requirement.
+    2.10.2 Clip exemption Clips used to attach equipment inside of clothes or pockets are exempt (e.g. Neo-mag Magnetic Pocket Mag Carrier).
+    2.10.3 Distance from belt All portions of the holstered firearm, holster, magazines, magazine pouches, and related equipment must remain within 3.375" (length of a standard overlay) of the inner edge of the competitor's belt system.
+    2.10.4 IWB holsters & ammunition carriers IWB (Inside the Waistband) holsters follow standard requirements as outlined in Section 2.1.4. There is no restriction on positioning of IWB ammunition carriers.
+    2.10.5 OWB holsters & ammunition carriers OWB (Outside the Waistband) holsters may only be worn on the competitor's strong side between 2 and 4 o'clock, or 8 and 10 o'clock. The strong side hip bone denotes the position of 2 o'clock for right handed, or 10 o'clock for left handed competitors. OWB
+
+13
+
+/!.(I!TIONSiHOO'TINGLLEAGUE
+
+ammunition carriers may not be further forward than the hip bone,	may	o'clock to the rear (moon clips are exempt from this restriction).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14
+
+3 Match Types and Levels
+All divisions referenced here are listed in Appendix A, Appendix B, Appendix C
+3.1 PCSL Division Types
+3.1.1 Core Divisions PCSL's core set of divisions for each match type.
+3.1.1.1 PCR System Tracking Core Divisions are always tracked by the PCR System.
+        3.1.1.2 Availability All applicable Core Divisions shall always be available at any affiliated PCSL match, except in special cases approved directly by PCSL (e.g. a PCC-only event)
+    3.1.2 Recognized Divisions PCSL divisions that are important to support and/or provisional, but will not be available at level 3 or 4 Events, unless a specific exemption is made by PCSL on a case-by-case basis. Recognized divisions may be available at level 1 & 2 events by discretion of the Match Director. They may also be tracked by the PCR System, especially in the case of provisional divisions under evaluation to potentially be moved up to Core divisions.
+    3.1.3 Unrecognized/Custom Divisions Divisions that Match Directors may invent and use at their leisure. May only be implemented at affiliated Level 1 matches (or unaffiliated matches), and will never be tracked by the PCR System.
+3.2 Match Type: PCSL Pistol
+A match using any of the divisions listed in Appendix A.
+3.3 Match Type: PCSL Rifle
+A match using any of the divisions listed in Appendix B.
+3.4 Match Type: PCSL 2-Gun
+A match using a Handgun and Rifle
+3.4.1 Competition (COMP)
+3.4.1.1 Rifle Any rifle allowed per Section B.1.1.
+3.4.1.2 Handgun Any handgun allowed per Section A.1.1.
+3.4.2 Practical (PRAC)
+3.4.2.1 Rifle Any rifle allowed per Section B.1.2.
+3.4.2.2 Handgun Any handgun allowed per Section A.1.2.
+3.5 Match Type: PCSL Pistol Caliber 2-Gun
+Identical to PCSL 2-Gun except for the following changes:
+3.5.1 PCC Required A PCC (defined in Section A.1.3) must be used as the rifle in all divisions.
+    3.5.2 Rifle Steel Distance Rifle paper and steel targets remain white, but rifle steel may be placed as close as 7 yards.
+3.5.3 Division Determination  Competitor's Division is determined by handgun only.
+3.5.4 Pistol Caliber 2-Gun Practical Division Restrictions  In Pistol Caliber 2-Gun Practical Division
+only, the PCC has the following additional restrictions:
+
+15
+
+3.5.4.1 Maximum Rounds Maximum rounds loaded in magazines at start signal: 30
+3.6 Match Type: PCSL Shotgun
+A match using any of the divisions listed in Appendix C.
+3.7 Match Type: PCSL 3-Gun
+3.7.1 Open (OPEN)
+3.7.1.1 Rifle Any rifle allowed per Section B.1.1.
+        3.7.1.2 Handgun Any handgun allowed per Section A.1.1, except that the maximum magazine length is 171.25mm and magazines may be loaded full.
+3.7.1.3 Shotgun Any shotgun allowed per Section C.2.1
+        3.7.1.4 Pre-Staging of equipment Pre-Staging of tripods or other equipment on the course of fire is never allowed unless specifically stated in the WSB. All equipment must start on the competitor's person, held or attached in a way that it does not rest on the ground or any other object.
+3.7.2 Modified (MOD)
+3.7.2.1 Rifle Any rifle allowed per Section D.1.
+3.7.2.2 Handgun Any handgun allowed per Section D.2.
+3.7.2.3 Shotgun Any shotgun allowed per Section C.2.2
+3.7.3 Practical (PRAC)
+3.7.3.1 Rifle Any rifle allowed per Section B.1.2
+3.7.3.2 Handgun Any handgun allowed per Section A.1.2
+3.7.3.3 Shotgun Any shotgun allowed per Section C.2.3
+3.7.4 Tactical Optics (TAC)
+3.7.4.1 Rifle Any rifle allowed per Section D.3.
+3.7.4.2 Handgun Any handgun allowed per Section D.4.
+3.7.4.3 Shotgun Any shotgun allowed per Section C.2.4
+PCSL Match Level Schedule
+
+Level
+0	Level 1	Level 2	Level 3	Level 4
+
+Designation	Unaf-fili-ated
+
+Local	State/Sectional	Regional	National
+
+PCSL Affiliation Required
+PCR System Multiplier*
+
+No	Yes	Yes	Yes	Yes
+N/A	1*	3*	5*	10*
+
+PCSL Interaction Required
+
+No	Club Affiliation Only
+
+Club Affiliation + PCSL Written Approval
+
+PCSL-Run,
+or by contract
+
+PCSL-Run,
+or by contract
+
+Competitor PCSL Membership Requirement
+
+N/A	Free	Free		Free through 2026
+
+Free through 2026
+
+Core Divisions Available
+
+N/A	Always	Always	Always	Always
+
+
+16
+
+
+
+Level
+0	Level 1	Level 2	Level 3	Level 4
+
+Recognized Divisions Available
+
+N/A	Recommended, MD Decision
+
+MD Decision	Never	Never
+
+Unrecognized Divisions Available
+
+Yes	Yes	Never	Never	Never
+
+Activity Fees Paid to PCSL
+Paper Target Type
+
+No	No	None through 2027		N/A (PCSL-
+Run)
+N/A	PCSL Only	PCSL Only	PCSL Only
+
+N/A (PCSL-
+Run) PCSL
+Only
+
+Allowed Match Types
+
+N/A	2-Gun/PC 2-Gun,
+Pistol, Rifle, 3-Gun, Shotgun
+
+2-Gun/PC 2-Gun, Pistol, Rifle, 3-Gun, Shotgun
+
+2-Gun, Pistol, Rifle
+
+2-Gun, Pistol, Rifle
+
+PCSL 2-Gun/PC
+2-Gun Allowed Scoring Types PCSL Rifle Allowed Scoring Types
+PCSL Pistol Allowed Scoring Types
+
+N/A	PCSL Hit Factor	PCSL Hit Factor	PCSL Hit
+Factor
+N/A	PCSL Hit Factor	PCSL Hit Factor	PCSL Hit
+Factor
+N/A	PCSL Hit Factor	PCSL Hit Factor	PCSL Hit
+Factor
+
+PCSL Hit
+Factor
+PCSL Hit
+Factor
+PCSL Hit
+Factor
+
+PCSL Shotgun Allowed Scoring Types
+PCSL 3-Gun
+Allowed Scoring Types
+
+N/A	PCSL Hit Factor,
+PCSL Time-Plus Points
+N/A	PCSL Hit Factor,
+PCSL Time-Plus Points
+
+PCSL Hit Factor, PCSL Time-Plus Points
+PCSL Hit Factor, PCSL Time-Plus Points
+
+N/A	N/A
+
+N/A	N/A
+
+Stage Count Restrictions Round Count Restrictions
+
+N/A	No	No	No	No
+N/A	No	No	No	No
+
+Classifier Stage Restrictions
+
+N/A	No	Maximum 1 per every 4 stages
+
+Case by case
+
+Case by case
+
+
+
+
+*subject to change
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17
+
+4 Match Procedures
+The match will be conducted according to a posted schedule released prior to the match.
+4.1 Fixed Squadding Matches
+Every competitor will be on a squad, except in the case of RM approved situations (such as a competitor needing to "shoot through" due to scheduling conflicts).
+    4.1.1 Squad time requirements Every competitor must shoot each stage with their assigned squad at the designated time as outlined by the schedule. If a competitor fails to show up to shoot a stage at their squad's designated time, they will receive a DNF for the stage and a 0 score. The RM may approve a secondary shoot time on a case-by-case basis.
+    4.1.2 Participation in Stage Reset Unless the match is staff-only reset, all squadmates are required to stay with their squad at their designated stage and time. All competitors are expected to assist with stage reset to the extent that they are physically able. If a competitor abandons their squad, they may be subject to a Strike per Section 13.1 or Match DQ for unsportsmanlike conduct (Section 15.7) based on the severity and recurrence of the incident. Doing so is disrespectful to fellow squadmates and match staff. Taking a break as needed whether to use the restroom, take a breather, or other reasonable actions is not considered abandoning a squad.
+4.2 Open Squadding Matches
+During the match schedule, competitors may queue for any stage they have yet to shoot. This may be done individually, or with any sized group.
+4.2.1 Single stage queue Competitors may only queue for a single stage at a time.
+    4.2.2 Participation in Stage Reset Unless the match is staff-only reset, competitors are required to assist with reset to the extent that they are physically able at the stage they are currently waiting to shoot. If a competitor neglects their duty to reset or abandons their stage, they may be subject to a Strike per Section 13.1 or Match DQ for unsportsmanlike conduct (Section 15.7) based on the severity and recurrence of the incident. Doing so is disrespectful to fellow competitors and match staff. Taking a break as needed whether to use the restroom, take a breather, or other reasonable actions, is not considered abandoning a stage.
+         4.2.2.1 Reset completion before leaving If a competitor or group of competitors finishes a stage with no other competitors available to help reset, they are expected to reset the stage entirely before moving on to the next.
+4.3 Match timing
+Matches are deemed to start when the first "Make Ready" command is issued and end when the MD declares the scores and results final (see Section 4.7).
+4.4 Stage Inspection/Walkthroughs
+    4.4.1 Free walkthrough During the specified open hours of the event, and only if there is not a competitor or squad currently shooting on a stage, competitors may freely walk through and inspect the stage.
+    4.4.2 Prohibited manipulation Activating or manipulating moving targets or altering/marking the course of fire to gain an unfair advantage is not allowed and shall result in either a Strike per Section 13.1 or Match DQ for unsportsmanlike conduct per Section 15.7. In these situations, the RM must be called.
+
+
+
+18
+
+        4.4.2.1 Resetting fallen steel Falling steel targets that are down may be reset by competitors to get an accurate view of the target presentation. However, activated or moving targets that are set in place or at rest must be left untouched.
+4.5 Chronograph & Power Factor
+    4.5.1 Division power factor testing If the match includes divisions that require a minimum power factor as listed in Chapter 3, Match Directors may elect to implement a fair procedure to test some or all of the competitors' adherence to the power factor requirement as part of these divisions.
+        4.5.1.1 Multiple ammunition types If a competitor has used or plans to use different types of ammunition and firearms throughout the event, each firearm/ammunition pairing is subject to testing.
+    4.5.2 Power Factor Power Factor is a measure of the average momentum of projectiles from a singular type of ammunition fired from the competitor's firearm based on the projectile's weight in grains, and average velocity in feet per second of at minimum a 3-shot string of that ammunition. It is calculated by multiplying the projectile weight in grains by the average velocity in feet per second, and then dividing by 1000.
+    4.5.3 Failing power factor A competitor failing to meet minimum power factor for their declared division shall be reassigned to the next most open division with no power factor requirement that all of their equipment used thus far in the match fits into.
+        4.5.3.1 No suitable division If no division in the match is suitable for the competitor's equipment and measured power factor, the competitor shall shoot the match for no score.
+4.6 Suspending shooting activities
+If the Range Master and/or MD deem that climatic or other conditions have, or are likely to, seriously affect the safety and/or conduct of a match, they may order that all shooting activities be suspended until a "resume shooting" directive is issued.
+4.7 Final Results
+    4.7.1 Arbitration period When all scores have been collected and posted, the MD will announce the beginning of the arbitration period. This arbitration period will last no more than 1 hour and may be waived by majority vote of competitors present provided there are no outstanding requests to arbitrate.
+    4.7.2 Results finalization Upon completion of the arbitration period, the MD will declare the scores and results final. No further editing may occur.
+4.8 Unaddressed situations
+Any situation not specifically addressed in the rulebook shall be up to the RM to issue a fair and thoughtful ruling.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19
+
+5 Range Commands
+5.1 Range Commands
+    5.1.1 "Make ready." When it is time for a competitor to begin the stage and the ROs have determined the stage is clear, the Timer RO will issue the "Make Ready" command.
+        5.1.1.1 Before make ready While on the stage waiting for the make ready command and prior to the make ready command being issued by an RO, the competitor may not take any action to unholster, load, point downrange, or handle their firearms in any way aside from carrying long guns vertically. (see Section 13.2)
+        5.1.1.2 RO guidance during make ready During the make ready period, the RO team should make every effort to guide the competitor through the proper start condition per the WSB such as reminding them to chamber a round if necessary. However, it is ultimately the competitor's responsibility to make sure they, their firearms, and their equipment are in the proper start conditions as listed by the WSB.
+        5.1.1.3 Viewing targets through optics After the "Make Ready" command has been issued, a competitor may be allowed by the Timer RO to take a few reasonable steps to view targets through their optics. However, this permission does not extend to various shooting locations, including prone and braced positions.
+    5.1.2 "Are you ready?" When the competitor appears ready to start the stage, or gives a verbal confirmation, the Timer RO will issue this command. There is no requirement of the competitor to respond. Silence will be taken as confirmation that the competitor is ready. If the competitor is not ready, it is their responsibility to speak up and notify the RO.
+    5.1.3 "Standby." After the "standby" command, the competitor will maintain the proper start position until the start signal is issued.
+5.1.4 Start Signal
+        5.1.4.1 Start signal timing The indicator to the competitor to begin the stage. The RO will activate the Start Signal in a 1-4 second window after issuing the "standby" command.
+        5.1.4.2 Default and alternative start signals The Start Signal by default is the timer's beep, but may be defined by the WSB as a different signal such as a visual indicator.
+    5.1.5 "If you are finished, unload and show clear." When the competitor appears to have completed the stage, the RO will issue this command. It is the competitor's responsibility to unload their firearm and present the cleared firearm to the Timer RO for visual inspection.
+        5.1.5.1 RO verification If the Timer RO is unsure of the state of the firearm they may ask the competitor to show clear again or take steps to resolve the issue as needed.
+        5.1.5.2 Competitor responsibility Despite the practice of the Timer RO visually inspecting the competitor's firearm, it is solely the responsibility of the competitor to make sure that their firearm is completely unloaded in compliance with Section 1.4.
+    5.1.6 "If clear..." Use "If clear, hammer down, holster." for handguns, "If clear, hammer down, muzzle." for long guns, "If clear, hammer down, flag, muzzle." for long guns at ranges requiring ECIs, and "If clear, cylinder closed, holster." for revolvers.
+        5.1.6.1 No more rounds Once this command has been issued in full, the competitor may not fire any more rounds. If they do, this is a Match DQ for unsafe gun handling.
+        5.1.6.2 Hammer down requirement "Hammer Down" requires the competitor to dry fire their firearm in a safe direction through a pull of the trigger. The competitor may not use decocking mechanisms or manually decock the hammer to achieve this.
+
+20
+
+
+ger" down).
+5.1.6.3 
+Alternative phrasing An acceptable substitution for "Hammer Down" is "Pull The Trig-
+
+5.1.6.4 Muzzle orientation "Muzzle" is implied to mean "orient the muzzle vertically" (up or
+
+5.1.6.4.1 Muzzle up variation At host ranges where muzzle up is deemed the only acceptable
+    
+orientation for carrying long guns to and from the course of fire, the phrase "muzzle up" may be substituted.
+    5.1.7 "Show clear [handgun/rifle/shotgun]." On multigun stages where there are still abandoned firearms to be cleared and/or retrieved by the competitor somewhere on the course of fire, the Timer RO shall issue this range command to instruct the competitor to begin following a repeated process of Section 5.1.5 - Section 5.1.6 with the other firearm(s).
+        5.1.7.1 Omission when already cleared If other ROs have already cleared and retrieved the competitor's abandoned firearms on the course of fire, this command can be omitted and Section 5.1.8 can be issued.
+5.1.8 "Range is clear."
+        5.1.8.1 When to issue The Timer RO will wait to issue this command until they are certain of the status of the stage, including the status of any abandoned firearms yet to be unloaded or retrieved.
+        5.1.8.2 After range is clear Once this command is issued, all firearm handling for the stage (outside of carrying long guns vertically) has finished. After "Range is Clear", competitors, resetters, and others may make their way downrange to score and reset.
+5.1.9 "Stop!"
+        5.1.9.1 When to issue stop Any RO may issue the "Stop" command at any point during the stage. This should occur if the competitor makes a safety violation, if certain targets or props on the stage are seen to be set up incorrectly or broken, or if a range officer sees a potentially dangerous situation occurring or about to develop (e.g. unexpected persons or animals enter the course of fire, competitor moves uprange of the RO or other persons during the course of fire, etc).
+        5.1.9.2 Competitor response If this command is issued, the competitor must cease what they are doing and safely stop, awaiting further instruction from the Timer RO.
+        5.1.9.3 Follow-up procedure The Timer RO will proceed with commands Section 5.1.5 - Sec-tion 5.1.8 to ensure the range is clear, then necessary corrective actions will be taken.
+    5.1.10 "Hit!" Used to confirm competitor hits on targets that require hit calls, such as long range steel.
+    5.1.11 "Time!" Used to inform the competitor that the Par Time has elapsed and that the competitor must stop shooting the stage.
+    5.1.12 Supplemental Range Commands The following are words or phrases that may be used by an RO Team during a course of fire to facilitate competitor safety or procedural tasks. ROs will use their best judgement on when to issue these situational commands and they are considered neither aid nor interference.
+5.1.12.1 "Muzzle!"
+5.1.12.2 "Finger!"/"Trigger!"
+5.1.12.3 "Switch/Go to [handgun/rifle/shotgun]!"
+5.1.12.4 "Good!"
+5.1.12.5 DMT Procedure Specific Supplemental Range Commands
+5.1.12.5.1 "Mag!"
+5.1.12.5.2 "Show clear!"
+5.1.12.5.3 "Good!"/"Clear!"
+
+
+21
+
+6 Coaching & Coachable Competitors
+6.1 Coaching & Coachable Competitors
+For standard competitors, coaching is not allowed either by an RO or other person. It is the competitor's responsibility to understand the course of fire, prepare their equipment for the stage, and keep track of their progress on the stage in real time.
+    6.1.1 Coaching penalties If a competitor coaches another or gains an advantage by receiving coaching, the competitor and coaching party shall be assigned procedural penalties per occurrence of help given (by the coaching party) and help acted on (by the competitor), or other appropriate penalties determined by the RM. Procedurals may be assigned solely to the coaching party even if the shooter does not act in response to the coaching.
+6.2 RO/Competitor interaction during static rifle steel engagement
+On certain long range targets requiring hit calls, the RO and competitor may interact, and the RO may inform the competitor if they are unclear on which targets have been neutralized.
+    6.2.1 Proper Coaching Example There are three long range targets. The competitor accidentally begins on the center target, then engages the right target, then is confused as to where the third one is. They come back to the middle target and re-engage it but don't receive a hit call and are clearly wondering why. The RO should inform the competitor that the target is already hit but should not offer any additional help to guide the competitor toward their remaining target.
+    6.2.2 Improper Coaching Example Competitor gets into their long range position and engages the first of three long range targets. They get lost and can't locate the second target. The RO begins walking them in "look just past the crest of this first hill, see that bright green bush, the target is just to the right of that..." etc. Instead, the RO should let the competitor solve the problem, and only provide clarification on which targets have been engaged/neutralized if necessary.
+6.3 Coachable Competitors
+It is highly recommended (but not required) for matches of all levels to offer a "Coachable Competitor" option. Coachable Competitors are not eligible for any order of finish prizes, awards, recognitions, and their results shall not be taken into account for any PCR calculations. Otherwise, there is no difference between them and standard competitors, aside from being allowed to receive unlimited coaching and verbal aid from ROs or squadmates/spectators. This is a fantastic option for individuals who are new to competition shooting and allows a much more comfortable environment when starting out.
+    6.3.1 No reshoot for poor coaching Poor coaching is not a valid reason for reshoot. However, if an RO suspects unfair interference by another competitor or RO, the RM shall be called to determine a fair course of action.
+    6.3.2 MD eligibility decisions MDs may make reasonable denials regarding the eligibility of a com-petitor to register as a Coachable Competitor based on the competitor's known previous practical shooting experience.
+6.4 Special event types that wish to allow unlimited coaching
+Certain special match formats using the PCSL Rules may lend themselves to allowing all forms of coaching. In these cases, coaching is encouraged by both ROs and squadmates. If a competitor would prefer not to receive coaching, it is their responsibility to notify the RO and their squadmates prior to the stage. The MD must communicate the match's allowance of coaching to the competitors prior to the match start.
+    6.4.1 Excluded match types The following affiliated match types of Level 1 or higher are excluded from this rule and may never offer unlimited coaching:
+
+22
+
+/!.(I!TIONSiHOO'TINGLLEAGUE
+
+6.4.1.1 PCSL 2-Gun & Pistol Caliber 2-Gun
+6.4.1.2 PCSL Rifle
+6.4.1.3 PCSL Pistol
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+23
+
+7 Stage Procedures
+7.1 Written Stage Brief (WSB)
+Each stage shall have a written stage brief published and posted at the stage. The WSB shall contain all pertinent information required for a competitor to fairly and correctly shoot the stage including:
+7.1.1 Total round count The total scored round count for each firearm.
+7.1.2 Target types and numbers  Types and number of targets for each firearm.
+7.1.3 Maximum points Maximum point value of the stage.
+7.1.4 Par time Par time (if applicable).
+    7.1.5 Start position The start position of the competitor (and the competitor's equipment, if starting somewhere other than on the competitor's person).
+7.1.6 Start conditions The start condition(s) of the competitor's firearm(s).
+7.1.7 Stage procedure The full stage procedure.
+        7.1.7.1 Fault lines implicit It is understood that fault lines indicate the acceptable shooting areas on a stage. A WSB does not need to specifically state that "targets must be engaged from within the shooting area".
+    7.1.8 Uncommon elements If applicable, notes regarding uncommon stage elements like props or physical obstacles, along with a specified penalty for failing to interact with these elements as described by the stage procedure.
+    7.1.9 Safety notes If applicable, safety notes related to the specific stage (such as safe-angle modifica-tions on non-standard bay layouts or natural terrain areas).
+    7.1.10 WSB limitations The WSB may not supersede any rule in the general rulebook unless the rule specifically allows for it.
+    7.1.11 WSB reading The WSB will be read to the squad at the beginning of the scheduled stage time and will remain available for the competitors to review throughout their time on the stage.
+    7.1.12 Missed WSB reading When a competitor is not present for the WSB reading for any reason (like a bathroom break), they should make themselves known to the ROs as soon as they return to the stage. The ROs should, but are not required to, make reasonable efforts to read the WSB to the returning competitor. A competitor being unaware of crucial stage information due to missing the WSB being read is not grounds for a reshoot.
+7.2 Pre-Loading Areas
+Pre-loading areas may be designated on a per-stage basis. Shotgun pre-loading areas are handled differently from Admin pre-loading areas.
+7.2.1 Shotgun Pre-Loading Areas (Tube-Fed Magazines Only)
+        7.2.1.1 Shotgun pre-loading without RO supervision The WSB or RO team may specifically allow for shotguns to be pre-loaded without direct RO supervision as long as there is a defined shotgun-only pre-load area within 6 ft of a side berm or backstop, and competitors point their shotgun directly into the side berm or backstop while pre-loading.
+7.2.1.2 Timing of shotgun pre-loading If there is a specified shotgun pre-loading area, competitors
+may only pre-load their shotguns after the WSB is read and the walkthrough period has begun.
+
+24
+
+        7.2.1.3 Transport of pre-loaded shotguns Pre-loaded shotguns may be carried vertically without RO supervision only from the pre-load area to the stage, or the reverse. Pre-loaded shotguns must stay on safe while being transported.
+        7.2.1.4 No chambered round Pre-loaded shotguns may never be left with a round chambered. Only the magazine tube may be pre-loaded.
+    7.2.2 Admin pre-loading areas Admin pre-loading areas may be implemented in order to increase the stage's efficiency.
+         7.2.2.1 Admin pre-loading area requirements Admin pre-loading areas must be defined with a box or boundary and be within 6 ft of a side berm or backstop. If multiple firearms need to be pre-loaded, a table or dump box between the pre-loading area and the backstop is required.
+        7.2.2.2 RO supervision required Firearms may never be pre-loaded unless the competitor is in a specified Admin pre-load area and under direct RO supervision.
+        7.2.2.3 Make Ready command Once in the Admin pre-loading area, competitors must wait for an RO's "Make Ready" command before pre-loading the applicable firearms.
+         7.2.2.4 Pre-loading direction and movement Competitors must point their firearms directly into the side berm or backstop while pre-loading. Once the applicable firearms are pre-loaded, the competitor must stay in the admin pre-loading area under direct RO supervision until directed to proceed to the course of fire by the RO.
+            7.2.2.4.1 Exception for long gun in dump box Where only a long gun is pre-loaded and remains in the dump box, an RO may excuse the competitor to take a final walkthrough while the stage is being reset. In this case the RO must remain with the long gun until the competitor returns to retrieve it.
+        7.2.2.5 Transport to course of fire When stage reset is complete, the ROs will ask the competitor to take their firearms to the course of fire. During this time(as soon as they leave the pre-loading-areas) and until they get another "Make Ready" command from the RO, the competitor may not draw their pre-loaded handgun or point their long gun in any direction other than vertical.
+7.2.2.6 Safety during transport Pre-loaded long guns must stay on safe while being transported.
+    7.2.3 No pre-loading area specified If no pre-loading area is specified, competitors may never load their firearms prior to receiving the "Make Ready" command from an RO.
+7.3 Competitor & Firearm Start Conditions
+    7.3.1 WSB start conditions The WSB may dictate any competitor or firearm start conditions that can be safely and equitably achieved by competitors of all sizes and strengths. Any aspect of these start conditions not covered by the WSB has no restrictions.
+    7.3.2 Option to start unloaded The competitor always has the option to start with an unloaded firearm by choice, even if the WSB specifies that the firearm starts loaded, unless this option is specifically disallowed by the WSB.
+    7.3.3 Default Start Conditions If any aspect of the competitor's or firearm's start condition is left unspecified by the WSB, the following default start conditions apply
+7.3.3.1 Firearm loaded and safe Firearm loaded, in a Safe Condition per Section 2.6 and,
+        7.3.3.2 Handgun start position If the competitor starts with the handgun: handgun holstered, competitor's wrists below belt and strong hand wrist completely below backstrap of handgun
+            7.3.3.2.1 No hand contact Unless otherwise specified by the WSB, no part of the hands forward of the wrist may be in contact with the handgun prior to the start signal. Additionally, Concealment Garments may not be in either hand prior to the start signal.
+        7.3.3.3 Long gun start position If the competitor starts with a long gun: [Rifle/Shotgun] held with stock touching belt and muzzle pointed generally downrange.
+
+
+
+25
+
+7.4 Re-holstering
+Re-holstering of a handgun in a Safe Condition (Section 2.6.2) is always allowed during the course of fire unless prohibited by the WSB.
+    7.4.1 Host Range Rule Exception Host ranges may prohibit re-holstering "on-the-clock" as a policy, but this rule modification must be clearly communicated in each WSB where it applies. If a competitor re-holsters a handgun in a prohibited way, 14.3 shall apply.
+7.5 Drop-Mag Target (DMT) Procedure
+A stage design tool to safely and fairly require unloading firearms on the clock as part of a stage procedure.
+DMT procedures are valid for handgun and rifle firearm types only.
+    7.5.1 Correct DMT procedure The correct and safe way to implement this mechanic into a stage is the following:
+        7.5.1.1 Remove magazine Competitor completely removes magazine/source of feed from the firearm with a round chambered.
+    
+
+round.
+7.5.1.2 
+Engage DMT Competitor engages the specified DMT with the single remaining chambered
+
+7.5.1.3 Firearm cleared At this point, the firearm is considered to have been officially cleared by
+    
+the RO, and the competitor can proceed with the next portion of the stage.
+7.5.2 Example use cases
+        7.5.2.1 Rifle to handgun transition Requiring the competitor to re-sling their rifle after engaging a rifle DMT, then complete a handgun portion without worrying about the safety angle of the rifle while slung, allowing the competitor to reload the rifle and finish the stage after engaging all the handgun targets.
+        7.5.2.2 Prone after handgun Requiring a prone rifle position after a handgun portion of a stage, ensuring that the competitor does not go prone with a loaded handgun holstered.
+    7.5.3 RO magazine warning If the RO notices a competitor moves to engage a DMT without first removing their magazine, they should verbally issue a "Mag!" warning to remind the competitor to remove their magazine before engagement. This is not considered coaching or interference.
+    7.5.4 RO verification of clear If the RO is unable to make an absolute determination that the firearm is clear, such as in the case where the competitor does not exactly adhere to the correct DMT procedure, the RO must issue a "Show clear!" command on the clock, visually inspect an empty chamber, then issue the "If clear, hammer down" command. The time it takes for the RO re to be confident that the firearm is clear before allowing the competitor to continue is considered the competitor's inherent penalty for failing to follow instructions. The RO will then issue the "Clear!" or "Good!" command to let the competitor know they may continue with the stage.
+    7.5.5 Revolvers Revolvers: no action needed before engaging the DMT. After engagement, the cylinder must be emptied completely and shown to the RO in an easily visible manner. The RO will respond "Clear!" to let the competitor know they can proceed with the stage.
+    7.5.6 Lever Action Rifle Lever Action Rifle with fixed magazine: No action needed before engaging the DMT. After engagement, the magazine tube & action must be emptied completely and shown to the RO in an easily visible manner. The RO will respond "If clear, hammer down!" The competitor must dry fire the rifle in a safe direction, then the RO will issue the "Clear!" command to let the competitor know they can proceed with the stage.
+7.6 Prone with a holstered handgun
+    7.6.1 Prone requirements All stages requiring prone shooting with a long gun where a handgun may be holstered at any point during the stage must require the competitor to either:
+        7.6.1.1 No handgun on person Not have a handgun on their person during the prone position (such as requiring a mandatory handgun abandonment somewhere other than the competitor's holster), or
+
+26
+
+7.6.1.2 Verified unloaded handgun Have a verified unloaded handgun by one of the following
+methods:
+7.6.1.2.1 DMT procedure Properly executed DMT procedure
+            7.6.1.2.2 Start unloaded Competitor starts the stage with an unloaded handgun, and does not load it at any point on the stage before the prone position
+    7.6.2 Elective prone On stages where a competitor elects to go prone as an option, it is the competitors responsibility to ensure that either Section 7.6.1.1 or Section 7.6.1.2 apply (otherwise - Stage DQ per Section 14.5).
+7.7 Abandoning/Dumping of Firearms
+    7.7.1 Required abandonment locations Stages may require competitors to abandon firearms in specific abandonment locations per the WSB.
+7.7.2 Proper Abandonment of Firearms
+         7.7.2.1 Correct abandonment positions Firearms must be abandoned in their corresponding type of abandonment positions (Section 9.1.5) or for handguns, in the competitor's holster (unless specifically prohibited by the WSB).
+        7.7.2.2 Proper orientation The firearm must be completely contained in the intended orientation that the abandonment position was designed to safely contain the firearm (e.g. muzzle down into a slant box or barrel), or, for non-standard variants, abandoned in a specific way outlined by the WSB.
+        7.7.2.3 Correcting botched abandonment Competitors may correct a botched attempt at aban-doning a firearm provided that Section 15.3 and Section 15.4 are not applicable, and the competitor does not leave the vicinity of the improperly abandoned firearm, or fire rounds with another firearm, before correcting its position.
+         7.7.2.4 Rangemaster discretion The Rangemaster has discretion on determining safe abandonment positions.
+    7.7.3 Safe condition requirement Firearms must be abandoned in their defined Safe Conditions per Section 2.6, else one procedural will be assigned per occurrence (Section 12.7), or for handguns re-holstered while not in a Safe Condition, the competitor will receive a Stage DQ (Section 14.3).
+     7.7.4 Firearm transitions Competitors may always transition back and forth between firearm platforms (for example, if a competitor realizes that they did not neutralize all designated targets with their original firearm), provided that no other rules are violated, unless specifically prohibited by the WSB.
+7.8 Grounding of Firearms
+    7.8.1 Grounding allowed A competitor is allowed to place their firearm on the ground, provided that the Section 15.3 and Section 15.4 are not violated (including inert firearms) and the firearms are in a safe condition per Section 2.6.
+    7.8.2 Stay within reach A competitor must stay within reaching distance of a grounded firearm. Leaving the vicinity of a grounded firearm will result in a Stage DQ (Section 14.7).
+    7.8.3 No engagement while grounded While a firearm is grounded, a competitor may NOT engage any target with any other firearm. Doing so will result in a Stage DQ (Section 14.7).
+7.9 Bracing on stage props, walls, and other equipment
+    7.9.1 Definition of bracing Bracing is defined as using a physical structure to gain support or stability while taking a shot, and does NOT include touching or "brushing against" the physical structure while taking an unsupported shot.
+    7.9.2 Bracing restrictions Unless otherwise specified by the WSB, competitors may not brace on or use for support any prop, wall, or other equipment that is not inside the marked shooting areas.
+
+
+27
+
+    7.9.3 Prohibited wall manipulation It is never acceptable to push against a wall or other stage prop in a way that changes its position to reveal a new shooting position or opportunity that was otherwise not available. This is considered cheating and shall result in a "Stop!" call, a Strike, and a Stage DQ (Section 14.11).
+    7.9.4 Wall bracing rules Walls are divided into three recognized "pieces" consisting of the two end posts and the midsection or "field" (Section 9.1.1). The following situations address when it is acceptable to use a wall for support:
+        7.9.4.1 Entire wall inside shooting area The entire wall is inside or acts as a boundary of the shooting area: competitors may brace on any portion of the wall.
+        7.9.4.2 One post and field inside One post and any part of the field is inside or act as a boundary of the shooting area: competitors may not brace on the post outside the shooting area, but may brace on the post inside the shooting area or the wall's entire field.
+        7.9.4.3 Only one post touches Only one post touches the shooting area: competitors may only use that post for support.
+        7.9.4.4 Entire wall outside The entire wall is outside the shooting area: competitors may not use the wall for support unless otherwise specified by the WSB.
+7.9.5 Bracing on barrels, dump boxes, and other props
+        7.9.5.1 Entire prop inside The entire prop is inside or acts as a boundary of the shooting area: competitors may brace on any portion of the prop with their body or equipment.
+        7.9.5.2 Prop partially inside In the case that the prop is partially inside the shooting area, or tangent to it, (for example, a single leg of a dump box resting on the ground inside the fault lines), the entire prop shall be available for support, provided the competitor does not touch the ground outside the shooting area with their body or equipment.
+        7.9.5.3 Prop completely outside If a prop is completely outside the shooting area, it may never be used for support unless otherwise specified by the WSB.
+    7.9.6 Bracing penalty Any shot fired while bracing in a way not permitted in this section will earn a per-shot procedural penalty (Section 12.2).
+7.10 Malfunctions
+    7.10.1 During make ready During make ready, a competitor may safely correct any malfunction they notice with no penalty. If the firearm needs to be worked on off the stage, the RO will guide the competitor through safely unloading all firearms, and then the competitor will be given the opportunity to correct the problem or change equipment followed by shooting the stage further down in the squad order (or at a later time with RM permission should the schedule permit).
+    7.10.2 During stage execution During the execution of a stage (i.e. after the start signal), a competitor may reasonably attempt to correct malfunctions while always adhering to safe gun handling principles.
+    7.10.3 Malfunction time limit If a competitor takes longer than 2 minutes to correct any malfunction, the RO Team may either terminate the course of fire, or tell the competitor to "Switch to Handgun/Ri-fle/Shotgun" (Section 5.1.12.3) depending on if there is still a firearm left to shoot.
+7.11 Squibs
+    7.11.1 RO squib stop It is recognized that squibs stuck in the barrel can result in catastrophic malfunctions and potential injury to the competitor or other nearby persons if additional rounds are attempted to be fired out of the firearm. As a result, any time an RO suspects a squib, they should issue the "Stop!" command and terminate the course of fire.
+        7.11.1.1 Competitor squib stop If the competitor suspects a squib and does not receive a "Stop!" command, they must stop themselves and inform the RO of a possible squib. Eligibility for a re-shoot follows the same criteria as if an RO made the "Stop!" command.
+
+28
+
+            7.11.1.1.1 Squib rule abuse Abusing this rule in order to get a re-shoot is considered cheating, and the RM must be called if suspected. After discussing the situation with the RO Team, the RM will make a decision on any necessary action to take, which may include a Strike or Match DQ as covered in Section 13.1 or Chapter 15.
+7.11.2 Squib reshoot eligibility  Eligibility for re-shoots after a potential squib:
+        7.11.2.1 True squib found If the suspect firearm is found to have a true squib, the course will be scored as shot and any penalties will be assessed. No re-shoot will be granted.
+        7.11.2.2 False squib If the competitor was stopped due to a suspected squib but the firearm is found to be clear, the competitor must re-shoot the course of fire.
+7.12 Disallowed Actions
+    7.12.1 RM authority A Range Master may at any time declare a specific action on a stage as Disallowed.
+    7.12.2 Purpose A Disallowed Action will typically relate to safety or maintaining stage integrity, and may include things like restricting a problematic movement path or engagement angle.
+    7.12.3 Reshoot for disallowed action If an action is committed by a competitor during their stage which results in the Range Master declaring the action as Disallowed, a reshoot is mandatory.
+    7.12.4 Repeat offense Committing a Disallowed Action after being declared by the Range Master as such shall result in a Stage DQ.
+7.13 False Starts and Creeping
+    7.13.1 False start procedure In the event where a competitor begins moving out of the start position between the "Standby" command and the Start Signal, the RO Team will stop the competitor (regardless of whether the start signal is subsequently issued) and restart the Range Commands at either "Make Ready" or "Are You Ready?".
+7.13.1.1 No penalty As such, no procedural penalties for false starts should ever be issued.
+7.14 Clearing of firearms by an RO during the Course of Fire
+    7.14.1 Clearing procedure ROs may clear firearms while the competitor is active on the Course of Fire. To do this, the RO must take the following steps while maintaining safe muzzle direction:
+1. Verify the safe dumping condition of the firearm
+2. Remove the magazine
+3. Remove any chambered round
+4. Verify the chamber is empty either visually or by retaining the chambered round.
+5. If possible, lock slide/bolt to the rear
+    7.14.2 Firearm placement after clearing The RO may then leave the firearm in the abandonment position or return it to a Pre-Loading Area, safely transporting it with the muzzle vertical.
+    7.14.3 Competitor responsibility After an RO clears a competitor's firearm it remains the competitor's responsibility to verify the condition of their firearm when they retrieve it. (Section 1.1)
+
+
+
+
+
+
+
+
+
+
+29
+
+8 Re-Shoots
+8.1 Re-Shoots
+    8.1.1 When re-shoots must be issued A re-shoot must be issued if a competitor's accurate score cannot be determined for a stage, or if certain circumstances prevent the competitor from getting the same fair opportunity to shoot the stage as the other competitors (such as interference, range equipment malfunction, altered target presentation, loss of ear protection, etc).
+    8.1.2 Re-shoot score stands If a competitor is awarded a re-shoot, the new score must stand the moment the start signal for the re-shoot is issued even in the case where the re-shoot is later found out to have been awarded in error.
+    8.1.3 Environmental Factors Unfavorable conditions throughout the day, such as changing lighting conditions, dust, rain, wind, or similar, are not automatically grounds for re-shoots. In the face of extremely unfavorable environmental factors, the RM and MD team should work toward solutions that offer competitors reasonably fair opportunities to complete the shooting challenges while ensuring that the match may still be completed as scheduled.
+The following are common situations where re-shoots will likely be issued:
+8.2 Prematurely reset targets
+If a target is reset before an RO can score it, all reasonable efforts will be made to accurately score the target before a reshoot is issued. Video evidence may be used (if volunteered by the competitor), deductive reasoning may be used, etc. If an accurate score cannot be determined beyond reasonable doubt, the competitor must complete a re-shoot.
+    8.2.1 Intentional premature reset Intentionally resetting targets before they are scored is considered cheating, and the RM must be called if suspected. After discussing the situation with the RO Team, the RM will make a decision on any necessary action to take, which may include a Strike or Match DQ as covered in Section 13.1 or Chapter 15.
+8.3 RO Interference
+If a competitor has been physically interfered with by an RO between the start signal and the end of the course of fire, the RO Team must ask the competitor if they wish to re-shoot. The competitor must accept or forfeit the re-shoot opportunity before the targets are scored, else the score will stand.
+8.4 Range Equipment Failure (REF)
+If a competitor is not presented with an equitable shooting challenge due to the malfunction of any target, prop, or other piece of range equipment on the stage, the competitor must complete a re-shoot.
+8.5 Loss of eye/ear protection
+If a competitor accidentally loses their eye/ear protection mid stage and does not recover their eye/ear protection quickly with minimal effort (such as over-ears being slightly bumped out of position), or does not notice their eye/ear protection has been lost, the RO should issue the "Stop!" command as soon as possible and issue a re-shoot.
+    8.5.1 Competitor responsibility for protective equipment A competitor must never risk hearing or eye damage for the sake of continuing a stage. If ROs have not noticed the loss of protective equipment, the competitor must notify an RO immediately.
+    8.5.2 Intentional loss of protective equipment Intentionally losing eye or ear protection mid-stage to be awarded a re-shoot is considered cheating, and the RM must be called if suspected. After
+
+
+30
+
+discussing the situation with the RO Team, the RM will make a decision on any necessary action to take, which may include a Strike or Match DQ as covered in Section 13.1 or Chapter 15.
+8.6 Altered Presentation of a Stage
+    8.6.1 Mandatory Reshoot If for any reason a stage is presented differently to a competitor than to the rest of the match participants, a mandatory re-shoot must be issued with the corrected presentation of the stage.
+8.6.2 Competitive Equivalence Exceptions
+        8.6.2.1 Equivalent Presentations While all reasonable efforts should be made to have each target present the same to each competitor, an RM may make a judgement that minute differences in the presentation of a moving target are considered competitively equivalent (for example, the exact resting position of a Texas Star or Polish Plate Rack) and do not constitute grounds for a re-shoot.
+        8.6.2.2 Equivalent Substitutions If, for any reason, a stage prop or target becomes unserviceable and no exact replacement is available, the RM may approve a close replacement that shares nearly identical properties to the original like target area and shape (such as replacing an 8" circular plate with an 8" hexagonal plate). Such replacements are considered competitively equivalent and do not constitute grounds for a re-shoot.
+    8.6.3 Objectively more difficult presentations In the special case where the RM determines that an incorrect (or original in the case of course modification per Section 9.2.8) presentation of the stage is objectively more difficult than the corrected or modified presentation, competitors that have completed the stage in its incorrect or original form have the option to forfeit their re-shoot opportunity and remain with their current score.
+        8.6.3.1 Example 1 An open Practical paper target accidentally gets replaced with a Practical hardcover variant during a target change. No other changes occur on the stage. This incorrect presentation is objectively more difficult than the correct presentation. Competitors who completed the stage under the incorrect presentation may elect to keep their original score instead of re-shooting.
+        8.6.3.2 Example 2 The positions of a Practical open target and Practical hardcover target get swapped accidentally during a target change. The incorrect presentation may be argued to be harder than the correct one depending on the exact positions of the swapped targets, but it is not considered objectively harder. All competitors who completed the stage with the incorrect presentation must complete a mandatory re-shoot.
+8.7 Suspected squib resulting in a "Stop!" call, where no obstruction is found
+See Section 7.11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+31
+
+9 Stage Design & Construction
+9.1 Stage Equipment
+9.1.1 Walls Walls are structures that simulate impenetrable barriers on the stage.
+        9.1.1.1 Wall sections Individual walls are defined as having three sections - the two outer "posts" and the central midsection or "field".
+        9.1.1.2 Extension to ground Walls are always considered to extend to the ground, even if the physical field does not
+        9.1.1.3 Extension to infinity Walls 69" tall or taller (as measured from the base of both posts to the top of the field) are considered to extend upward to infinity.
+        9.1.1.4 Connected posts Wall posts that share the same base or mount, or which are clearly intended to be connected as a joint or corner, are considered to be fully and solidly connected along that corner, even if there are slight gaps in between the posts.
+        9.1.1.5 Wall materials Walls may be constructed of many different materials. The field section of the walls may have coarse plastic mesh or wire that allows competitors to see through the wall, or wood/coroplast which completely blocks lines of sight. Whether or not the wall is a visual barrier or just a physical barrier, it is never permissible to engage targets through a wall. In cases where ROs suspect competitors of cheating by shooting through the near-edge of a wall, the RM must be called and, after consideration, a Strike or Match DQ may be issued for unsportsmanlike conduct (Section 13.1 or Section 15.7).
+        9.1.1.6 Wall ports Walls may have ports constructed in their fields as shooting positions. These ports should be open or blocked in an obvious manner so that competitors easily recognize them as available or unavailable shooting positions. Ports do not need to be specifically defined in the WSB.
+    9.1.2 Barrels Barrels may also be used as props that simulate impenetrable barriers on the stage. Barrels are considered impenetrable hard cover objects in all situations except:
+         9.1.2.1 Steel targets adjacent to barrels When the barrel is positioned next to a steel target that is visible from a legal shooting position. In this case, bullet strikes that originate from the legal shooting position and go completely through the edge of the barrel to hit the steel target shall score normally.
+            9.1.2.1.1 Obscured steel prohibition Note that if the steel target is completely obscured by the barrel from the specific shooting position, competitors may never shoot through the barrel to hit the steel target. In such cases, the RM must be called to make a judgement. At a minimum, no engagement shall be awarded per Section 12.5, and a Strike or Match DQ for unsportsmanlike conduct may be assessed per Section 13.1 or Section 15.7.
+    9.1.3 Fault Lines Fault Lines are physical indicators of the limits of the shooting areas on the stage. Fault lines should be slightly raised off the ground to allow competitors to feel when they are touching or across the boundary even while visually focused on the process of shooting.
+        9.1.3.1 Flat surface thickness For sections of stages where the surface is uniformly flat (such as concrete or asphalt), fault lines used must have a minimum thickness of 0.5".
+        9.1.3.2 Uneven surface thickness For sections of stages with uneven surfaces (grass, dirt, sand, gravel) fault lines used must have a minimum thickness of 1.0".
+        9.1.3.3 Rope fault lines Thick rope secured to the ground or rope strung between posts may be used as fault line as long as the slight change in competitive presentation of the shooting area due to small shifts in the rope segments between anchor points or posts poses no significant difference to competitors' ability to execute the stage.
+        9.1.3.4 Rope trip hazards Rope fault lines strung between posts must be arranged so that no trip hazards are present on any reasonable path competitors or ROs may take during the course of fire.
+
+32
+
+        9.1.3.5 Open rear sections Incomplete or open rear sections of fault line boundaries are allowed. In these presentations, the last piece of fault line on either side of the open section is considered to extend rearward along the same angle. This may only be allowed by the RM if there is no competitive advantage for a shooter to take a position further back than where the physical fault line ends given the specific target presentation on the stage.
+            9.1.3.5.1 Rear boundary safety In these situations, competitors may not proceed any further back to engage targets than is safe considering the position of ROs and other observers in the vicinity of the stage. Doing so shall result in a "Stop!" call, a Stage DQ, and a Strike.
+    9.1.4 Target Sticks and Wall Supports Target Sticks and Wall Supports are always considered to be penetrable soft cover. Hits on target which completely pass through target sticks or wall supports should always be scored normally. Neither target sticks nor wall supports can be used as support by competitors.
+    9.1.5 Abandonment Positions (Dump Boxes/Dump Barrels) Dump boxes (or barrels) are considered standard abandonment positions in PCSL. Additionally, a variety of safe and structurally sound abandonment positions may be used. Abandonment positions may always be defined as staging positions per the WSB.
+9.1.5.1 Types of abandonment positions
+            9.1.5.1.1 Handgun specific Handgun specific (e.g. the competitor's holster OR a handgun-sized dump box or handgun section of a larger dump box),
+            9.1.5.1.2 Long gun specific Long gun specific (e.g. a dump barrel or a dump box with no handgun compartment), or
+            9.1.5.1.3 Combo Combo (e.g. a slanted wooden long gun dump box with an integrated handgun-specific compartment)
+        9.1.5.2 Type definition in WSB In general, the specific type of abandonment positions used on the stage do not need to be defined per the WSB as it is usually obvious to the competitors whether the abandonment position is meant to accept a handgun or a long gun. In cases where non-standard abandonment positions are used, their types must be defined by the WSB.
+         9.1.5.3 Acceptable abandonment conditions Acceptable abandonment positions in PCSL must adhere to the following conditions:
+              9.1.5.3.1 Safe muzzle direction The firearms must be able to be contained in a non-precarious way so that the muzzle of a correctly abandoned firearm maintains a safe direction at all times, even if the firearm or abandonment position is accidentally bumped with a reasonable amount of force.
+            9.1.5.3.2 No flagging Abandonment positions must be oriented so that the muzzle direction of a correctly abandoned firearm cannot flag the shooter or ROs as they complete the course of fire.
+            9.1.5.3.3 Downward angle when personnel present If any personnel may be expected in front of the dump position before the range is completely cleared, the muzzle of the correctly abandoned firearm is held at a sufficient downward angle such that no personnel are flagged by the abandoned firearm at any time. If the muzzle is not held in such a way, ROs must inform competitors and other personnel that they are not to proceed past the abandonment position until the abandoned firearm has been cleared.
+        9.1.5.4 Dual use as staging areas Abandonment locations may double as firearm staging areas, provided that the competitor can both abandon their current firearm and pick up their other firearm safely.
+        9.1.5.5 Non-standard positions Non-standard abandonment positions may be defined by stage designers as long as they adhere to the same conditions listed above.
+9.2 Stage Design & Construction Criteria
+9.2.1 Usage of different PCSL paper target types in the same MATCH
+        9.2.1.1 K-Zone and Practical targets The K-Zone targets may not be used alongside the Practical full size targets in the same match.
+        9.2.1.2 K-Zone and Competition targets The K-Zone targets may be used alongside the Compe-tition full size targets in the same match.
+
+
+33
+
+        9.2.1.3 Practical and Competition mixing Practical and Competition variants may always be mixed within the same match
+        9.2.1.4 K-Zone level restrictions The K-Zone targets may not be used at Level 2 events or higher (Section 10.1.4.1).
+9.2.2 Usage of different PCSL paper target types on the same STAGE
+         9.2.2.1 Practical and Competition on same stage Practical and Competition full-sized variants may not both be used for the same firearm type on a single stage.
+        9.2.2.2 Mini Practical usage Mini Practical targets may be used for any firearm type regardless of what types of full sized targets (if any) are used on the rest of the stage.
+         9.2.2.3 Single presentation per firearm A single PCSL target "presentation" (i.e. a specific target type and color - like the white side of a competition target, or brown side of a mini practical target) may not ever be used for mandatory engagements from different firearms on the same stage.
+            9.2.2.3.1 Option targets exception However, a single "presentation" may be used to denote an "option" target, such as a target that can be engaged with either handgun or rifle.
+    9.2.3 Fixing Props in Place All props that are not intended to move over the course of the match (i.e. walls, fault lines, target stands, barrels, etc) should be fixed in place by some method that can resist inclement weather, strong winds, and competitors bumping into them.
+        9.2.3.1 Marking paint for heavy props In cases where the weight of the prop is solely relied on for fixing the prop in place (such as heavy/wide steel target bases that do not fall in the wind), it is highly recommended (mandatory at Level 2+ events) that marking paint is used at the base of the prop to ensure proper return to its position in case it gets dislodged for any reason.
+9.2.4 Steel Target and Prop Placement Requirements
+9.2.4.1 Minimum distances  See Section 1.8 for minimum allowable shooting position distances.
+        9.2.4.2 Steel prop distances All steel props that are placed with the intention to potentially take bullet strikes on the stage (such as hardcover plates, no-shoot plates, static or falling, or similar) have the same minimum distances. As such, they must be placed such that they are at or beyond these minimum safe distances from every reasonable engagement angle on the stage (per the WSB).
+        9.2.4.3 Visual indicators for close steel If sections of a shooting area make it possible to engage steel at less than minimum safe distances, the stage must contain clear visual indicators (like specified props, extra fault lines, or ground markers) that designate the safe minimum distances. Such visual indicators must be specifically noted in the WSB.
+9.2.5 Safety of Shooting Challenges and Stage Design
+        9.2.5.1 Target placement for safe impact Targets must be placed with consideration given to the safe impact of rounds into the desired berms and backstops from any legal shooting position on the stage by competitors of all sizes. Angles of potential ricochets should always be taken into account, and target presentation must be adjusted accordingly.
+        9.2.5.2 No dangerous enticement Targets may never be placed in a way that entices a competitor to engage them in a potentially dangerous manner. This includes placing targets in a way where they are not easily visible past the 180 limit if the specific stage design lends itself to such enticement (180 traps).
+         9.2.5.3 Hazard-free stages The match team must ensure that stages and stage props are reasonably free of hazards to competitors both participating in the shooting challenges as well as traversing the stage to score and reset targets. These types of hazards include but are not limited to:
+            9.2.5.3.1 Sharp objects Sharp metal objects like screw tips protruding from walls or barrels, bullet strikes through steel barrels or wall frames, or extremely sharp edges on steel targets or props
+9.2.5.3.2 Unsecured fault lines Unsecured fault lines that have lifted off the ground creating
+a trip hazard
+9.2.5.3.3 Debris Large rocks or debris inside the shooting areas.
+
+34
+
+9.2.6 Stage Design Requirements
+        9.2.6.1 Consistent props Any stage prop or obstacle must be consistent for each competitor and be constructed so that it withstands use for all competitors throughout the event.
+        9.2.6.2 RO line of sight All stage constructions and special prop implementation must be done in a way that allows at least one RO to stay safely within line of sight of the competitor at all times.
+         9.2.6.3 Prone position area requirements Stages requiring competitors to go prone shall provide at least a fully defined 4' x 8' shooting area oriented in the direction of the target array to be engaged from the prone position.
+            9.2.6.3.1 Raised platform prone For prone positions on raised platforms at least 12" off the ground: 30" x 6'
+         9.2.6.4 Abandonment locations for multi-firearm stages All stages requiring the use of more than one firearm must have at least one designated abandonment location suitable for every type of firearm used on the stage.
+            9.2.6.4.1 Combo dump box A single dump box with both a handgun and long gun section is sufficient for all firearms.
+            9.2.6.4.2 Holster as abandonment The competitor's holster is always considered to be an acceptable abandonment location for the handgun by default.
+9.2.6.4.3 Re-slinging not valid Re-slinging a long gun is never a valid abandonment location
+unless a DMT procedure is required per the WSB.
+            9.2.6.4.4 Exception for last firearm Exception: if a WSB procedurally forces a specific type of firearm to be used last on the stage (such as preventing competitors from returning to shooting areas for previously abandoned firearms), no abandonment position is required for the last firearm type used.
+        9.2.6.5 No required re-holstering loaded Stages and WSBs may never require a competitor to re-holster a loaded handgun.
+        9.2.6.6 DMT implementation requirements When implementing a DMT procedure on a stage, the following must apply:
+            9.2.6.6.1 DMT marking The DMT must be clearly marked or obvious to the competitor (such as being the only available target from the specified engagement position).
+            9.2.6.6.2 Single hit for full points The competitor must be able to score full points on the specified DMT with a single hit.
+9.2.7 Special or Obscure Physical Challenges
+         9.2.7.1 Prohibited obscure challenges No stage may require competitors to complete any obscure physical challenge that may not be safely executable without specialized experience.
+            9.2.7.1.1 Exception for specialized matches Exception: Matches with a specialized pre-requisite for participation (like a SWAT competition) may contain obscure physical challenges that require specialized skills related to the competitor demographic. These challenges must be documented in the distributed match information and the MD/RM must make reasonable efforts to provide circumvention (with fair penalties) or education on these obstacles. A simple example is a rope rappel.
+        9.2.7.2 Competitive equity Reasonable effort should be made regarding shooting positions and obstacles to ensure competitive equity between competitors of varied sizes and physical ability.
+        9.2.7.3 Optional penalty for obstacles Unique physical challenges or obstacles may be included as long as they are paired with a corresponding fair penalty value for skipping the obstacle.
+            9.2.7.3.1 WSB documentation These physical challenges or obstacles and corresponding optional penalty values must be outlined in the stage's WSB.
+9.2.8 Course Modification
+        9.2.8.1 Inclement weather measures In the event of inclement weather, the Range Master may mandate the use of transparent protective covers (target bags), waterproof or treated targets, and/or overhead shelters for cardboard targets.
+
+35
+
+9.2.8.1.1 Directive is final This directive is final and cannot be contested by competitors.
+            9.2.8.1.2 Uniform application Once implemented, these measures must be uniformly applied to all affected targets and remain in place for the duration of the order, until officially lifted by the Range Master.
+        9.2.8.2 RM modification authority The RM may approve the modification of a stage at any time during or before the event for the purposes of maintaining safety or competitive equity, preserving stage integrity, or related reasons.
+9.2.8.3 Post-commencement alterations If a stage has been altered after the match has com-
+menced:
+             9.2.8.3.1 Revised course requirement If possible, all competitors shall be required to complete the revised course of fire per Section 8.6 with all previous attempts removed from the match scores.
+            9.2.8.3.2 Stage removal If the Range Master (in consultation with the Match Director) determines that the physical or procedural change results in a loss of competitive equity or it is impossible for all competitors to attempt the revised stage, or if the stage has been rendered unsuitable or unworkable for any reason, that stage and all associated competitor scores must be removed from the match results.
+    9.2.9 Special Dispensation A competitor may at any time request the Range Master to make a judgement call based on their physical capabilities.
+Examples: A person requiring a stepstool to see certain targets.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+36
+
+10 Targets
+Being an open-source format, PCSL highly encourages experimentation by match directors. Virtually any target that can be engaged safely and consistently by all competitors in the match can be used at the MD's discretion. The following target types (10.1-10.8) are considered "standard" and will be what competitors regularly encounter at PCSL matches:
+10.1 PCSL Paper Targets
+10.1.1 PCSL Practical Target
+10.1.2 PCSL Mini Practical Target
+10.1.3 PCSL Competition Target
+10.1.4 PCSL K-Zone Target
+        10.1.4.1 K-Zone legacy usage The K-Zone Target was the standard PCSL Target until 2025. They may still be used at Level 1 PCSL matches (outside of classifier stages) with the K-Zone functioning identically to the T-Zone.
+10.2 PCSL Paper Target Zones and Target Color
+    10.2.1 Scoring zones The PCSL paper targets have 4 designated scoring zones (T, A, C, D), delineated by perforated lines.
+    10.2.2 Brown side - handgun The brown side will always be a designated handgun target (or PCC target in the case of PCSL Pistol matches)
+    10.2.3 White side - rifle The white side will always be a designated rifle target. Note that in PCSL 2-Gun and Pistol Caliber 2-Gun, you will only engage white paper with your PCC, as the PCC can only replace your rifle, not your handgun.
+    10.2.4 Shotgun targets In the case of paper shotgun slug or buckshot targets in PCSL 3-Gun or Shotgun events, match directors can define either the brown or white side as a slug or buckshot target.
+10.3 Paper Penalty Targets (No-Shoots)
+    10.3.1 No-shoot designation A "no-shoot" or paper penalty target will always be designated by solid red with a black "X" across the target. While it is recommended, these targets do not have to be PCSL T-Zone targets. Any similar paper target with a clearly defined perforated non-scoring border may be used as a no-shoot target.
+        10.3.1.1 PCSL Rifle exception In PCSL Rifle matches where competitors only shoot the white side of the targets, the black X may be omitted due to the obvious contrast between white and red targets.
+10.4 Falling & Reactive Steel
+    10.4.1 Steel target selection The MD is encouraged to use their best judgment when determining what type of falling steel targets to use on the stages. Targets that are minimally affected by wind and fall easily when hit are recommended.
+    10.4.2 Prohibited rotating steel Falling steel that is not prevented by its base or mounting system from turning in place without falling is not permitted at Level 2 or higher matches, and is highly discouraged from use at Level 1 matches.
+    10.4.3 Falling steel scoring Most reactive types of steel fall when hit, but some (like a spinner) are neutralized in other ways. In general, a falling steel target is always worth one steel hit unless otherwise specified by the WSB.
+
+37
+
+    10.4.4 Non-falling reactive steel A non-falling reactive steel target (such as a spinner) does not have any standard scoring in PCSL and its value is left up to the MD or stage designer to determine. This must be specified in the WSB.
+10.5 Static Steel
+    10.5.1 Static steel scoring Unless otherwise defined in the WSB, static steel targets need to be hit once to be neutralized and are worth one steel hit each.
+10.6 Color of Steel Targets
+10.6.1 Handgun steel color  Handgun steel targets will be painted blue.
+10.6.2 Rifle steel color Rifle steel targets will be painted white.
+    10.6.3 3-Gun steel colors In 3-Gun only, handgun/birdshot option targets will be painted yellow, and birdshot only targets will be painted gray or left unpainted for convenience. Slug and buckshot targets have no defined color, although orange, gray, or another distinct color not in use on the rest of the stage are recommended.
+    10.6.4 Alternate steel colors Alternate steel target colors may be used on a per-match or per-stage basis as long as the non-standard colors are clearly defined by the WSB and the following conditions are met:
+10.6.4.1 Level 1 events The match is a Level 1 event, or
+        10.6.4.2 Level 2 with approval The match is a Level 2 event with prior written approval from PCSL for the planned alternate target colors, or
+10.6.4.3 PCSL-run matches The match is run directly by PCSL
+10.7 Frangible Targets
+    10.7.1 Frangible target scoring Typically seen as clay pigeons, frangible targets may be used in matches and are generally worth one steel hit unless otherwise specified by the WSB.
+10.8 Steel or Frangible Penalty Targets (No-Shoots)
+    10.8.1 Steel no-shoot designation Steel no shoots will be painted solid red. Adding a black X across the face is optional. Frangible no-shoots do not have to be any specific color, but they must be clearly defined in the WSB, and must differ significantly in color from any frangible scoring targets on the stage, if applicable.
+    10.8.2 Falling no-shoot scoring Falling steel and frangible no-shoots must fall or be broken/chipped by the competitor's gunfire in order to score. If another target or prop knocks them over or breaks them rather than a projectile fired by a competitor, they will not earn any penalty.
+10.9 Maximum Target Distances, and Minimum Target Sizes
+    10.9.1 PCSL Pistol 50 yard maximum for all target types, 16 MOA minimum size of the largest circular area that can be fully inscribed inside the target's face completely unbroken. Note that 16 MOA is 8 inches at 50 yards, 4 inches at 25 yards, and 2 inches at 12.5 yards.
+    10.9.2 PCSL Rifle 600 yd maximum for all target types. 3 MOA minimum size of the largest circular area that can be fully inscribed inside the target's face.
+10.9.2.1 MOA reference 3 MOA is 18 inches at 600 yards, 12 inches at 400 yards, 8 inches at 267
+yards, 6 inches at 200 yards, and 3 inches at 100 yards.
+10.9.3 PCSL 2-Gun
+10.9.3.1 Handgun Identical to PCSL Pistol
+
+
+38
+
+        10.9.3.2 Rifle 200 yards for all target types, 8 MOA minimum size of the largest circular area that can be fully inscribed inside the target's face.
+10.9.3.2.1 MOA reference 8 MOA is 16 inches at 200 yards, 12 inches at 150 yards, 8 inches
+at 100 yards, 6 inches at 75 yards, and 4 inches at 50 yards.
+10.9.4 PCSL Pistol Caliber 2-Gun
+10.9.4.1 Handgun Identical to PCSL Pistol
+        10.9.4.2 PCC 100 yards for all target types, 8 MOA minimum size of the largest circular area that can be fully inscribed inside the target's face.
+10.9.5 PCSL Shotgun/3-Gun No target distance or size restrictions.
+10.10 Non-standard target types
+For non-standard targets, it's important for the WSB (or match book, if the target is used repeatedly throughout the entire match) to clearly communicate exactly how the target shall be engaged and scored in the particular course of fire.
+    10.10.1 MD judgment considerations MDs are encouraged to use their best judgment on types of targets used, and keep the following questions in mind:
+10.10.1.1 Safe engagement  Can the target be engaged safely?
+        10.10.1.2 Consistent presentation Can the target be consistently presented to every shooter in the match?
+10.10.1.3 Efficient scoring Can the target be scored efficiently and accurately by match staff?
+    10.10.2 Disallowed non-PCSL paper targets Non-PCSL paper targets are disallowed at any Level 1 or higher match of the following types:
+10.10.2.1 PCSL Pistol
+10.10.2.2 PCSL Rifle
+10.10.2.3 PCSL 2-Gun or Pistol Caliber 2-Gun
+    10.10.3 Buckshot paper targets Paper printouts or simply blank sheets of 8.5x11 paper may be used and are recommended as buckshot targets to assist in timely reset.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+39
+
+11 Scoring Types & Procedures
+11.1 Acceptable scoring types by match type
+    11.1.1 PCSL 2-Gun, Pistol Caliber 2-Gun, Rifle, and Pistol matches All affiliated PCSL 2-Gun, Pistol Caliber 2-Gun, Rifle, and Pistol matches must use Hit Factor scoring.
+    11.1.2 Shotgun or 3-Gun matches Affiliated PCSL Shotgun or PCSL 3-Gun matches may use either Hit Factor (defined under Section 11.2 - Section 11.3) or Time-Plus Points scoring (defined under Section 11.10
+- Section 11.11).
+11.2 Hit Factor Scoring Type
+11.2.1 Target scoring All targets are scored as laid out in this chapter and the stage's WSB.
+    11.2.2 Stage Points calculation The Competitor's scored points on each target are summed into their total Stage Points, which includes the subtractions from any penalties assessed. A competitor's Stage Points may never be less than zero.
+    11.2.3 Hit Factor calculation The competitor's Stage Points are divided by their Stage Time in seconds. The result (rounded to 4 decimal places) is the competitor's Hit Factor (points per second).
+    11.2.4 Stage Percentage calculation The competitor's Hit Factor is divided by the highest Hit Factor on that stage in the competitor's division, then multiplied by 100. This is the competitor's Stage Percentage (rounded to 4 decimal places)
+    11.2.5 Match Points calculation The Stage Percentage is multiplied by the sum of the maximum values of all targets on the stage. The result is the number of Match Points earned by the competitor on that particular stage.
+    11.2.6 Match finish determination Match finish is determined by every competitor's total Match Points earned sorted from highest to lowest.
+11.2.7 Example Hit Factor Scoring for a Stage
+• An example stage has 135 match points available from 24 paper hits and 3 steel hits required. 27 hits x 5 = 135.
+• An example competitor shoots 20 Alphas, 3 Charlie, 1 Delta, 3 steel hits in 37.00 seconds
+• 20A x 5 + 3C x 3 + 1D x 1 + 3 Steel x 5 = 125 stage points earned
+• 125 points / 37.00 seconds = 3.3784 Hit Factor
+• Highest Hit Factor in competitor's division: 4.5961
+• 3.3784/4.5961 = 73.5053% Stage Percentage
+• The example competitor earns 73.5053% * 135 = 99.2326 Match Points on this stage
+11.3 Hit Factor target & penalty values
+    11.3.1 Standard points per target The standard number of points a competitor may score per target is five times the required amount of hits on that target.
+        11.3.1.1 Default hit requirements Unless otherwise specified by the WSB, all paper targets require two hits, and all steel and frangible targets require one hit (unless a non-standard number points are also specified, such as on special or enhanced steel targets).
+11.3.2 Paper Scoring Zones
+        11.3.2.1 T-Zone/K-Zone A single hit in the T-Zone ("Tango") or older K-Zone ("Kilo") is equivalent to 2 separate Alpha hits.
+11.3.2.2 A-Zone The A-Zone ("Alpha") is worth five (5) points per hit.
+
+40
+
+11.3.2.3 C-Zone The C-Zone ("Charlie") is worth three (3) points per hit.
+11.3.2.4 D-Zone The D-Zone ("Delta") is worth one (1) point per hit.
+    11.3.3 Steel and frangible targets Steel and frangible targets are worth 5 points (equivalent to one Alpha) if hit, unless the WSB specifies otherwise.
+    11.3.4 Misses Misses ("Mikes") are worth minus 10 points (-10). If a competitor has less than the required amount of hits on a target, they will be assigned one miss for each missing hit.
+11.3.5 No-Shoots No-Shoots, or penalty targets, of any type, are worth minus 10 points (-10) per
+hit.
+        11.3.5.1 Paper or static steel no-shoots The maximum number of no-shoot penalties that can be earned on paper or static steel type no-shoots is two per penalty target.
+         11.3.5.2 Falling steel or frangible no-shoots The maximum number of no-shoot penalties that can be earned on falling steel or frangible no-shoots is one per penalty target.
+    11.3.6 Procedural penalties Procedural penalties are worth minus 10 points (-10) per occurrence. Reference Chapter 12.
+11.4 Scoring Procedure
+    11.4.1 RO team scoring The RO team will score every target, and in Hit Factor scoring, call out each hit value clearly so that the competitor can hear.
+        11.4.1.1 Timer RO calling scores Where the Timer RO is calling scores, the Scorekeeping RO should echo back the score after entering it on the scoring device.
+        11.4.1.2 Non-Timer RO scoring Where the Scorekeeping RO (or any other non-Timer RO) is scoring a target, they must call out the score clearly.
+    11.4.2 Competitor viewing The competitor should be given an opportunity to view each target and ask for the RO Team to re-score a target.
+        11.4.2.1 Target reset before viewing The resetting of a target after the RO team scores it but before the competitor or their delegate can view it is not grounds for a re-shoot.
+    11.4.3 Pre-scoring If scoring can be safely accomplished while the competitor is still shooting a stage, it is recommended that the RO team scores for time efficiency. This is called "scoring as we go" or "pre-scoring".
+    
+
+WSB.
+11.4.3.1 
+Announcing pre-scoring The RO Team must call out this process when reading the
+
+11.4.3.2 Delegate option A competitor can name a "delegate" who in their stead can challenge a
+    
+target for the competitor.
+        11.4.3.3 Delegate responsibility It is the delegate's responsibility to follow the RO team during pre-scoring.
+11.4.4 Criteria for evidence of a hit by target type
+11.4.4.1 Paper Targets The RO Team will use PCSL-approved Overlays to determine the score.
+        11.4.4.2 Falling Steel Targets If the target has a clear hit and the center of the projectile's impact is determined to be on the front face of the target, it is scored as a hit. If such evidence of a hit is discovered on a target used to activate another, a re-shoot must be issued due to Range Equipment Failure.
+        11.4.4.3 Static Steel Targets If a target has any evidence of a partial bullet strike on its front face, it is scored as a hit.
+        11.4.4.4 Frangible Targets Frangible Targets (like clays): Edge hits, chips, or nicks count as hits as long as they are determined to be caused by direct projectile strikes and not frag from elsewhere on the stage.
+
+41
+
+    11.4.5 Scoring Challenges A Competitor or their Delegate may challenge any score call made by a scoring RO, asking for evidence of a hit to be reviewed.
+        11.4.5.1 Second RO review Where a Competitor or Delegate still disagrees after the initial scoring RO has affirmed a score, another RO from the team will determine the score.
+        11.4.5.2 Range Master final determination Should there still be disagreement on the correct score after 2 ROs have affirmed and determined a score, the Range Master will be called to determine a score. The Range Master's determination is final and cannot be challenged.
+        11.4.5.3 Target removal for review The RO Team may not remove targets from stands for purposes of review unless the RM has given permission to do so. This commonly occurs when an RM is busy and cannot immediately attend to the challenge.
+        11.4.5.4 Tentative score approval In order to preserve match flow and scheduling, the RO Team may approve the competitor's tentative score prior to the final decision and an edit can be made later if deemed necessary.
+11.4.6 Bullet hits on paper targets
+        11.4.6.1 Scoring zone boundaries If a bullet strike partially breaks or is tangent to the perforated line of a scoring zone within a single target, it will be counted in the competitors favor as a hit in the higher of the two scoring zones.
+        11.4.6.2 Overlapping targets If a bullet strike is partially inside or tangent to the scoring zones of multiple overlapping targets, including penalty targets, it will count once for each target it came in contact with.
+11.4.7 Approval of Scores and Correction/Editing of scores
+        11.4.7.1 Competitor approval opportunity Competitors shall be given the opportunity at the conclusion of stage scoring to view and approve their score. This opportunity can be waived by the competitor either verbally or by default if the competitor does not make themself available to view the scoring device in a timely manner.
+        11.4.7.2 RM approval for edits Once a score has been approved on the scoring device, the RO team may not edit the scores without RM approval. If a scoring error is discovered, the RM must be called to approve the appropriate corrective action.
+11.5 Pass-throughs
+    11.5.1 Same plane definition Paper targets attached to the same set of target sticks, or paper targets that directly touch by sharing an edge or overlapping one another, are considered to be in the same plane.
+    11.5.2 Different planes Paper targets and non-paper targets are never considered to be in the same plane.
+    11.5.3 Shoot-throughs in same plane Shoot-throughs passing through two or more overlapping paper targets in the same plane shall only count for score on the visible portions of the target presentation and shall not count for score on any portion of a target completely obscured by the overlapping target(s) scoring zone.
+     11.5.4 Shoot-throughs to different planes Shoot-throughs passing through paper targets or no-shoots (excluding the hardcover portions, if any) to any target type not in the same plane shall score normally.
+11.6 Hit Calls on Static Steel
+    11.6.1 Level 2-4 requirements At Level 2-4 PCSL matches to be awarded a hit on static steel targets, targets must either:
+1. Be painted prior to every competitor's run
+2. Shall be required to have a "Hit!" call from an RO
+3. Be targets that clearly visually or audibly indicate a hit to the competitor. These targets must be identified in the WSB.
+
+42
+
+11.6.1.1 Level 1 recommendation This is a recommendation for Level 1 PCSL matches, but not
+required.
+11.6.1.2 Courtesy calls Where hit calls are not required, they are considered a courtesy.
+11.6.2 Erroneous hit calls If a hit call is made in error, the competitor shall still receive the scored
+hit.
+    11.6.3 Rapid fire arrays Some static steel arrays may be shot more quickly than accurate hit calls can be verbally made by the ROs. In these cases, it's recommended to use the verbal indication "Good!" (Section 5.1.12) at the completion of the entire array of static steel to let the competitor know that they have neutralized all targets in the array.
+    11.6.4 Multiple hit requirements Some static steel targets may require multiple hits from the same shooting position. In these cases, the ROs may count up to the number of required hits rather than simply saying "Hit!". For example, if two static steel targets require two hits each, the hit calls could be "One!", "Two!", "One!", "Two!".
+11.7 Hit Calls on Frangible Targets
+    11.7.1 Default no hit calls By default, hit calls shall not be made on frangible targets. At Level 1 matches only, an MD may elect to have hits called on frangible targets. If a hit call is made and the target is found not to be hit, the hit call must still stand, just like it would with a steel target.
+11.8 Calibration of Steel/Calling Hits on Falling Steel
+    11.8.1 RO Team efforts The RO Team will use their best efforts to maintain a properly calibrated set of targets on their stage and determine fair calls on a per-case basis. Part of these efforts include attempting to watch impacts on falling steel whenever safe and possible.
+    11.8.2 Level 2-4 painting requirements At Level 2-4 PCSL matches, falling steel targets (with the exception of shotgun birdshot targets) must be painted prior to every shooter (so that bullet impacts show clearly). It is recommended that Level 1 PCSL matches follow these same guidelines, but not required.
+11.8.3 Unpainted falling steel Unpainted falling steel targets must fall to score UNLESS:
+• An RO directly observes a direct hit described by Section 11.4.4.2 in real time and calls "Hit!", informing the competitor that the target will be scored as a hit and they can move on.
+• An RO directly observes a direct hit described by Section 11.4.4.2 in real time on a falling steel target that is used to activate another. This is a Range Equipment Malfunction and the RO should use the "Stop!" command, and a re-shoot must be issued.
+    11.8.4 Painted falling steel If a competitor impacts a painted falling steel target but the target does not fall, the hit shall be determined by Section 11.4.4.2.
+    11.8.5 45 degree turn A target that turns 45 degrees in place but does not fall is considered hit and ROs are encouraged to call "Hit!" on the clock to let the competitor know that the target is neutralized. If the RO does not call hit or can't determine if the angle turned is at least 45 degrees, the shooter must decide for themself on whether or not to continue to engage the target.
+11.9 Par Times & Overtime Shot Scoring Procedures
+Stages may have par times assigned to ensure efficient match flow. If a Par Time is specified by the WSB, it is crucial that the Timer RO be ready to issue the "TIME" command as soon as the timer indicates the Par Time has been reached. If neither the Timer RO nor competitor recognizes the par time has elapsed and the competitor continues engaging targets, it may be impossible to determine an accurate score and if so, a re-shoot must be issued. The following procedures address proper scoring if any overtime shots are made:
+11.9.1 Shots within grace period Any shot fired within 0.30s after the par time shall score normally.
+    11.9.2 Time recorded The competitor's time recorded shall be the last shot fired on or before Par+0.30s
+
+43
+
+    11.9.3 Overtime shots at unengaged targets Any shot taken after Par+0.30s at a previously unengaged target shall not be scored as an engagement.
+    11.9.4 Overtime hits on un-hit targets Any hit made on a previously un-hit target after Par+0.30s shall not be scored as a hit.
+    11.9.5 Paper targets being engaged at par time If a paper target is being engaged as the par time elapses, and an RO did not observe the exact order in which the hits were made on target, the number of overtime shots fired at the target will negate the equivalent number of BEST hits on the target to determine the final score. If an RO was able to distinguish which specific hits were made before and after Par+0.30s in real time, the hits made after Par+0.30s shall be ignored.
+• Example 1:
+A competitor is shooting a paper target while the 120s par time elapses. The last three shots were recorded at 119.90s, 120.15s, and 120.40s. The hits on the paper target are T, C, D, but no RO saw the hits as they appeared. The time recorded for the stage shall be 120.15s, and the target shall be scored as Charlie Delta, because the best hit (the Tango) is negated by the single over time shot taken after par.
+• Example 2:
+In a similar case as above, the target was instead at close range and the Timer RO was able to observe in real time that the order the hits appeared on target appeared was T, then C, then D. In this case the RO knows with 100% certainty that the Delta was the overtime shot, and the target shall be scored as a Tango.
+11.10 Time-Plus Points Scoring Type
+    11.10.1 Target neutralization All targets are checked for neutralization as laid out in this section and the stage's WSB.
+    11.10.2 Default Match Points All stages will have a pre-determined number of Match Points available. By default, all stages are worth 100 points, but MDs may set the number of Match Points available on a per-stage basis.
+    11.10.3 Total time calculation The competitor's total time is the time they took to shoot the stage plus any penalties or bonuses earned, rounded to 4 decimal places.
+    11.10.4 Stage Percentage calculation The competitor's Stage Percentage is the lowest total time in their division divided by the competitor's total time, multiplied by 100, and rounded to 4 decimal places.
+    11.10.5 Match Points calculation The competitor's Match Points earned on the stage is their Stage Percentage multiplied by the available Match Points on the stage.
+    11.10.6 Match finish determination Match finish is determined by every competitor's total Match Points earned sorted from highest to lowest.
+11.10.7 Example Time-Plus Points Scoring for a Stage
+• An example stage has 100 match points available.
+• An example competitor completes the stage in 34.87 seconds with 1 FTN penalty (+5s). The competitor's total time is 39.87 seconds.
+• The lowest total time in the competitor's division is 32.11 seconds.
+• 32.11/39.87 = 80.5367% Stage Percentage
+• The example competitor earns 80.5367% * 100 = 80.5367 Match Points on this stage
+11.11 Time-Plus Points Neutralization Criteria and Penalties
+    11.11.1 Neutralization requirements Unless otherwise specified by the WSB, all paper targets require two hits anywhere, or one hit in the T-Zone ("Tango") or K-Zone ("Kilo) to be neutralized, and all steel or frangible targets require one hit to be neutralized. For paper shotgun slug targets: 1 hit anywhere.
+
+
+
+44
+
+    11.11.2 Failure to Neutralize (FTN) Failure to Neutralize (FTN) penalties are worth +5 seconds each, and are awarded for every paper target that is hit, but not neutralized.
+    11.11.3 Misses Misses ("Mikes") are worth +10 seconds each, and are awarded for each target engaged with no hits.
+    11.11.4 Failure to Engage (FTE) Failure to Engage (FTE) penalties are worth +15 seconds each, and are awarded for each target that the competitor failed to fire a shot at. In Time-Plus Points scoring, no Mikes are assessed on targets where an FTE is earned.
+11.11.5 Procedural penalties  A procedural penalty is worth +5 seconds.
+11.12 Video Evidence
+    11.12.1 Submission for disputes Video evidence may be submitted to the RO Team or RM in order to determine the proper outcome of a dispute.
+    11.12.2 Scope limitation Video evidence that is submitted for judgment on a specific scoring, penalty, or disqualification dispute will never be used to implicate the competitor of an unrelated infraction, no matter how serious.
+Example: A competitor believes he hit a steel target, but the RO did not call a hit because he saw a splash of dirt next to the target. Reviewing the video shows that the shooter hit the steel target on the edge, and the dirt splash was caused by a bullet fragment. It is also noted that in the video, the competitor's foot is touching the ground outside the shooting area, but the ROs did not notice the foot fault during the stage. In this case, the competitor would receive the hit for the steel target, but not the penalty for the foot fault, because the video evidence was submitted only to resolve the scoring dispute over the steel target.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+45
+
+12 Procedural Penalties
+Procedurals may be assigned for actions that disobey the instructions provided by these rules, the WSB, or Range Rules. Because PCSL allows stage procedures to be highly flexible, cases may arise where there is no clear ruling on exactly how many procedurals to assign for a certain infraction. In cases like these, it's recommended to assign the least amount of procedurals possible while still mathematically discouraging the course of fire from being shot in an anti-competitive or stage-breaking manner. Best practice is always to think ahead and explicitly list potential penalty values in the WSB for non-standard stages (see: Section 12.9). In cases where judgments have to be made during the ongoing match, the RM and RO Team should conclude on a fair application of penalties and do their best to inform all competitors of the decisions and enforce the ruling consistently throughout the match.
+12.1 Foot Fault and Firing Shots While Outside A Shooting Area
+Engaging a target while part of the body, firearm, or worn equipment touches the ground outside the shooting area:
+    12.1.1 No significant advantage If no significant competitive advantage is gained (i.e. engaging targets from the position does not become easier by faulting) and the competitor is still at least partially inside the shooting area, only one procedural should be awarded per target engaged while faulting.
+    12.1.2 Significant advantage gained If a significant competitive advantage is gained or the competitor is completely outside of the shooting area, one procedural will be assigned per shot fired.
+    12.1.3 Re-entering the shooting area After faulting, the competitor is only considered to be back inside the shooting area when they are touching inside the shooting area with some part of their body and no longer touching anywhere outside the shooting area.
+        12.1.3.1 Jump example This means that a competitor cannot originate from outside the shooting area, jump in the air, fire shots while in the air, and land completely inside the shooting area. In this case, because the jump originated from outside the shooting area, the competitor would not be considered to be back inside the shooting area until they landed. Therefore these shots would have originated from completely outside the shooting area, which is an automatic per-shot procedural penalty.
+12.2 Bracing on an object outside the shooting area
+Engaging a target while part of the body, firearm, or worn equipment makes contact with any object outside the shooting area that results in support or stabilization, whether intentional or unintentional:
+12.2.1 Per-shot procedural  One procedural will be assigned per shot fired.
+12.3 Failure to Engage
+Failing to shoot at least one round at a target.
+    12.3.1 FTE penalties FTEs shall incur one procedural per occurrence, in addition to the miss penalties incurred for not hitting the target with the required number of rounds.
+        12.3.1.1 Two-hit target example A competitor does not engage a paper target that requires two hits will receive two misses and one FTE procedural.
+    12.3.2 Reasonable attempt to hit In order to not receive an FTE penalty on a target, the competitor must make a reasonable attempt to hit the target, rather than burning a round near the targets in the ground or backstop.
+        12.3.2.1 Reasonable attempt defined In general, "reasonable attempt to hit the target" means making the effort to align the firearm's point of aim in the general vicinity of the target before firing.
+
+
+46
+
+        12.3.2.2 Leaning position example Three handgun paper targets are spaced a few yards apart from each other and only available from a difficult leaning position. The competitor barely gets an angle on the first visible target and quickly fires three rounds into the berm near the first target without making an effort to aim at each of the other two targets available. The competitor claims that they engaged each of the three targets and should not receive any FTE penalties, even though there are no hits on target. In this case, the competitor should be assigned the misses for all the targets, and two FTEs, since they clearly only made one "reasonable" attempt to engage the first visible target of the set.
+        12.3.2.3 Long range rifle example A competitor gets into a long range rifle position with four targets spread out at various distances. They fire four shots in rapid succession with minimal, if any, change in point of aim. They claim they engaged all four targets and should receive no FTE penalties. In this case, either three or four FTE penalties should be assigned depending on if the ROs believed there was a reasonable attempt to at least aim at the first target in the set.
+    12.3.3 Enhanced FTE penalties The WSB may define an enhanced number of procedural penalties for not engaging certain targets that are determined to be of higher value or higher risk/reward.
+12.4 Engaging targets with the wrong firearm
+    12.4.1 Unsafe engagement First, if any unsafe engagement as outlined in Section 1.8 is made due to the shooter's proximity to the target, the shooter must be immediately stopped and receive a Stage DQ.
+    12.4.2 PCC considerations Note that in many of the following cases, competitors will most likely be using a Pistol Caliber Rifle as their rifle. In these cases, the caliber will likely be shared with the handgun (9mm) making determining which hits were made with which firearm difficult. Additionally, shooting handgun steel at close distances with a PCC is not unsafe and the shooter should not be stopped as in the case with rifle caliber at close distances. The following clarifications assume that the engagement made is safe, although with an incorrect firearm:
+    12.4.3 Wrong firearm scoring Targets must be engaged and hit with the correct firearm in order to score. If they are not engaged with the correct firearm, an FTE penalty will be applied and the target will be scored as missed, even if the shooter engages and hits the target with an incorrect firearm.
+         12.4.3.1 Malfunction example A competitor's rifle catastrophically malfunctions or the competitor runs out of ammo. They proceed to engage the remaining rifle targets with their handgun. In this case, all engagements and hits made on the rifle targets with the handgun will be scored as if they never occurred.
+    12.4.4 Falling & reactive steel If a competitor safely engages falling steel targets with the wrong firearm (such as knocking down handgun poppers with a PCC), they will automatically receive a miss and FTE penalty for each target engaged with the wrong firearm, because there is no way to engage the target correctly since it is no longer available to shoot at.
+    12.4.5 Static steel If a competitor safely engages static steel targets with the wrong firearm, it is treated as if nothing happened. They are simply wasting time and ammo. The competitor will not receive a hit or engagement on the targets by hitting them with the wrong firearm, but since the steel is static, the competitor does have the opportunity to go back and re-engage the same targets with the correct firearm to score normally.
+12.4.6 Paper Targets
+        12.4.6.1 Different calibers If engaging paper targets with the wrong firearm of a separate caliber (such as shooting a rifle paper with handgun, when using .223 and 9mm), where the holes made on target are obviously differentiated from one another, the incorrect engagements and hits are treated as if they never occurred, similar to the process for static steel listed above.
+        12.4.6.2 Same caliber If engaging paper targets with the wrong firearm of the same caliber (such as shooting a handgun target with a 9mm PCC while also using a 9mm handgun - except in the rare case where hits can easily be determined by bullet type, e.g. large clean holes left by target hollow points out of a handgun and ragged holes left by round nose bullets out of the PCC):
+            12.4.6.2.1 No re-engagement If the competitor does not then engage the targets with the correct firearm, they will receive an FTE procedural and misses for the incorrectly engaged targets.
+
+47
+
+            12.4.6.2.2 Re-engagement with indistinguishable hits If the competitor originally engages one or more paper target(s) with the incorrect firearm, but then does go back and engage the same target(s) with the correct firearm, and the hits made with the correct firearm are indistinguishable from those made with the incorrect firearm, the target(s) will be scored as shot and one procedural will be assigned per target.
+12.5 Engaging targets from the wrong position
+    12.5.1 Unsafe engagement First, if any unsafe engagement as outlined in Section 1.8 is made due to the shooter's proximity to the target, the shooter should be immediately stopped and receive a stage DQ.
+    12.5.2 Outside shooting area Targets engaged from completely outside the shooting area are auto-matically considered to be engaged from the wrong position.
+    12.5.3 Position-specific targets Unless otherwise specified, targets may be engaged from anywhere they are visible from within the shooting area. However, the WSB may require certain targets to only be engaged from a specific position. Targets must be engaged and hit from these specified positions in order to score. If they are not engaged from the defined position, an FTE penalty will be applied and the target will be scored as missed.
+        12.5.3.1 Port engagement example The WSB states that the three rifle steel targets must be engaged through a specific port. The competitor engages them from a separate position on the stage. These three targets will be scored as misses and incur one FTE penalty each unless the shooter fixes the mistake and re-engages the targets from the correct port.
+    12.5.4 Falling & reactive steel If a competitor safely engages falling steel targets from the wrong position, they will automatically receive a miss and FTE penalty for each target because there is no longer any way to engage the targets correctly since they are no longer available to shoot at.
+    12.5.5 Static steel If a competitor safely engages static steel targets from the wrong position, it is treated as if nothing happened. They are simply wasting time and ammo. The competitor will not receive a hit or engagement on the targets by hitting them from the wrong position, but since the steel is static, the competitor does have the opportunity to go back and re-engage the same targets from the correct position to score normally.
+12.5.6 Paper Targets
+        12.5.6.1 No re-engagement If a competitor engages paper targets from the wrong position and then does not re-engage the targets from the correct position, each target will be scored as though it was never engaged, earning mikes and FTE penalties.
+         12.5.6.2 Re-engagement with indistinguishable hits If a competitor originally engages one or more paper target(s) from the wrong position, but then corrects their mistake and re-engages the same target(s) from the correct position, and the hits made from the correct position are indistinguishable from those made from the incorrect position, the target(s) will be scored as shot and one procedural will be assigned per target.
+            12.5.6.2.1 Distinguishable hits In the case that the hits made from each position are clearly distinguishable (such as from angle of entry), the target shall be scored as if no shots were taken at it from the wrong position, and no procedurals shall be assigned.
+12.5.7 No-shoot hits No-Shoots hits earn penalties regardless of engagement position.
+12.6 Failing to activate a moving target before engaging
+    12.6.1 Per-shot procedural Engaging a moving target prior to activating it will automatically result in one procedural assigned per shot fired at that target unless the WSB specifically allows for the option to engage the moving target prior to activation.
+    12.6.2 Activation timing In the case of a piece of falling steel activating the moving target, the target is considered to be "activated" the moment the bullet strikes the activator target as long as the activator then proceeds to fall and activate the moving target.
+
+48
+
+        12.6.2.1 Slow fall example A competitor hits an activator popper which takes a long time to fall. Before it falls the competitor engages the moving target. Then the popper finishes falling and the moving target begins moving. No penalties are assessed.
+        12.6.2.2 Edge hit example A competitor nicks the edge of an activator popper thinking they successfully hit the target, but the popper does not fall and the moving target is not activated. If the competitor fires shots at the moving target before successfully re-engaging the activator popper, these shots will earn one procedural each.
+12.7 Abandoning a firearm not in its defined Safe Condition
+Reference Section 2.6 for Safe Condition definitions.
+12.7.1 Per-occurrence procedural  One procedural shall be assigned per occurrence, or
+    12.7.2 Handgun re-holstering For handguns re-holstered not in a Safe Condition, a Stage DQ will be issued instead (Section 14.3).
+12.8 Using a magazine that has been loaded in excess of the divisional limit
+    12.8.1 Per-round procedural One procedural shall be assigned for every round loaded in excess of the maximum load-to capacity imposed by the competitor's division per Chapter 3.
+    12.8.2 Utilized magazines only Penalties shall only be assessed for magazines that were utilized on the course of fire (i.e. inserted while a round was fired)
+12.9 Custom Penalties
+    12.9.1 WSB custom penalties A WSB may specify a custom penalty to be applied for committing an action. These penalties should be proportional to the action committed.
+    12.9.2 Maximum custom penalty In Hit Factor scoring, Custom Penalties may never be greater than 25% of available Stage Points per infraction.
+12.10 Disobeying stage procedures specified by the WSB
+Disobeying stage procedures specified by the WSB shall earn one general procedural per occurrence, unless the WSB has a Custom Penalty assigned to the specific action per Section 12.9.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+49
+
+13 Two-Strike System
+Certain serious infractions listed below that do not immediately put other persons in danger may be determined by the RM to warrant a severe warning rather than an immediate match disqualification. In the following cases, the RM may issue a "Strike" against the competitor in order to give them a second chance to complete the match without committing other serious infractions.
+A "Strike" may only be issued by the RM. An RO may not issue a Strike themselves. The RM must be called to handle the situation. If issued, the first Strike must be personally noted by the RM, the offending competitor, and at least one other range official, typically an RO involved in the incident. If a competitor receives two Strikes at any point during the event (including cases where the competitor is shooting the match an additional time for a new score), the competitor shall immediately receive a Match DQ (per Section 15.9).
+The Strike tool may also be used by the RM to handle unique situations not covered in the rulebook where a severe warning is warranted. The scenarios listed below are a non-exhaustive list of cases in which a first strike may be issued.
+13.1 Suspected Cheating or Unsportsmanlike Conduct
+In the case of blatant cheating/unsportsmanlike conduct, the competitor shall be disqualified per Section 15.7
+    13.1.1 Ear/Eye Pro Removal Removing ear/eye pro on the course of fire in order to be awarded a re-shoot.
+    13.1.2 Intentional Backtracking Intentionally backtracking in a way that doesn't advance the com-petitor's completion of the course of fire in order to create a situation of interference to be awarded a re-shoot.
+    13.1.3 Squad Abandonment Egregious abandonment of squad or continual failure to reset without good reason.
+    13.1.4 Prohibited Rate of Fire Accessories Use of prohibited full auto, burst, simulated full auto, or other enhanced rate of fire modes or accessories (as outlined in Section 2.7) on a stage shall result in a "Stop!" command being issued by an RO, a Stage DQ, and a Strike.
+13.2 Unapproved handling of firearms
+Handling firearms outside of one of the situations listed in Section 1.3
+    13.2.1 Match DQ Conditions A Match DQ shall be issued rather than a Strike if any conditions in Chapter 15 were met during the competitor's specific actions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+50
+
+14 Stage Disqualifications
+In all situations involving Stage DQs, the Range Master must be called to confirm the punitive action with the RO Team.
+Breaking certain safety rules may not result in an immediately dangerous situation, but may allow for a potentially dangerous situation to develop if the competitor is allowed to continue. Instead, the Stage DQ is a penalty that stops any potentially dangerous situation from arising in the moment but allows the competitor to review their actions and apply corrections to their behavior for the duration of the match.
+If one of these situations arises, the "Stop!" command shall be issued by an RO and the competitor's score for the stage will be removed. This offers a less punishing learning opportunity than a Match DQ, giving the competitor an opportunity to continue the match with higher standards. If a competitor receives two Stage DQs at any point during the event, the competitor shall immediately receive a Match DQ (Section 15.10).
+14.1 Engaging steel targets at unsafe distances
+Per Section 1.8
+14.2 Dropping an unloaded or inert firearm
+    14.2.1 Procedure If this occurs, an RO will issue the "Stop!" command, secure and check the firearm safely, and if the firearm is unloaded, the competitor will receive a Stage DQ.
+14.3 Holstering a loaded handgun not in a Safe Condition
+Per Section 2.6 and Section 7.4.1.
+14.4 Keeping a finger inside the trigger guard while clearly not engaging targets
+Such as while reloading, moving, etc. The RO shall clearly issue a "Finger!" warning when the incident is first noted and issue the "Stop!" command and Stage DQ on any further occurrence. ROs should only issue this warning if the trigger finger is clearly inside the trigger guard (not hovering around trigger guard).
+    14.4.1 Failure to hear warning Failure by the competitor to hear the "Finger!" warning the first time is not grounds for reversal of a Stage DQ.
+14.5 Prone with a holstered handgun without a verified unloaded handgun
+Per Section 7.6, specifically failing to meet the verified unloaded handgun conditions of Section 7.6.1.2.
+14.6 Engaging targets while handling multiple firearms simultaneously
+14.7 Engaging targets while a firearm is grounded or leaving the vicinity of a grounded firearm
+Per Section 7.8
+14.8 Improper abandonment of an unloaded firearm
+Per Section 7.7
+14.9 Committing a disallowed action
+Per Section 7.12.
+14.10 Using a prohibited firearm or accessory
+Per Section 2.7
+
+51
+
+14.11 Physically displacing stage props to reveal unintended or previously unavailable shooting opportunities
+Per Section 7.9
+Other situations mandating Stage DQs:
+14.12 Refusing to conduct a mandatory re-shoot
+    14.12.1 Consequence A competitor who refuses to re-shoot a course of fire as ordered by a Range Official will receive a Stage DQ on that stage regardless of any previous attempt.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+52
+
+15 Match Disqualifications
+In all situations involving Match DQs, the Range Master must be called to confirm the punitive action with the RO Team.
+At events where competitors may be allowed multiple entries (such as shooting multiple divisions or multiple schedules), a Match DQ will apply to all of the competitor's entries in the event. The following major safety violations will result in a Match DQ.
+15.1 Accidental discharge (AD)
+15.1.1 Round over backstop Any round traveling directly over a backstop or berm.
+    15.1.2 Round near competitor Any round impacting the ground within 5 feet of the competitor, provided it is not at a legitimate target within 5 feet from the correct shooting area (such as with low targets through a port, etc)
+    15.1.3 Round during manipulation Any round discharged while manipulating the firearm during reloading, unloading, taking corrective action of a malfunction or perceived malfunction
+15.1.4 Round while not engaging  Any round discharged while clearly not engaging targets
+        15.1.4.1 Exception for burning rounds With the exception of safely "burning" the round. "Burn-ing" the round means deliberately firing a shot into a safe backstop in order to unload the firearm or transition to the next round in the magazine (such as in the case of switching ammo types - e.g. bird to buck/slug, short range to long range, etc.)
+        15.1.4.2 RO notification recommended If a competitor is planning a burned round on the stage, it is highly recommended that they inform the RO Team prior to the stage start to avoid confusion. In the case that the RO Team interprets a burned round as an AD and stops the shooter, the RM must be called to determine the proper resolution, and a reshoot may be issued.
+15.2 Dropping a loaded firearm
+    15.2.1 Competitor instruction If this occurs, the competitor shall not make any effort to retrieve the firearm.
+    15.2.2 RO procedure The RO Team must issue the "Stop!" command, then proceed to safely handle and unload the dropped firearm before returning it to the competitor.
+15.3 Flagging/Sweeping
+    15.3.1 Muzzle pointing at person If at any point the muzzle of an unholstered firearm (whether loaded or unloaded) points at any part of the competitor's person or other person, the competitor shall be disqualified from the match.
+    15.3.2 Holster exception Depending on holster type or the competitor's physical build, drawing and re-holstering may require flagging of the competitor's person. In these cases, the competitor will be exempt only at the moments of re-holstering or drawing the handgun.
+15.4 Breaking the 180 or other modified safety angle for the course of fire
+    15.4.1 Uprange pointing If the competitor points any firearm uprange of the designated 180 plane for the bay (by default: perpendicular with the direction of the bay at the competitor's position), or other modified safety angle as defined by the WSB, they will receive a Match DQ.
+15.4.2 During draw/reholster
+
+
+53
+
+        15.4.2.1 Hip direction The direction that the competitor's hips are pointing must not be uprange of the 180 or defined safety angle.
+        15.4.2.2 Exclusion radius The competitor has a 3 ft exclusion radius around the midpoint of their feet where the exact muzzle direction of the handgun is not considered to break the 180 (for example, in the case of holsters with a slight forward cant).
+15.5 Intoxication or being under the influence of mentally or physically impairing substances
+During a competitor's scheduled shooting
+15.6 Violation of the cold range policy
+Per Section 1.2
+15.7 Blatant unsportsmanlike conduct, attempts to cheat, or aggressive behavior
+Whether physical or verbal, toward any person
+15.8 Improper abandonment of a loaded firearm
+Per Section 7.7
+15.9 Receiving two Strikes
+In a single event.
+15.10 Receiving two Stage DQs
+In a single event (see Chapter 14).
+15.11 Using prohibited ammunition
+Per Section 2.8.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+54
+
+16 Arbitration
+16.1 Occasional disputes are inevitable
+Section 11.4 lays out the procedures of scoring. If a competitor does not agree with the decision, they may submit an arbitration.
+    16.1.1 Scoring calls not arbitrable While scoring calls (hits) may not be arbitrated, all other decisions may be submitted for arbitration. This includes penalties, both type and quantity.
+16.2 Arbitration Committee
+16.2.1 Committee size The Arbitration Committee must consist of either 3 or 5 people.
+16.2.2 Committee Chair The Committee Chair must be assigned by the RM and must be a working
+RO.
+16.2.3 No involved members  No member of the Committee may be involved in the arbitrated event.
+16.3 Arbitration Fee
+    16.3.1 Fee amount The Arbitration Fee is $100 or the match fee, whichever is less. The fee may be collected by any means determined by the match staff, including electronically.
+    16.3.2 Failed arbitration Should the Arbitration fail (the competitor loses), the Arbitration Fee must be donated to a charitable cause.
+    16.3.3 Successful arbitration Should the Arbitration succeed (the competitor wins), the Arbitration Fee will be returned in full to the competitor.
+16.4 Arbitration Form
+Download Arbitration Form (PDF)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+55
+
+17 Glossary
+17.1 Glossary
+    17.1.1 180 Rule A plane, typically perpendicular to the direction of the bay at the competitor's position, where the safe muzzle direction for the stage is defined to be downrange of this plane. See Section 15.4.
+    17.1.2 AD Accidental Discharge. An unintended discharge of a firearm, which results in a Match DQ. See Section 15.1.
+    17.1.3 Backstop / Berm Impenetrable terrain or constructs designed to terminate projectiles safely, typically surrounding three sides of a shooting bay.
+17.1.4 Carbine / Rifle These terms may be used interchangeably.
+    17.1.5 Cold Range A range status where all firearms must remain free of live ammunition unless under the direct supervision of an RO or in a designated function fire area. See Section 1.2.
+17.1.6 COF Course of Fire.
+17.1.7 CRO Chief Range Officer.
+17.1.8 DA/SA Double Action / Single Action.
+17.1.9 Delegate A person who can challenge a target score in the competitor's stead.
+    17.1.10 DMT Drop-Mag Target. A stage design tool requiring the unloading of a firearm on the clock.
+17.1.11 DNF Did Not Finish. Resulting in 0 points for the stage.
+17.1.12 DQ  Disqualification. Can be a Stage DQ (Chapter 14) or Match DQ (Chapter 15).
+    17.1.13 ECI Empty Chamber Indicator. A flag inserted into the action of a firearm to demonstrate it is unloaded. See Section 1.5.
+17.1.14 FTE Failure to Engage. A penalty assessed for failing to fire at least one round at a target.
+    17.1.15 FTN Failure to Neutralize. A penalty in Time-Plus Scoring for hitting a target but failing to meet the neutralization requirements.
+17.1.16 HF Hit Factor. The score derived from Points per Second.
+17.1.17 Long Gun Refers to either a rifle or shotgun, but not a handgun.
+    17.1.18 Make Ready The command issued by the RO allowing the competitor to handle firearms and prepare for the course of fire.
+    17.1.19 Matchsaver A shell holder attached to a shotgun near the ejection port to allow for a rapid load (not considered a loaded firearm if holding a shell).
+17.1.20 MD  Match Director.
+17.1.21 Mike A "Miss" on a target.
+17.1.22 MOA Minute of Angle.
+    17.1.23 Muzzle Brake Any muzzle device that features at least one set of externally visible braking baffles for which the uncompromising purpose is to reduce recoil force, rather than compensate for muzzle rise or act as a flash hider. Examples:
+
+56
+
+• The PWS PRC Compensator IS defined as a muzzle brake because the first ports closest to the barrel constitute a set of externally visible braking baffles. However, the similar PWS FSC Compensator is NOT defined as a muzzle brake because its baffle set is compromised in terms of recoil reduction in order to achieve its hybrid purpose.
+• The Surefire Warcomp is NOT defined as a muzzle brake because it acts as a flash hider with muzzle rise compensating ports, not braking baffles to reduce recoil force.
+• The KAC MAMS, Precision Armament EFAB and AFAB, and similar devices are NOT defined as muzzle brakes because their baffle sets do not have the uncompromised purpose of reducing recoil due to the pinhole-style gas port design.
+• For any specific muzzle device questions, please send a link to the product or very clear pictures of the device to info@pcsleague.com
+17.1.24 No-Shoot A penalty target, typically marked in solid red or with an "X".
+17.1.25 OAL Overall Length.
+17.1.26 PCC Pistol Caliber Carbine.
+    17.1.27 PCR PCSL Competitor Rating - PCSL's way of assigning classifications and rankings based on competitor performance. More info is available at PCSLeague.us.
+    17.1.28 Pistol / Handgun These terms may be used interchangeably. "Pistol" in the context of this rulebook shall always refer to a handgun type firearm, and not a rifle in a pistol configuration.
+17.1.29 PPS Points Per Second (may be used interchangeably with HF - Hit Factor).
+17.1.30 RM Range Master.
+17.1.31 RO Range Officer.
+17.1.32 RO Team All of the individuals currently acting as ROs for the stage.
+    17.1.33 Safe Action Handguns with a system of internal safeties (such as a trigger safety lever) rather than an external manual safety lever.
+17.1.34 SAO Single Action Only.
+17.1.35 Scorekeeping RO The RO handling the scorekeeping device while running a competitor.
+    17.1.36 Squib A bullet lodged inside the barrel of a firearm due to insufficient powder charge or other ammunition malfunction.
+    17.1.37 Stage Gun A firearm that is designed into a stage for a special purpose, often a sponsor's model. Ammunition and the firearm must be supplied by the match.
+17.1.38 Start Signal The signal, typically an audible beep, that initiates the timed course of fire.
+    17.1.39 Strike A formal severe warning issued by the RM for serious infractions that do not immediately warrant a Match DQ.
+    17.1.40 Sweeping / Flagging Pointing the muzzle of a firearm at any part of one's own person or another person. See Section 15.3.
+17.1.41 Timer RO The RO handling the timer while running a competitor.
+17.1.42 WSB Written Stage Brief.
+
+
+
+
+
+
+
+57
+
+A Pistol Divisions Appendix
+BAN STATE DIVISIONS - PCSL recognizes lower capacity versions of all core and recognized divisions when shot in a state or region that has laws restricting magazine capacity. These divisions (such as Competition-10, Practical-10, etc) are considered separate recognized divisions and will not be scored against their standard capacity counterparts (both at the individual match and in the PCR System).
+A.1 PCSL Pistol - Core Divisions
+A.1.1 Competition (COMP)
+
+Minimum Caliber	9x19mm
+Maximum caliber	.45 ACP
+Maximum bullet velocity	1600 fps
+Minimum power factor	No
+Maximum rounds loaded in magazines at start	30
+signal
+Maximum magazine length	no
+Handgun requirement	Must be a handgun per Section 2.4.1
+Other restrictions	no
+
+A.1.2 Practical (PRAC)
+
+Minimum Caliber	9x19mm
+Maximum caliber	.45 ACP
+Maximum bullet velocity	1600 fps
+Minimum power factor	125
+Maximum rounds loaded in magazines at start	20
+signal
+Maximum magazine length	no
+compensators/porting	Not Allowed
+Frame mounted optics	no
+Gas Pedals	no restrictions
+Flashlights/lasers	allowed
+Magwells	allowed
+Handgun requirement	Must be a handgun per Section 2.4.1
+Other restrictions	no
+
+A.1.3 Pistol Caliber Carbine (PCC)
+
+Minimum Caliber	9x19mm
+Maximum caliber	.45 ACP Maximum bullet velocity 1600 fps Minimum power factor	125
+Coupled magazines	Coupled (side-by-side) magazines are prohibited
+Support devices	Tripods, bipods, bags, and related support devices are prohibited
+Rifle requirement	Must be a rifle per Section 2.4.2
+Other restrictions	no
+
+
+
+
+58
+
+A.1.4 Defensive Practical (DP)
+
+
+If  non-ported/non-compensated
+
+
+
+If ported/com-pensated
+
+Maximum weight with empty magazine Maximum barrel length (measured breech to muzzle)
+
+34.0oz	29.0oz
+4.52in	4.02in
+
+Minimum Caliber	9x19mm	"
+Maximum caliber	.45 ACP	"
+
+Maximum bullet velocity
+
+1600 fps	"
+
+Minimum power factor	125	"
+
+Maximum rounds loaded in magazines at start signal
+Maximum magazine length
+
+15	"
+
+no	"
+
+Frame mounted optics	no	"
+Gas Pedals	Allowed given a maximum added width of 3/8" (0.375").	" Folding/deployable thumb rests will be measured in deployed configuration.
+Flashlights/lasers	allowed	"
+Magwells	maximum width of 1.625in	"
+
+Concealment requirement
+
+Must be shot from concealment (Section 2.10)	"
+
+Handgun requirement	Must be a handgun per Section 2.4.1	"
+Other restrictions	no	"
+
+
+A.1.5 Defensive Competition (DC)
+
+
+If  non-ported/non-compensated
+
+
+
+If ported/com-pensated
+
+Maximum weight with empty magazine Maximum barrel length (measured breech to muzzle)
+
+50.0oz	45.0oz
+5.42in	5.02in
+
+Minimum Caliber	9x19mm	"
+Maximum caliber	.45 ACP	"
+
+Maximum bullet velocity
+
+1600 fps	"
+
+Minimum power factor	125	"
+
+Maximum rounds loaded in magazines at start signal
+Maximum magazine length
+
+20	"
+
+no	"
+
+Frame mounted optics	no	"
+Gas Pedals	Allowed given a maximum added width of 3/8" (0.375").	" Folding/deployable thumb rests will be measured in stowed configuration.
+
+
+59
+
+
+
+If  non-ported/non-compensated
+
+If ported/com-pensated
+
+
+
+Flashlights/lasers	allowed	"
+Magwells	maximum width of 1.625in	"
+
+Concealment requirement
+
+Must be shot from concealment (Section 2.10)	"
+
+Handgun requirement	Must be a handgun per Section 2.4.1	"
+Other restrictions	no	"
+
+A.2 PCSL Pistol - Recognized Divisions
+A.2.1 Rimfire Rifle (RFR)
+
+Caliber	.22LR or .22Magnum only
+
+Minimum power factor
+Maximum rounds loaded in magazines at start signal
+
+no unlimited
+
+Support devices	Tripods, bipods, bags, and related support devices are prohibited
+Rifle requirement	Must be a rifle per Section 2.4.2
+Other restrictions	no
+Steel targets	Many modern steel targets have no problem falling from .22LR fire. Steel that doesn't fall can be called hit by an RO, or painted between competitors and checked for bullet strikes
+Activator targets	Activator targets may not reliably fall from .22LR hits. Rimfire competitors shall be awarded full points on un-activated targets, without engagement(or penalties), provided they successfully hit the activator(s)
+
+A.2.2 Rimfire Pistol (RFP)
+
+Caliber	.22LR or .22Magnum only
+
+Minimum power factor
+Maximum rounds loaded in magazines at start signal
+Handgun requirement
+
+no unlimited
+
+Must be a handgun per Section 2.4.1
+
+Other restrictions	no
+Steel targets	Many modern steel targets have no problem falling from .22LR fire. Steel that doesn't fall can be called hit by an RO, or painted between competitors and checked for bullet strikes
+Activator targets	Activator targets may not reliably fall from .22LR hits. Rimfire competitors shall be awarded full points on un-activated targets, without engagement(or penalties), provided they successfully hit the activator(s)
+
+
+
+
+
+
+
+60
+
+B Rifle Divisions Appendix
+B.1 PCSL Rifle - Core Divisions
+B.1.1 Competition (COMP)
+
+
+
+PCC
+allowed Minimum caliber Maximum caliber Minimum power factor
+
+Pistol Caliber Carbines as defined in Section A.1.3 are allowed 5.7x28, 5.45x39, 5.56x45, 9x19mm
+.308 Win/7.62x51
+none for rifle calibers. When using PCC: 125
+
+Optics	no restrictions
+Suppressors	allowed
+
+Support devices
+
+Bipods, bags, and related support devices are allowed in PCSL Rifle or 3-Gun matches in Competition division only, but not in PCSL 2-Gun matches.
+
+Tripods	Tripods are never allowed outside of PCSL 3-Gun Open division
+
+Rifle requirement Other restrictions
+
+Must be a rifle per Section 2.4.2 no
+
+
+
+
+B.1.2 Practical (PRAC)
+
+PCC allowed	no
+Minimum caliber	5.45x39, 5.56x45
+Maximum caliber	.308 Win/7.62x51
+Minimum power	no
+factor
+Optics	no restrictions
+
+Maximum rounds loaded in magazines at start signal
+High-capacity magazines Coupled magazines
+
+30
+
+
+Magazines that are capable of holding more than 30 rounds (including drums) are allowed provided that they are only loaded to 30 rounds at the start of the stage Coupled magazines (side by side) are prohibited
+
+Magwells	Magwells up to 2.000" outer width are allowed
+Suppressors	allowed
+Muzzle brakes	Muzzle brakes are prohibited UNLESS used for the purpose of adapting a suppressor, as long as the suppressor remains attached.
+
+Blast mitigation devices
+Bolt Carrier Groups
+
+Blast mitigation device such as the Surefire Warden or Griffin Armament Blast Shield that remains attached to a muzzle brake is allowed as long as the device directs all gasses forward of the muzzle.
+Lightened or Reduced Mass BCGs are prohibited. In any platform, the total assembled BCG mass must be no less than 0.2oz under the OEM BCG mass of the platform. In an AR-15, the OEM BCG mass is considered to be 11.0oz
+
+Support devices	Tripods, bipods, bags, and related support devices are prohibited
+Rifle requirement	Must be a rifle per Section 2.4.2
+
+
+61
+
+
+
+Other restrictions	no
+
+B.2 PCSL Rifle - Recognized Divisions
+There are no recognized divisions at this time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+62
+
+C Shotgun Divisions Appendix
+C.1 PCSL Shotgun - Core Divisions
+There are no recognized divisions at this time.
+C.2 PCSL Shotgun - Recognized Divisions
+C.2.1 Open (OPEN)
+
+Minimum Caliber	20 Gauge
+Maximum Caliber	12 Gauge
+Minimum power factor	no
+Shotgun requirement	Must be a shotgun per Section 2.4.3
+Other restrictions	no
+
+C.2.2 Modified (MOD)
+
+Minimum Caliber	20 Gauge
+Maximum Caliber	12 Gauge
+Minimum power factor	no
+Magazine type	Fixed single magazine tube only, no speed-loading devices allowed
+Optical sight	A single non-magnified optical sight is permitted
+Flashlights/lasers	No restrictions on flashlights/lasers
+
+Barrel porting, Compensators, and Brakes
+
+allowed
+
+Maximum magazine tube capacity	none
+
+Maximum rounds loaded at start signal
+
+13 if starting chambered, 12 if starting with an empty chamber
+
+Support devices	Bipods, bags, and other related support devices may not be used
+Shotgun requirement	Must be a shotgun per Section 2.4.3
+Other restrictions	no
+
+C.2.3 Practical (PRAC)
+
+Minimum Caliber	20 Gauge
+Maximum Caliber	12 Gauge
+Minimum power factor	no
+Magazine type	Fixed single magazine tube only, no speed-loading devices allowed
+Optical sight	A single non-magnified optical sight is permitted
+Flashlights/lasers	No restrictions on flashlights/lasers
+Compensators, and Brakes	no
+Barrel porting	allowed
+Maximum barrel length	21.0in
+Maximum magazine tube capacity	8
+
+Maximum rounds loaded at start signal
+
+9 if starting chambered, 8 if starting with an empty chamber
+
+Support devices	Bipods, bags, and other related support devices may not be used
+
+
+63
+
+
+
+Shotgun requirement	Must be a shotgun per Section 2.4.3
+Other restrictions	no
+
+C.2.4 Tactical (TAC)
+
+Minimum Caliber	20 Gauge
+Maximum Caliber	12 Gauge
+Minimum power factor	no
+Magazine type	Fixed single magazine tube only, no speed-loading devices allowed
+Sights	Iron sights only
+Flashlights/lasers	no
+Barrel porting, Compensators, and	no
+Brakes
+Maximum magazine tube capacity	none
+
+Maximum rounds loaded at start signal
+
+9 if starting chambered, 8 if starting with an empty chamber
+
+Support devices	Bipods, bags, and other related support devices may not be used
+Shotgun requirement	Must be a shotgun per Section 2.4.3
+Other restrictions	no
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+64
+
+D 3Gun-Specific Division Modifications
+D.1 Modified (MOD) Rifle
+Any rifle allowed per Section B.1.1 with the following adjustments:
+    D.1.1 Maximum muzzle device size 1.0" diameter x 3.0" length measured from end of barrel crown to end of muzzle.
+D.1.2 Optical sighting system Only a single optical sighting system is allowed.
+    D.1.3 Bipod A single bipod may be attached to the rifle, but must remain attached throughout the course of fire.
+D.2 Modified (MOD) Handgun
+Any handgun allowed per Section A.1.1 with the following adjustments
+D.2.1 Max magazine length 141.25mm
+D.2.2 Minimum power factor No
+D.2.3 Maximum rounds loaded in magazines at start signal N/A
+D.3 Tactical Optics (TAC) Rifle
+Any rifle allowed per Section B.1.1 with the following adjustments
+D.3.1 Optical sighting system Only a single optical sighting system is allowed.
+    D.3.2 Maximum muzzle device size 1.0" diameter x 3.0" length measured from end of barrel crown to end of muzzle.
+D.4 Tactical Optics (TAC) Handgun
+Any handgun allowed per Section A.1.1 with the following adjustments
+D.4.1 Max magazine length 141.25mm
+D.4.2 Minimum power factor No
+D.4.3 Maximum rounds loaded in magazines at start signal N/A
+D.4.4 Sights Iron Sights Only
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+65
+
+E Changelog
+E.1 Rule Changes and Updates
+This page documents the history of changes to the PCSL General Rulebook.
+E.1.1 2026
+E.1.1.1 Version 2026-05-05 Draftable Comparison
+• Using new markdown-generated formatting
+• 22Magnum added to A.2.1/A.2.2 (Rimfire Rifle)
+• Divisions
+- Removed from Chapter 3, added as Divisions Appendices A, B, C, and D
+- Reformatted with tables for easier viewing
+- Practical Irons, TenRoundIrons, and Revo have been removed
+• "Carbine" generally renamed to "Rifle" Except for PCCs
+• Section number references fixed as needed
+E.1.1.2 Version 2026-02-06 Draftable Comparison
+• Rules referencing other sections' numbers updated
+• 2.10 Concealment added
+• Chapter 3:
+- "Load-to capacity" terminology in section 3 changed
+- Actual Carry Pistol (ACP) Division removed
+- Defensive Practical (DP) and Defensive Competition (DC) Divisions added
+- Revolver Open (REVO) division renamed
+- 3.20.7 included 3-gun in match types allowing bipods and such
+- Muzzle Device section re-organized and rewritten. Brakes on the ends of suppressors are no longer permitted in Practical
+• 4.9 Moved from Arbitration chapter
+• 5.1.2.1 rolled into 5.1.2
+• 5.1.4 added to restrict how much time is wasted during Make Ready trying out positions
+• 7.7.2 Removed explicit reference to DQ sections. The rules are clear already
+• 7.7.2.4 Added RM discretion on abandonment permissions
+• 7.14 Added section. This was always implied previously, now it is clearly spelled out
+• 9.11.3 Prone shooting areas must be fully defined all around now
+• 9.14 New section making implied permission explicit.
+• 11.4.2.1 Clarified rules confusion
+• 11.4.3.3/11.4.3.4 Fixed requirement for Delegates to make themselves known. Anybody can be a Delegate
+• 11.4.5.3/11.4.5.4 ROs should not be removing targets unless the RM allows it
+• 11.6 Cleaned up wording and confusion around when a HIT call is required and when it is a courtesy
+• 11.12 Moved from Arbitration chapter
+• Chapter 16:
+- General rewrite
+- Moved Video evidence
+- Arb fee added
+- Arb committee, composition, and roles clarified
+- Arbitration Form added as a link
+E.1.2 2025
+
+
+66
+
+E.1.2.1 February 2025
+• Initial release of the online rulebook
+• Migrated from PDF-only format to web + PDF
+
+
+For questions about rule changes, please contact the PCSL administration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+67
