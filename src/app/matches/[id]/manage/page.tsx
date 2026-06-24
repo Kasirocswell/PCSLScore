@@ -30,10 +30,10 @@ export default async function ManageMatchPage({ params }: Props) {
     redirect('/auth/login')
   }
 
-  // Fetch user role
+  // Fetch user role & stripe_connect_id
   const { data: profile, error: profileError } = await supabase
     .from('profiles')
-    .select('role')
+    .select('role, stripe_connect_id')
     .eq('id', user.id)
     .single()
 
@@ -41,7 +41,7 @@ export default async function ManageMatchPage({ params }: Props) {
     redirect('/dashboard')
   }
 
-  // Fetch match details with all stages, targets, and squads
+  // Fetch match details with all stages, targets, squads, and competitor registrations
   const { data: match, error: matchError } = await supabase
     .from('matches')
     .select(`
@@ -67,6 +67,13 @@ export default async function ManageMatchPage({ params }: Props) {
         id,
         name,
         max_capacity
+      ),
+      registrations (
+        id,
+        division,
+        squad_id,
+        payment_status,
+        profiles ( id, full_name, email )
       )
     `)
     .eq('id', matchId)
@@ -102,5 +109,5 @@ export default async function ManageMatchPage({ params }: Props) {
     )
   }
 
-  return <MatchWorkspace match={match as any} />
+  return <MatchWorkspace match={match as any} stripeConnectId={profile?.stripe_connect_id || null} />
 }

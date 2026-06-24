@@ -226,23 +226,42 @@ export default function CreateMatchForm({ clubs }: CreateMatchFormProps) {
               </div>
 
               {paymentRequired && (
-                <div className="pt-2 border-t border-white/5 animate-fadeIn">
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                    Registration Fee (USD)
-                  </label>
-                  <div className="relative group max-w-[200px]">
-                    <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-emerald-400 transition-colors duration-200">
-                      <DollarSign className="w-4 h-4" />
-                    </span>
-                    <input
-                      type="number"
-                      name="price"
-                      required={paymentRequired}
-                      min="0.01"
-                      step="0.01"
-                      placeholder="45.00"
-                      className="w-full pl-11 pr-4 py-2 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all duration-200 text-sm"
-                    />
+                <div className="pt-4 border-t border-white/5 space-y-4 animate-fadeIn">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                        Registration Fee (USD) <span className="text-emerald-400 font-bold">*</span>
+                      </label>
+                      <div className="relative group">
+                        <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-emerald-400 transition-colors duration-200">
+                          <DollarSign className="w-4 h-4" />
+                        </span>
+                        <input
+                          type="number"
+                          name="price"
+                          required={paymentRequired}
+                          min="0.01"
+                          step="0.01"
+                          placeholder="45.00"
+                          className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all duration-200 text-sm"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                        Payment Collection Method <span className="text-emerald-400 font-bold">*</span>
+                      </label>
+                      <select
+                        name="payment_method"
+                        required={paymentRequired}
+                        defaultValue="online"
+                        className="w-full px-4 py-3 bg-slate-900 border border-white/10 rounded-xl text-slate-100 focus:outline-none focus:border-indigo-500/50 focus:bg-slate-800 transition-all duration-200 text-sm"
+                      >
+                        <option value="online">Online Prepayment (Stripe)</option>
+                        <option value="cash">Cash In Person (At Match)</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
               )}

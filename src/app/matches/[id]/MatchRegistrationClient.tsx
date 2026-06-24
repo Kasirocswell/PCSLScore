@@ -73,6 +73,7 @@ interface MatchDetails {
   match_type: string
   payment_required: boolean
   price: number
+  payment_method?: 'online' | 'cash' | null
   is_published: boolean
   created_by: string
   clubs: { id: string; name: string; location: string } | null
@@ -125,8 +126,9 @@ export default function MatchRegistrationClient({
   const isRegistered = !!userRegistration
   const paymentStatus = userRegistration?.payment_status || 'pending'
   const isPaymentPending = match.payment_required && match.price > 0 && paymentStatus === 'pending'
+  const isCashMatch = match.payment_method === 'cash'
   // If payment param is success, override the lock in the UI to allow squad selection immediately while webhook finishes.
-  const isSquaddingLocked = isPaymentPending && paymentParam !== 'success'
+  const isSquaddingLocked = isPaymentPending && !isCashMatch && paymentParam !== 'success'
 
   // Poll to check for payment webhook completion if user returns from Stripe but db has not updated yet
   useEffect(() => {
@@ -617,29 +619,43 @@ export default function MatchRegistrationClient({
                   {match.payment_required && match.price > 0 && (
                     <div className="pt-4 border-t border-white/5 space-y-3">
                       {paymentStatus === 'pending' && paymentParam !== 'success' ? (
-                        <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 space-y-3 animate-fadeIn">
-                          <div className="flex items-start gap-2 text-xs text-amber-300 leading-relaxed font-semibold">
-                            <Lock className="w-4 h-4 shrink-0 mt-0.5" />
-                            <span>Entry Fee Payment Required to Squad</span>
+                        match.payment_method === 'cash' ? (
+                          <div className="p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/20 space-y-2 animate-fadeIn">
+                            <div className="flex items-start gap-2 text-xs text-cyan-300 leading-relaxed font-semibold">
+                              <Unlock className="w-4 h-4 shrink-0 mt-0.5" />
+                              <span>Cash Payment at Match Required</span>
+                            </div>
+                            <p className="text-[11px] text-slate-400 leading-normal">
+                              This match requires cash payment in person at the range. Please pay{' '}
+                              <strong className="text-white font-extrabold">${match.price}</strong> to the Match Director.
+                              <span className="block mt-1 font-semibold text-cyan-400/80">Squadding is open - assign yourself below!</span>
+                            </p>
                           </div>
-                          <p className="text-[11px] text-slate-400 leading-normal">
-                            This match director requires competitors to prepay the match entry fee of{' '}
-                            <strong className="text-white font-extrabold">${match.price}</strong> before self-assigning onto the squad sheets.
-                          </p>
+                        ) : (
+                          <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 space-y-3 animate-fadeIn">
+                            <div className="flex items-start gap-2 text-xs text-amber-300 leading-relaxed font-semibold">
+                              <Lock className="w-4 h-4 shrink-0 mt-0.5" />
+                              <span>Entry Fee Payment Required to Squad</span>
+                            </div>
+                            <p className="text-[11px] text-slate-400 leading-normal">
+                              This match director requires competitors to prepay the match entry fee of{' '}
+                              <strong className="text-white font-extrabold">${match.price}</strong> before self-assigning onto the squad sheets.
+                            </p>
 
-                          <button
-                            onClick={handleRealPayment}
-                            disabled={loading}
-                            className="w-full py-2 bg-gradient-to-r from-emerald-500 to-indigo-500 hover:from-emerald-600 hover:to-indigo-600 text-white font-bold text-xs rounded-lg flex items-center justify-center gap-2 shadow transition-all duration-300 active:scale-95 cursor-pointer"
-                          >
-                            {loading ? (
-                              <Loader2 className="w-4 h-4 animate-spin" />
-                            ) : (
-                              <CreditCard className="w-4 h-4" />
-                            )}
-                            Pay ${match.price} Entry Fee via Stripe
-                          </button>
-                        </div>
+                            <button
+                              onClick={handleRealPayment}
+                              disabled={loading}
+                              className="w-full py-2 bg-gradient-to-r from-emerald-500 to-indigo-500 hover:from-emerald-600 hover:to-indigo-600 text-white font-bold text-xs rounded-lg flex items-center justify-center gap-2 shadow transition-all duration-300 active:scale-95 cursor-pointer"
+                            >
+                              {loading ? (
+                                <Loader2 className="w-4 h-4 animate-spin" />
+                              ) : (
+                                <CreditCard className="w-4 h-4" />
+                              )}
+                              Pay ${match.price} Entry Fee via Stripe
+                            </button>
+                          </div>
+                        )
                       ) : (
                         <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-2.5 text-xs text-emerald-300 font-semibold leading-none">
                           <CheckCircle className="w-4.5 h-4.5" />

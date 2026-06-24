@@ -11,7 +11,9 @@ import {
   addTargetAction,
   deleteTargetAction,
   createSquadAction,
-  deleteSquadAction
+  deleteSquadAction,
+  createStripeConnectOnboardingAction,
+  toggleCompetitorPaymentAction
 } from '../../actions'
 import {
   ArrowLeft,
@@ -35,7 +37,13 @@ import {
   Upload,
   FileText,
   Image,
-  ExternalLink
+  ExternalLink,
+  UserCheck,
+  Search,
+  CreditCard,
+  Sparkles,
+  Lock,
+  Unlock
 } from 'lucide-react'
 
 interface TargetItem {
@@ -77,6 +85,20 @@ interface ClubItem {
   name: string
 }
 
+interface ProfileItem {
+  id: string
+  full_name: string | null
+  email: string
+}
+
+interface RegistrationItem {
+  id: string
+  division: string
+  squad_id: string | null
+  payment_status: 'pending' | 'paid' | 'free'
+  profiles: ProfileItem | null
+}
+
 interface MatchDetails {
   id: string
   club_id: string
@@ -87,24 +109,32 @@ interface MatchDetails {
   match_type: string
   payment_required: boolean
   price: number
+  payment_method?: 'online' | 'cash' | null
   is_published: boolean
   clubs?: ClubItem
   stages?: StageItem[]
   squads?: SquadItem[]
+  registrations?: RegistrationItem[]
 }
 
 interface MatchWorkspaceProps {
   match: MatchDetails
+  stripeConnectId: string | null
 }
 
-export default function MatchWorkspace({ match }: MatchWorkspaceProps) {
-  const [activeTab, setActiveTab] = useState<'settings' | 'stages' | 'squads'>('stages')
+export default function MatchWorkspace({ match, stripeConnectId }: MatchWorkspaceProps) {
+  const [activeTab, setActiveTab] = useState<'settings' | 'stages' | 'squads' | 'competitors'>('stages')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState<string | null>(null)
   
   // Settings Tab State
   const [paymentRequired, setPaymentRequired] = useState(match.payment_required)
+
+  // Competitors Tab State
+  const [competitorSearch, setCompetitorSearch] = useState('')
+  const [competitorDivisionFilter, setCompetitorDivisionFilter] = useState('All')
+  const [togglingRegId, setTogglingRegId] = useState<string | null>(null)
 
   // Stages & Targets Builder State
   const [selectedStageId, setSelectedStageId] = useState<string | null>(
@@ -169,6 +199,50 @@ export default function MatchWorkspace({ match }: MatchWorkspaceProps) {
     } else {
       triggerSuccess('Match settings updated successfully!')
       router.refresh()
+    }
+  }
+
+  // Stripe Connect Onboarding Launcher
+  async function handleStripeOnboarding() {
+    setLoading(true)
+    setError(null)
+    setSuccess(null)
+
+    try {
+      const res = await createStripeConnectOnboardingAction()
+      if (res?.error) {
+        triggerError(res.error)
+        setLoading(false)
+      } else if (res?.url) {
+        window.location.href = res.url
+      } else {
+        triggerError('Failed to initiate Stripe onboarding session.')
+        setLoading(false)
+      }
+    } catch (err: any) {
+      triggerError(err?.message || 'An unexpected error occurred during Stripe Connect redirect.')
+      setLoading(false)
+    }
+  }
+
+  // Toggle Competitor Payment (MD manual overrides)
+  async function handleTogglePayment(registrationId: string) {
+    if (togglingRegId) return
+    setTogglingRegId(registrationId)
+    setError(null)
+
+    try {
+      const res = await toggleCompetitorPaymentAction(match.id, registrationId)
+      if (res?.error) {
+        triggerError(res.error)
+      } else {
+        triggerSuccess(`Payment status successfully updated to ${res.nextStatus === 'paid' ? 'Paid' : 'Pending'}!`)
+        router.refresh()
+      }
+    } catch (err: any) {
+      triggerError(err?.message || 'An unexpected error occurred.')
+    } finally {
+      setTogglingRegId(null)
     }
   }
 
@@ -432,6 +506,17 @@ export default function MatchWorkspace({ match }: MatchWorkspaceProps) {
           >
             <Users className="w-4 h-4" />
             Squad Sheet
+          </button>
+          <button
+            onClick={() => { setActiveTab('competitors'); setStageFormMode('none') }}
+            className={`flex items-center gap-2 px-5 py-3 border-b-2 font-semibold text-sm transition-all cursor-pointer ${
+              activeTab === 'competitors'
+                ? 'border-indigo-500 text-white bg-white/5'
+                : 'border-transparent text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            <UserCheck className="w-4 h-4 text-cyan-400" />
+            Competitors
           </button>
           <button
             onClick={() => { setActiveTab('settings'); setStageFormMode('none') }}
@@ -1113,199 +1198,416 @@ export default function MatchWorkspace({ match }: MatchWorkspaceProps) {
           </div>
         )}
 
-        {/* TAB 3: SETTINGS */}
-        {activeTab === 'settings' && (
-          <div className="max-w-2xl mx-auto backdrop-blur-xl bg-white/5 border border-white/10 p-8 rounded-2xl space-y-6 shadow-2xl">
-            <div>
-              <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                <Settings className="w-5 h-5 text-indigo-400" />
-                Edit Match Settings
-              </h2>
-              <p className="text-xs text-slate-400 mt-1">
-                Modify match parameters, publishing toggles, location descriptions, and pricing structures.
-              </p>
+        {/* TAB 3: COMPETITORS */}
+        {activeTab === 'competitors' && (
+          <div className="space-y-6">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-white/5 pb-4">
+              <div>
+                <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                  <UserCheck className="w-5 h-5 text-cyan-400" />
+                  Competitor Registrations
+                </h2>
+                <p className="text-xs text-slate-400 mt-1">
+                  Manage registered shooters, track divisions and squads, and toggle cash or online payment statuses.
+                </p>
+              </div>
+              <div className="bg-white/5 border border-white/10 px-4 py-2 rounded-xl text-center">
+                <span className="block text-[9px] uppercase tracking-wider font-bold text-slate-400">Total Registered</span>
+                <strong className="text-lg text-indigo-400 font-extrabold">{(match.registrations || []).length}</strong>
+              </div>
             </div>
 
-            <form onSubmit={handleUpdateSettings} className="space-y-6">
-              {/* Match Name */}
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                  Match Name <span className="text-emerald-400 font-bold">*</span>
-                </label>
-                <div className="relative group">
-                  <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-indigo-400 transition-colors">
-                    <Target className="w-4 h-4" />
-                  </span>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    defaultValue={match.name}
-                    className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all text-sm"
-                  />
+            {/* Filter controls */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {/* Search Bar */}
+              <div className="relative col-span-1 md:col-span-2">
+                <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-500">
+                  <Search className="w-4 h-4" />
+                </span>
+                <input
+                  type="text"
+                  placeholder="Search shooter name or email..."
+                  value={competitorSearch}
+                  onChange={(e) => setCompetitorSearch(e.target.value)}
+                  className="w-full pl-10 pr-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all text-xs"
+                />
+              </div>
+
+              {/* Division Filter */}
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-slate-400 shrink-0 font-semibold uppercase">Division:</span>
+                <select
+                  value={competitorDivisionFilter}
+                  onChange={(e) => setCompetitorDivisionFilter(e.target.value)}
+                  className="w-full px-4 py-2.5 bg-slate-900 border border-white/10 rounded-xl text-slate-100 focus:outline-none focus:border-indigo-500/50 focus:bg-slate-800 transition-all text-xs"
+                >
+                  {['All', ...Array.from(new Set((match.registrations || []).map(r => r.division)))].map(div => (
+                    <option key={div} value={div}>{div}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Competitors List Table */}
+            <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+              {(match.registrations || []).filter(reg => {
+                const profile = reg.profiles || { full_name: '', email: '' }
+                const name = (profile.full_name || '').toLowerCase()
+                const email = (profile.email || '').toLowerCase()
+                const search = competitorSearch.toLowerCase()
+                
+                const matchesSearch = name.includes(search) || email.includes(search)
+                const matchesDivision = competitorDivisionFilter === 'All' || reg.division === competitorDivisionFilter
+
+                return matchesSearch && matchesDivision
+              }).length > 0 ? (
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse text-left text-xs">
+                    <thead>
+                      <tr className="border-b border-white/5 bg-white/5 text-slate-400 font-bold uppercase tracking-wider">
+                        <th className="px-6 py-4">Shooter</th>
+                        <th className="px-6 py-4">Division</th>
+                        <th className="px-6 py-4">Squad</th>
+                        <th className="px-6 py-4 text-center">Payment Status</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-white/5 text-slate-300">
+                      {(match.registrations || []).filter(reg => {
+                        const profile = reg.profiles || { full_name: '', email: '' }
+                        const name = (profile.full_name || '').toLowerCase()
+                        const email = (profile.email || '').toLowerCase()
+                        const search = competitorSearch.toLowerCase()
+                        
+                        const matchesSearch = name.includes(search) || email.includes(search)
+                        const matchesDivision = competitorDivisionFilter === 'All' || reg.division === competitorDivisionFilter
+
+                        return matchesSearch && matchesDivision
+                      }).map(reg => {
+                        const isTogglingThis = togglingRegId === reg.id
+                        const squadName = match.squads?.find(s => s.id === reg.squad_id)?.name || 'Unassigned'
+                        
+                        return (
+                          <tr key={reg.id} className="hover:bg-white/[2%] transition-all">
+                            <td className="px-6 py-4">
+                              <div className="font-bold text-white text-sm">
+                                {reg.profiles?.full_name || 'Anonymous Competitor'}
+                              </div>
+                              <div className="text-[10px] text-slate-400 select-all mt-0.5">
+                                {reg.profiles?.email}
+                              </div>
+                            </td>
+                            <td className="px-6 py-4">
+                              <span className="font-semibold text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-1 rounded-lg">
+                                {reg.division}
+                              </span>
+                            </td>
+                            <td className="px-6 py-4">
+                              <span className={`font-semibold ${reg.squad_id ? 'text-slate-200' : 'text-slate-500'}`}>
+                                {squadName}
+                              </span>
+                            </td>
+                            <td className="px-6 py-4 text-center">
+                              <button
+                                type="button"
+                                disabled={!!togglingRegId}
+                                onClick={() => handleTogglePayment(reg.id)}
+                                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-bold text-[10px] uppercase tracking-wider border transition-all duration-300 cursor-pointer ${
+                                  isTogglingThis
+                                    ? 'bg-white/5 border-white/10 text-slate-400 animate-pulse'
+                                    : reg.payment_status === 'paid'
+                                    ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/40'
+                                    : 'bg-amber-500/10 border-amber-500/30 text-amber-400 hover:bg-amber-500/20 hover:border-amber-500/40'
+                                }`}
+                              >
+                                {isTogglingThis ? (
+                                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                                ) : reg.payment_status === 'paid' ? (
+                                  <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+                                ) : (
+                                  <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
+                                )}
+                                {isTogglingThis ? 'Updating...' : reg.payment_status === 'paid' ? 'Paid' : 'Pending'}
+                              </button>
+                            </td>
+                          </tr>
+                        )
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <div className="p-12 text-center text-slate-500">
+                  <UserCheck className="w-8 h-8 mx-auto text-slate-600 mb-2" />
+                  <p className="text-xs">No registered competitors match your filters.</p>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 4: SETTINGS */}
+        {activeTab === 'settings' && (
+          <div className="max-w-2xl mx-auto space-y-6 animate-fadeIn">
+            
+            {/* Stripe Connect Onboarding Section */}
+            <div className="backdrop-blur-xl bg-white/5 border border-white/10 p-6 rounded-2xl space-y-4 shadow-2xl">
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-indigo-500/10 border border-indigo-500/20 rounded-xl shrink-0">
+                  <CreditCard className="w-6 h-6 text-indigo-400" />
+                </div>
+                <div className="space-y-1">
+                  <h3 className="text-base font-bold text-white flex items-center gap-2">
+                    Stripe Connect Merchant Integration
+                  </h3>
+                  <p className="text-xs text-slate-400 leading-relaxed">
+                    Link your bank account to receive payouts of competitor entry fees directly into your account during checkout.
+                    We charge <strong className="text-emerald-400 font-extrabold">$0 platform fee</strong> on top of Stripe's native processing fees.
+                  </p>
                 </div>
               </div>
 
-              {/* Match Type & Date */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                    Match Type <span className="text-emerald-400 font-bold">*</span>
-                  </label>
-                  <select
-                    name="match_type"
-                    required
-                    defaultValue={match.match_type}
-                    className="w-full px-4 py-3 bg-slate-900 border border-white/10 rounded-xl text-slate-100 focus:outline-none focus:border-indigo-500/50 focus:bg-slate-800 transition-all text-sm"
-                  >
-                    <option value="2-Gun">2-Gun</option>
-                    <option value="Pistol Caliber 2-Gun">Pistol Caliber 2-Gun</option>
-                    <option value="Rifle">Rifle</option>
-                    <option value="Pistol">Pistol</option>
-                    <option value="Shotgun">Shotgun</option>
-                    <option value="3-Gun">3-Gun</option>
-                  </select>
+              {stripeConnectId ? (
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/10">
+                  <div className="flex items-center gap-2 text-xs text-emerald-400 font-semibold">
+                    <CheckCircle className="w-4 h-4 shrink-0 text-emerald-400" />
+                    <span>Stripe Merchant Account Linked: <strong className="text-white select-all">{stripeConnectId}</strong></span>
+                  </div>
+                  <span className="text-[9px] uppercase tracking-wider font-bold text-emerald-300 bg-emerald-500/15 border border-emerald-500/20 px-2.5 py-0.5 rounded-full text-center shrink-0">
+                    Verified
+                  </span>
                 </div>
+              ) : (
+                <div className="space-y-3">
+                  <div className="p-4 rounded-xl bg-amber-500/5 border border-amber-500/10 text-xs text-amber-300 flex items-start gap-2.5 leading-relaxed">
+                    <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5 text-amber-400" />
+                    <span>You must link your bank account before publishing matches with Online Prepayment enabled.</span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={handleStripeOnboarding}
+                    disabled={loading}
+                    className="w-full py-2.5 bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/15 active:scale-95 transition-all duration-300 cursor-pointer animate-pulse"
+                  >
+                    {loading ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <Sparkles className="w-4 h-4" />
+                    )}
+                    Connect Bank Account with Stripe
+                  </button>
+                </div>
+              )}
+            </div>
 
+            {/* Edit Match Configuration */}
+            <div className="backdrop-blur-xl bg-white/5 border border-white/10 p-8 rounded-2xl space-y-6 shadow-2xl">
+              <div>
+                <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                  <Settings className="w-5 h-5 text-indigo-400" />
+                  Edit Match Settings
+                </h2>
+                <p className="text-xs text-slate-400 mt-1">
+                  Modify match parameters, publishing toggles, location descriptions, and pricing structures.
+                </p>
+              </div>
+
+              <form onSubmit={handleUpdateSettings} className="space-y-6">
+                {/* Match Name */}
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                    Match Date <span className="text-emerald-400 font-bold">*</span>
+                    Match Name <span className="text-emerald-400 font-bold">*</span>
                   </label>
                   <div className="relative group">
                     <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-indigo-400 transition-colors">
-                      <Calendar className="w-4 h-4" />
+                      <Target className="w-4 h-4" />
                     </span>
                     <input
-                      type="date"
-                      name="date"
+                      type="text"
+                      name="name"
                       required
-                      defaultValue={match.date}
-                      className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-100 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all text-sm"
+                      defaultValue={match.name}
+                      className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all text-sm"
                     />
                   </div>
                 </div>
-              </div>
 
-              {/* Location */}
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                  Range Location <span className="text-emerald-400 font-bold">*</span>
-                </label>
-                <div className="relative group">
-                  <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-indigo-400 transition-colors">
-                    <MapPin className="w-4 h-4" />
-                  </span>
-                  <input
-                    type="text"
-                    name="location"
-                    required
-                    defaultValue={match.location}
-                    className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all text-sm"
-                  />
+                {/* Match Type & Date */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                      Match Type <span className="text-emerald-400 font-bold">*</span>
+                    </label>
+                    <select
+                      name="match_type"
+                      required
+                      defaultValue={match.match_type}
+                      className="w-full px-4 py-3 bg-slate-900 border border-white/10 rounded-xl text-slate-100 focus:outline-none focus:border-indigo-500/50 focus:bg-slate-800 transition-all text-sm"
+                    >
+                      <option value="2-Gun">2-Gun</option>
+                      <option value="Pistol Caliber 2-Gun">Pistol Caliber 2-Gun</option>
+                      <option value="Rifle">Rifle</option>
+                      <option value="Pistol">Pistol</option>
+                      <option value="Shotgun">Shotgun</option>
+                      <option value="3-Gun">3-Gun</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                      Match Date <span className="text-emerald-400 font-bold">*</span>
+                    </label>
+                    <div className="relative group">
+                      <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-indigo-400 transition-colors">
+                        <Calendar className="w-4 h-4" />
+                      </span>
+                      <input
+                        type="date"
+                        name="date"
+                        required
+                        defaultValue={match.date}
+                        className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-100 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all text-sm"
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              {/* Match Description */}
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                  Match Description
-                </label>
-                <div className="relative group">
-                  <span className="absolute top-3 left-4 text-slate-500 group-focus-within:text-indigo-400 transition-colors">
-                    <Briefcase className="w-4 h-4" />
-                  </span>
-                  <textarea
-                    name="description"
-                    rows={3}
-                    defaultValue={match.description || ''}
-                    placeholder="Details about schedules, divisions, requirements, range procedures..."
-                    className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all text-sm resize-none"
-                  />
+                {/* Location */}
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                    Range Location <span className="text-emerald-400 font-bold">*</span>
+                  </label>
+                  <div className="relative group">
+                    <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-indigo-400 transition-colors">
+                      <MapPin className="w-4 h-4" />
+                    </span>
+                    <input
+                      type="text"
+                      name="location"
+                      required
+                      defaultValue={match.location}
+                      className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all text-sm"
+                    />
+                  </div>
                 </div>
-              </div>
 
-              {/* Payment & Price Settings */}
-              <div className="p-4 rounded-xl border border-white/5 bg-slate-900/40 space-y-4">
-                <div className="flex items-center justify-between">
+                {/* Match Description */}
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                    Match Description
+                  </label>
+                  <div className="relative group">
+                    <span className="absolute top-3 left-4 text-slate-500 group-focus-within:text-indigo-400 transition-colors">
+                      <Briefcase className="w-4 h-4" />
+                    </span>
+                    <textarea
+                      name="description"
+                      rows={3}
+                      defaultValue={match.description || ''}
+                      placeholder="Details about schedules, divisions, requirements, range procedures..."
+                      className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all text-sm resize-none"
+                    />
+                  </div>
+                </div>
+
+                {/* Payment & Price Settings */}
+                <div className="p-4 rounded-xl border border-white/5 bg-slate-900/40 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="space-y-0.5">
+                      <label className="text-sm font-semibold text-white">Payment Required to Squad</label>
+                      <p className="text-xs text-slate-400">Lock competitor squad selection until registration fee is prepaid.</p>
+                    </div>
+                    <label className="relative inline-flex items-center cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        name="payment_required"
+                        value="true"
+                        checked={paymentRequired}
+                        onChange={(e) => setPaymentRequired(e.target.checked)}
+                        className="sr-only peer"
+                      />
+                      <div className="w-11 h-6 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-slate-400 after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-500 peer-checked:after:bg-white"></div>
+                    </label>
+                  </div>
+
+                  {paymentRequired && (
+                    <div className="pt-2 border-t border-white/5 animate-fadeIn grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                          Registration Fee (USD)
+                        </label>
+                        <div className="relative group">
+                          <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-emerald-400 transition-colors">
+                            <DollarSign className="w-4 h-4" />
+                          </span>
+                          <input
+                            type="number"
+                            name="price"
+                            required={paymentRequired}
+                            min="0.01"
+                            step="0.01"
+                            defaultValue={match.price}
+                            className="w-full pl-11 pr-4 py-2 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all text-sm"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                          Payment Collection
+                        </label>
+                        <select
+                          name="payment_method"
+                          defaultValue={match.payment_method || 'online'}
+                          className="w-full px-4 py-2 bg-slate-900 border border-white/10 rounded-xl text-slate-100 focus:outline-none focus:border-indigo-500/50 focus:bg-slate-800 transition-all text-sm"
+                        >
+                          <option value="online">Online Prepayment (Stripe)</option>
+                          <option value="cash">Cash In Person (At Range)</option>
+                        </select>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Publishing Setting */}
+                <div className="flex items-center justify-between p-4 rounded-xl border border-white/5 bg-slate-900/40">
                   <div className="space-y-0.5">
-                    <label className="text-sm font-semibold text-white">Payment Required to Squad</label>
-                    <p className="text-xs text-slate-400">Lock competitor squad selection until registration fee is prepaid.</p>
+                    <label className="text-sm font-semibold text-white">Publish Match</label>
+                    <p className="text-xs text-slate-400">Make this match instantly discoverable by public shooters.</p>
                   </div>
                   <label className="relative inline-flex items-center cursor-pointer select-none">
                     <input
                       type="checkbox"
-                      name="payment_required"
+                      name="is_published"
                       value="true"
-                      checked={paymentRequired}
-                      onChange={(e) => setPaymentRequired(e.target.checked)}
+                      defaultChecked={match.is_published}
                       className="sr-only peer"
                     />
                     <div className="w-11 h-6 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-slate-400 after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-500 peer-checked:after:bg-white"></div>
                   </label>
                 </div>
 
-                {paymentRequired && (
-                  <div className="pt-2 border-t border-white/5 animate-fadeIn">
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                      Registration Fee (USD)
-                    </label>
-                    <div className="relative group max-w-[200px]">
-                      <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-emerald-400 transition-colors">
-                        <DollarSign className="w-4 h-4" />
-                      </span>
-                      <input
-                        type="number"
-                        name="price"
-                        required={paymentRequired}
-                        min="0.01"
-                        step="0.01"
-                        defaultValue={match.price}
-                        className="w-full pl-11 pr-4 py-2 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all text-sm"
-                      />
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Publishing Setting */}
-              <div className="flex items-center justify-between p-4 rounded-xl border border-white/5 bg-slate-900/40">
-                <div className="space-y-0.5">
-                  <label className="text-sm font-semibold text-white">Publish Match</label>
-                  <p className="text-xs text-slate-400">Make this match instantly discoverable by public shooters.</p>
+                {/* Form Actions */}
+                <div className="pt-4 border-t border-white/5 flex flex-col sm:flex-row justify-end items-center gap-3">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full sm:w-auto px-6 py-2.5 bg-gradient-to-r from-indigo-500 to-emerald-500 hover:from-indigo-600 hover:to-emerald-600 text-white font-semibold rounded-xl shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/35 transition-all duration-300 transform active:scale-95 disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 text-sm cursor-pointer"
+                  >
+                    {loading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Saving...
+                      </>
+                    ) : (
+                      <>
+                        <Save className="w-4 h-4" />
+                        Save Match Configuration
+                      </>
+                    )}
+                  </button>
                 </div>
-                <label className="relative inline-flex items-center cursor-pointer select-none">
-                  <input
-                    type="checkbox"
-                    name="is_published"
-                    value="true"
-                    defaultChecked={match.is_published}
-                    className="sr-only peer"
-                  />
-                  <div className="w-11 h-6 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-slate-400 after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-500 peer-checked:after:bg-white"></div>
-                </label>
-              </div>
-
-              {/* Form Actions */}
-              <div className="pt-4 border-t border-white/5 flex flex-col sm:flex-row justify-end items-center gap-3">
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full sm:w-auto px-6 py-2.5 bg-gradient-to-r from-indigo-500 to-emerald-500 hover:from-indigo-600 hover:to-emerald-600 text-white font-semibold rounded-xl shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/35 transition-all duration-300 transform active:scale-95 disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 text-sm cursor-pointer"
-                >
-                  {loading ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      Saving...
-                    </>
-                  ) : (
-                    <>
-                      <Save className="w-4 h-4" />
-                      Save Match Configuration
-                    </>
-                  )}
-                </button>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         )}
 

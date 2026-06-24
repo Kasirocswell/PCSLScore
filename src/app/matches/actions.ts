@@ -120,6 +120,7 @@ export async function createMatchAction(formData: FormData) {
     const payment_required = formData.get('payment_required') === 'true'
     const priceRaw = formData.get('price') as string
     const price = payment_required ? parseFloat(priceRaw || '0') : 0.00
+    const payment_method = payment_required ? (formData.get('payment_method') as string || 'online') : 'online'
     const is_published = formData.get('is_published') === 'true'
 
     if (!club_id) return { error: 'Shooting club is required' }
@@ -130,18 +131,25 @@ export async function createMatchAction(formData: FormData) {
     if (payment_required && (isNaN(price) || price < 0)) {
       return { error: 'A valid registration price is required' }
     }
+    if (payment_required && payment_method !== 'online' && payment_method !== 'cash') {
+      return { error: 'Invalid payment method selected' }
+    }
 
     const { user, supabase } = await verifyClubDirector(club_id)
 
     // Enforce active subscription checking
     const { data: profile, error: profileErr } = await supabase
       .from('profiles')
-      .select('subscription_active')
+      .select('subscription_active, stripe_connect_id')
       .eq('id', user.id)
       .single()
 
     if (profileErr || !profile?.subscription_active) {
       return { error: 'An active Match Director subscription ($10/month) is required to create a match.' }
+    }
+
+    if (payment_required && payment_method === 'online' && !profile.stripe_connect_id) {
+      return { error: 'To require online payments, you must link your bank account via Stripe Connect in the workspace Settings first.' }
     }
 
     const { data: match, error: insertError } = await supabase
@@ -155,6 +163,7 @@ export async function createMatchAction(formData: FormData) {
         match_type,
         payment_required,
         price,
+        payment_method,
         is_published,
         created_by: user.id
       })
@@ -185,6 +194,7 @@ export async function updateMatchAction(matchId: string, formData: FormData) {
     const payment_required = formData.get('payment_required') === 'true'
     const priceRaw = formData.get('price') as string
     const price = payment_required ? parseFloat(priceRaw || '0') : 0.00
+    const payment_method = payment_required ? (formData.get('payment_method') as string || 'online') : 'online'
     const is_published = formData.get('is_published') === 'true'
 
     if (!name || name.trim() === '') return { error: 'Match name is required' }
@@ -194,8 +204,24 @@ export async function updateMatchAction(matchId: string, formData: FormData) {
     if (payment_required && (isNaN(price) || price < 0)) {
       return { error: 'A valid registration price is required' }
     }
+    if (payment_required && payment_method !== 'online' && payment_method !== 'cash') {
+      return { error: 'Invalid payment method selected' }
+    }
 
-    const { supabase } = await verifyMatchDirector(matchId)
+    const { supabase, user } = await verifyMatchDirector(matchId)
+
+    // Verify Stripe Connect ID if online payment is selected
+    if (payment_required && payment_method === 'online') {
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('stripe_connect_id')
+        .eq('id', user.id)
+        .single()
+
+      if (!profile?.stripe_connect_id) {
+        return { error: 'To require online payments, you must link your bank account via Stripe Connect in the Settings first.' }
+      }
+    }
 
     const { error: updateError } = await supabase
       .from('matches')
@@ -207,6 +233,7 @@ export async function updateMatchAction(matchId: string, formData: FormData) {
         match_type,
         payment_required,
         price,
+        payment_method,
         is_published,
         updated_at: new Date().toISOString()
       })
@@ -731,7 +758,7 @@ export async function joinSquadAction(matchId: string, squadId: string | null, p
     // Get match pricing config
     const { data: match, error: matchError } = await supabase
       .from('matches')
-      .select('payment_required')
+      .select('payment_required, payment_method')
       .eq('id', matchId)
       .single()
 
@@ -739,8 +766,8 @@ export async function joinSquadAction(matchId: string, squadId: string | null, p
       return { error: 'Match not found' }
     }
 
-    // Enforce prepayment rule
-    if (match.payment_required && registration.payment_status === 'pending' && squadId !== null && !paymentSuccessOverride) {
+    // Enforce prepayment rule only if payment_method is online
+    if (match.payment_required && match.payment_method !== 'cash' && registration.payment_status === 'pending' && squadId !== null && !paymentSuccessOverride) {
       return { error: 'Payment required to squad: Please pay the match entry fee first' }
     }
 
@@ -1017,10 +1044,10 @@ export async function createMatchPaymentSessionAction(matchId: string) {
       return { error: 'You have already paid for this match.' }
     }
 
-    // Load match details
+    // Load match details, including payment_method and created_by
     const { data: match, error: matchError } = await supabase
       .from('matches')
-      .select('name, price, payment_required')
+      .select('name, price, payment_required, payment_method, created_by')
       .eq('id', matchId)
       .single()
 
@@ -1030,6 +1057,21 @@ export async function createMatchPaymentSessionAction(matchId: string) {
 
     if (!match.payment_required || match.price <= 0) {
       return { error: 'No prepayment is required for this match.' }
+    }
+
+    if (match.payment_method === 'cash') {
+      return { error: 'This match requires cash payment in person at the match.' }
+    }
+
+    // Load Match Director's Stripe Connect ID
+    const { data: directorProfile, error: profileErr } = await supabase
+      .from('profiles')
+      .select('stripe_connect_id')
+      .eq('id', match.created_by)
+      .single()
+
+    if (profileErr || !directorProfile?.stripe_connect_id) {
+      return { error: 'This match cannot accept online payments because the Match Director has not linked their Stripe Connect account.' }
     }
 
     const headersList = await headers()
@@ -1055,6 +1097,11 @@ export async function createMatchPaymentSessionAction(matchId: string) {
       mode: 'payment',
       success_url: `${origin}/matches/${matchId}?payment=success`,
       cancel_url: `${origin}/matches/${matchId}?payment=cancel`,
+      payment_intent_data: {
+        transfer_data: {
+          destination: directorProfile.stripe_connect_id,
+        },
+      },
       metadata: {
         type: 'match_registration_payment',
         match_id: matchId,
@@ -1067,5 +1114,108 @@ export async function createMatchPaymentSessionAction(matchId: string) {
   } catch (err: any) {
     console.error('Failed to create match payment checkout session:', err.message)
     return { error: err?.message || 'Failed to initialize entry fee payment' }
+  }
+}
+
+// 17. CREATE STRIPE CONNECT ONBOARDING SESSION
+export async function createStripeConnectOnboardingAction() {
+  try {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+
+    if (!user) {
+      return { error: 'Not authenticated' }
+    }
+
+    // Verify user role & get stripe_connect_id
+    const { data: profile, error: profileErr } = await supabase
+      .from('profiles')
+      .select('role, stripe_connect_id')
+      .eq('id', user.id)
+      .single()
+
+    if (profileErr || !profile || profile.role !== 'director') {
+      return { error: 'Match Director account required for Stripe Connect.' }
+    }
+
+    let stripeConnectId = profile.stripe_connect_id
+
+    if (!stripeConnectId) {
+      // Create express account on Stripe
+      const account = await stripe.accounts.create({
+        type: 'express',
+        capabilities: {
+          card_payments: { requested: true },
+          transfers: { requested: true },
+        },
+      })
+      
+      stripeConnectId = account.id
+
+      // Persist to profiles
+      const { error: updateErr } = await supabase
+        .from('profiles')
+        .update({ stripe_connect_id: stripeConnectId })
+        .eq('id', user.id)
+
+      if (updateErr) {
+        return { error: 'Failed to update user profile with connected account' }
+      }
+    }
+
+    const headersList = await headers()
+    const host = headersList.get('host') || 'localhost:3000'
+    const proto = headersList.get('x-forwarded-proto') || 'http'
+    const origin = `${proto}://${host}`
+
+    // Create account link
+    const accountLink = await stripe.accountLinks.create({
+      account: stripeConnectId,
+      refresh_url: `${origin}/dashboard?stripe_onboarding=refresh`,
+      return_url: `${origin}/dashboard?stripe_onboarding=success`,
+      type: 'account_onboarding',
+    })
+
+    return { success: true, url: accountLink.url }
+  } catch (err: any) {
+    console.error('Failed to create Stripe Connect onboarding session:', err.message)
+    return { error: err?.message || 'Failed to initialize Stripe Connect onboarding' }
+  }
+}
+
+// 18. TOGGLE COMPETITOR PAYMENT STATUS (MD ONLY)
+export async function toggleCompetitorPaymentAction(matchId: string, registrationId: string) {
+  try {
+    const { supabase } = await verifyMatchDirector(matchId)
+
+    // Fetch registration's current payment_status
+    const { data: registration, error: fetchErr } = await supabase
+      .from('registrations')
+      .select('payment_status')
+      .eq('id', registrationId)
+      .eq('match_id', matchId)
+      .single()
+
+    if (fetchErr || !registration) {
+      return { error: 'Registration not found' }
+    }
+
+    const nextStatus = registration.payment_status === 'paid' ? 'pending' : 'paid'
+
+    const { error: updateErr } = await supabase
+      .from('registrations')
+      .update({ payment_status: nextStatus })
+      .eq('id', registrationId)
+      .eq('match_id', matchId)
+
+    if (updateErr) {
+      return { error: updateErr.message }
+    }
+
+    revalidatePath(`/matches/${matchId}/manage`)
+    return { success: true, nextStatus }
+  } catch (err: any) {
+    console.error('Failed to toggle competitor payment status:', err.message)
+    return { error: err?.message || 'Failed to toggle payment status' }
   }
 }
