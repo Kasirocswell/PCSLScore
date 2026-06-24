@@ -67,7 +67,7 @@ export default function Navbar({ user }: NavbarProps) {
                   <>
                     <Link href="/matches" className="text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1.5 transition-colors">
                       <Calendar className="w-4 h-4 text-indigo-400" />
-                      Register Match
+                      Matches
                     </Link>
                     <Link href="/dashboard/scores" className="text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1.5 transition-colors">
                       <Trophy className="w-4 h-4 text-amber-400" />
