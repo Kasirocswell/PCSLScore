@@ -2,6 +2,7 @@
 
 import { createClient } from '@/utils/supabase/server'
 import { revalidatePath } from 'next/cache'
+import { geocodeAddress } from '@/utils/geocoding'
 
 export async function createClubAction(formData: FormData) {
   const name = formData.get('name') as string
@@ -35,6 +36,22 @@ export async function createClubAction(formData: FormData) {
       return { error: 'Only Match Directors are authorized to create clubs' }
     }
 
+    // Attempt geocoding (best-effort)
+    let latitude: number | null = null
+    let longitude: number | null = null
+    const geocodeQuery = zipCode?.trim() || location?.trim()
+    if (geocodeQuery) {
+      try {
+        const coords = await geocodeAddress(geocodeQuery)
+        if (coords) {
+          latitude = coords.lat
+          longitude = coords.lon
+        }
+      } catch (err) {
+        console.warn('Geocoding failed for club creation:', err)
+      }
+    }
+
     const { error: insertError } = await supabase
       .from('clubs')
       .insert({
@@ -42,7 +59,9 @@ export async function createClubAction(formData: FormData) {
         location: location.trim(),
         zip_code: zipCode?.trim() || null,
         description: description?.trim() || null,
-        created_by: user.id
+        created_by: user.id,
+        latitude,
+        longitude
       })
 
     if (insertError) {
@@ -103,6 +122,22 @@ export async function updateClubAction(clubId: string, formData: FormData) {
       return { error: 'You are not authorized to edit this club' }
     }
 
+    // Attempt geocoding (best-effort)
+    let latitude: number | null = null
+    let longitude: number | null = null
+    const geocodeQuery = zipCode?.trim() || location?.trim()
+    if (geocodeQuery) {
+      try {
+        const coords = await geocodeAddress(geocodeQuery)
+        if (coords) {
+          latitude = coords.lat
+          longitude = coords.lon
+        }
+      } catch (err) {
+        console.warn('Geocoding failed for club modification:', err)
+      }
+    }
+
     const { error: updateError } = await supabase
       .from('clubs')
       .update({
@@ -110,7 +145,9 @@ export async function updateClubAction(clubId: string, formData: FormData) {
         location: location.trim(),
         zip_code: zipCode?.trim() || null,
         description: description?.trim() || null,
-        updated_at: new Date().toISOString()
+        updated_at: new Date().toISOString(),
+        latitude,
+        longitude
       })
       .eq('id', clubId)
 
