@@ -45,6 +45,7 @@ export default async function MatchesPage({
   const searchQuery = typeof params.q === 'string' ? params.q.trim() : ''
   const zipQuery = typeof params.zip === 'string' ? params.zip.trim() : ''
   const filterType = typeof params.type === 'string' ? params.type : 'all'
+  const activeTab = typeof params.tab === 'string' ? params.tab : 'upcoming'
 
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
@@ -136,6 +137,22 @@ export default async function MatchesPage({
     matches = matches.filter(match => match.match_type === filterType)
   }
 
+  // Calculate current date in local/timezone-safe YYYY-MM-DD
+  const now = new Date()
+  const offset = now.getTimezoneOffset()
+  const localDate = new Date(now.getTime() - (offset * 60 * 1000))
+  const todayStr = localDate.toISOString().split('T')[0]
+
+  // Partition matches into upcoming vs past
+  const upcomingMatches = matches.filter(match => match.date >= todayStr)
+  const pastMatches = matches.filter(match => match.date < todayStr)
+
+  // Sort upcoming soonest first, past most recent first
+  upcomingMatches.sort((a, b) => a.date.localeCompare(b.date))
+  pastMatches.sort((a, b) => b.date.localeCompare(a.date))
+
+  const activeMatches = activeTab === 'past' ? pastMatches : upcomingMatches
+
   const matchTypes = [
     '2-Gun',
     'Pistol Caliber 2-Gun',
@@ -181,6 +198,9 @@ export default async function MatchesPage({
 
         {/* Filter Toolbar */}
         <form method="GET" className="grid grid-cols-1 md:grid-cols-12 gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          {/* Keep tab state when applying search filters */}
+          <input type="hidden" name="tab" value={activeTab} />
+
           {/* Search Input */}
           <div className="md:col-span-4 relative group">
             <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-indigo-400 transition-colors">
@@ -239,10 +259,40 @@ export default async function MatchesPage({
           </div>
         </form>
 
+        {/* Match Registry Tabs */}
+        <div className="flex border-b border-white/10 gap-6 pb-2 animate-fadeIn">
+          <Link
+            href={`/matches?tab=upcoming${searchQuery ? `&q=${encodeURIComponent(searchQuery)}` : ''}${zipQuery ? `&zip=${encodeURIComponent(zipQuery)}` : ''}${filterType !== 'all' ? `&type=${encodeURIComponent(filterType)}` : ''}`}
+            className={`pb-4 text-sm font-bold uppercase tracking-wider relative transition-all duration-200 ${
+              activeTab !== 'past'
+                ? 'text-indigo-400 font-extrabold'
+                : 'text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            Upcoming Matches ({upcomingMatches.length})
+            {activeTab !== 'past' && (
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 to-emerald-500 rounded-full" />
+            )}
+          </Link>
+          <Link
+            href={`/matches?tab=past${searchQuery ? `&q=${encodeURIComponent(searchQuery)}` : ''}${zipQuery ? `&zip=${encodeURIComponent(zipQuery)}` : ''}${filterType !== 'all' ? `&type=${encodeURIComponent(filterType)}` : ''}`}
+            className={`pb-4 text-sm font-bold uppercase tracking-wider relative transition-all duration-200 ${
+              activeTab === 'past'
+                ? 'text-indigo-400 font-extrabold'
+                : 'text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            Past Matches ({pastMatches.length})
+            {activeTab === 'past' && (
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 to-emerald-500 rounded-full" />
+            )}
+          </Link>
+        </div>
+
         {/* Matches Grid */}
-        {matches.length > 0 ? (
+        {activeMatches.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {matches.map(match => {
+            {activeMatches.map(match => {
               const registeredCount = match.registrations?.length || 0
               const isUserRegistered = user
                 ? match.registrations?.some(r => r.profile_id === user.id)
@@ -351,6 +401,14 @@ export default async function MatchesPage({
                         className="px-4 py-2 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 font-semibold text-xs group-hover:bg-indigo-500 group-hover:text-white transition-all duration-300 flex items-center gap-1.5 cursor-pointer"
                       >
                         Manage Workspace
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                      </Link>
+                    ) : match.date < todayStr ? (
+                      <Link
+                        href={`/matches/${match.id}/scores`}
+                        className="px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-semibold text-xs group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 flex items-center gap-1.5 cursor-pointer"
+                      >
+                        View Scores
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                       </Link>
                     ) : (
