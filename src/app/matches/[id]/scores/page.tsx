@@ -82,6 +82,32 @@ export default async function MatchLeaderboardPage({ params }: Props) {
     notFound()
   }
 
+  // 3.5 Fetch classifications for these competitors matching their profile_id and registered division
+  const competitorIds = registrations?.map((r: any) => r.profiles?.id).filter(Boolean) || []
+
+  let classifications: any[] = []
+  if (competitorIds.length > 0) {
+    const { data: classData } = await supabase
+      .from('view_competitor_classifications')
+      .select('profile_id, division, classification, average_percentage')
+      .in('profile_id', competitorIds)
+    if (classData) {
+      classifications = classData
+    }
+  }
+
+  // Merge classification info into registrations object
+  const registrationsWithClass = registrations.map((reg: any) => {
+    const pId = reg.profiles?.id
+    const div = reg.division
+    const clsMatch = classifications.find(c => c.profile_id === pId && c.division === div)
+    return {
+      ...reg,
+      classification: clsMatch ? clsMatch.classification : 'U',
+      average_percentage: clsMatch ? clsMatch.average_percentage : 0
+    }
+  })
+
   // 4. Fetch all computed runs from view_stage_run_scores
   const stageIds = stages.map(s => s.id)
   let runScores: any[] = []
@@ -119,7 +145,7 @@ export default async function MatchLeaderboardPage({ params }: Props) {
     <LeaderboardClient
       match={match as any}
       stages={stages as any}
-      registrations={registrations as any}
+      registrations={registrationsWithClass as any}
       runScores={runScores}
       squads={squads || []}
     />

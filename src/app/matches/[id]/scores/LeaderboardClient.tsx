@@ -39,7 +39,10 @@ interface Registration {
   division: string
   squad_id: string | null
   profiles: Profile | null
+  classification?: 'GM' | 'M' | 'A' | 'B' | 'C' | 'D' | 'U'
+  average_percentage?: number
 }
+
 
 interface RunScore {
   stage_run_id: string
@@ -76,6 +79,25 @@ interface LeaderboardClientProps {
   squads: Squad[]
 }
 
+const getClassificationBadgeStyles = (cls: string) => {
+  switch (cls) {
+    case 'GM':
+      return 'bg-gradient-to-r from-red-600 to-amber-500 text-white border border-red-400 shadow-[0_0_10px_rgba(239,68,68,0.4)] animate-pulse'
+    case 'M':
+      return 'bg-gradient-to-r from-purple-600 to-indigo-500 text-white border border-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.3)]'
+    case 'A':
+      return 'bg-blue-600 text-white border border-blue-400'
+    case 'B':
+      return 'bg-emerald-600 text-white border border-emerald-400'
+    case 'C':
+      return 'bg-slate-500 text-white border border-slate-400'
+    case 'D':
+      return 'bg-amber-700 text-white border border-amber-500'
+    default:
+      return 'bg-slate-800 text-slate-400 border border-slate-700'
+  }
+}
+
 export default function LeaderboardClient({
   match,
   stages,
@@ -88,7 +110,9 @@ export default function LeaderboardClient({
   
   // Filters
   const [selectedDivision, setSelectedDivision] = useState<string>('all')
+  const [selectedClassification, setSelectedClassification] = useState<string>('all')
   const [selectedStageId, setSelectedStageId] = useState<string>(stages.length > 0 ? stages[0].id : '')
+
 
   // Available unique divisions in this match
   const divisions = useMemo(() => {
@@ -261,10 +285,11 @@ export default function LeaderboardClient({
       }
     })
 
-    // 2. Filter list by division if not 'all'
+    // 2. Filter list by division and classification
     const filteredList = list.filter(item => {
-      if (divisionFilter === 'all') return true
-      return item.competitor.division === divisionFilter
+      const matchDivision = divisionFilter === 'all' || item.competitor.division === divisionFilter
+      const matchClass = selectedClassification === 'all' || (item.competitor.classification || 'U') === selectedClassification
+      return matchDivision && matchClass
     })
 
     // 3. Sort list: Non-DQs first (sorted by total points descending), DQs at the very bottom
@@ -292,7 +317,8 @@ export default function LeaderboardClient({
     })
 
     return standingsWithPerc
-  }, [selectedDivision, registrations, stages, runScores, scoringData, dqCompetitorsSet])
+  }, [selectedDivision, selectedClassification, registrations, stages, runScores, scoringData, dqCompetitorsSet])
+
 
   // Detailed stage standings for the 'Stages' tab
   const stageStandings = useMemo(() => {
@@ -307,7 +333,11 @@ export default function LeaderboardClient({
     const runs = runScores.filter(r => r.stage_id === selectedStageId)
 
     const list = registrations
-      .filter(reg => divisionFilter === 'all' || reg.division === divisionFilter)
+      .filter(reg => {
+        const matchDivision = divisionFilter === 'all' || reg.division === divisionFilter
+        const matchClass = selectedClassification === 'all' || (reg.classification || 'U') === selectedClassification
+        return matchDivision && matchClass
+      })
       .map(reg => {
         const run = runs.find(r => r.registration_id === reg.id)
         const isDqOverall = dqCompetitorsSet.has(reg.id)
@@ -364,7 +394,8 @@ export default function LeaderboardClient({
       ...item,
       rank: item.isDq ? 'DQ' : item.isDnf ? 'DNF' : index + 1
     }))
-  }, [selectedStageId, selectedDivision, stages, registrations, runScores, dqCompetitorsSet, scoringData])
+  }, [selectedStageId, selectedDivision, selectedClassification, stages, registrations, runScores, dqCompetitorsSet, scoringData])
+
 
   // Total points available in this match
   const totalMatchMaxPoints = useMemo(() => {
@@ -480,6 +511,28 @@ export default function LeaderboardClient({
               </select>
             </div>
 
+            {/* Classification Filter */}
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-semibold text-slate-500 flex items-center gap-1">
+                <Award className="w-3.5 h-3.5 text-purple-400" /> Class:
+              </span>
+              <select
+                value={selectedClassification}
+                onChange={(e) => setSelectedClassification(e.target.value)}
+                className="bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white focus:outline-none focus:border-cyan-500 transition"
+              >
+                <option value="all">All Classes</option>
+                <option value="GM">GM (Grand Master)</option>
+                <option value="M">M (Master)</option>
+                <option value="A">A Class</option>
+                <option value="B">B Class</option>
+                <option value="C">C Class</option>
+                <option value="D">D Class</option>
+                <option value="U">U (Unclassified)</option>
+              </select>
+            </div>
+
+
             {/* Dynamic Stage Filter (Only visible on 'Stages' tab) */}
             {activeTab === 'stages' && (
               <div className="flex items-center gap-2">
@@ -557,7 +610,12 @@ export default function LeaderboardClient({
 
                           {/* Competitor Name */}
                           <td className="py-4 px-4 font-bold text-white">
-                            <span className="block group-hover:text-cyan-400 transition">{compName}</span>
+                            <div className="flex items-center gap-2">
+                              <span className="block group-hover:text-cyan-400 transition">{compName}</span>
+                              <span className={`text-[10px] font-black px-1.5 py-0.5 rounded font-mono ${getClassificationBadgeStyles(item.competitor.classification || 'U')}`}>
+                                {item.competitor.classification || 'U'}
+                              </span>
+                            </div>
                             <span className="sm:hidden text-[10px] text-slate-500 font-medium font-mono block mt-0.5 uppercase">
                               {item.competitor.division} • Squad {squadName}
                             </span>
@@ -670,11 +728,17 @@ export default function LeaderboardClient({
 
                           {/* Shooter */}
                           <td className="py-4 px-4 font-bold text-white">
-                            <span>{compName}</span>
+                            <div className="flex items-center gap-2">
+                              <span>{compName}</span>
+                              <span className={`text-[10px] font-black px-1.5 py-0.5 rounded font-mono ${getClassificationBadgeStyles(item.competitor.classification || 'U')}`}>
+                                {item.competitor.classification || 'U'}
+                              </span>
+                            </div>
                             <span className="block text-[10px] text-slate-500 font-mono mt-0.5 uppercase sm:hidden">
                               {item.competitor.division} • HF: {item.isDq || item.isDnf ? '0.0000' : item.hitFactor.toFixed(4)}
                             </span>
                           </td>
+
 
                           {/* Time */}
                           <td className="py-4 px-4 hidden sm:table-cell text-center font-mono text-sm text-slate-300">
@@ -752,8 +816,14 @@ export default function LeaderboardClient({
                         <tr key={item.registrationId} className="hover:bg-slate-900/60 transition">
                           {/* Competitor */}
                           <td className="py-4 px-4 font-bold text-white whitespace-nowrap">
-                            <span>{compName}</span>
+                            <div className="flex items-center gap-2">
+                              <span>{compName}</span>
+                              <span className={`text-[10px] font-black px-1.5 py-0.5 rounded font-mono ${getClassificationBadgeStyles(item.competitor.classification || 'U')}`}>
+                                {item.competitor.classification || 'U'}
+                              </span>
+                            </div>
                           </td>
+
 
                           {/* Division */}
                           <td className="py-4 px-4 hidden sm:table-cell whitespace-nowrap">

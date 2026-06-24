@@ -239,6 +239,26 @@ export async function createStageAction(matchId: string, formData: FormData) {
     const required_hits_per_paper_target = parseInt(required_hits_per_paper_target_raw || '2', 10)
     const required_hits_per_steel_target = parseInt(required_hits_per_steel_target_raw || '1', 10)
 
+    const is_classifier = formData.get('is_classifier') === 'true'
+    const classifier_number = is_classifier ? (formData.get('classifier_number') as string || null) : null
+
+    let classifier_hhfs: any = null
+    if (is_classifier) {
+      const hhf_competition = parseFloat(formData.get('classifier_hhf_competition') as string || '0')
+      const hhf_practical = parseFloat(formData.get('classifier_hhf_practical') as string || '0')
+      const hhf_pcc = parseFloat(formData.get('classifier_hhf_pcc') as string || '0')
+      const hhf_limited = parseFloat(formData.get('classifier_hhf_limited') as string || '0')
+      const hhf_production = parseFloat(formData.get('classifier_hhf_production') as string || '0')
+
+      classifier_hhfs = {
+        Competition: hhf_competition || 0,
+        Practical: hhf_practical || 0,
+        PCC: hhf_pcc || 0,
+        Limited: hhf_limited || 0,
+        Production: hhf_production || 0
+      }
+    }
+
     if (!name || name.trim() === '') return { error: 'Stage name is required' }
     if (isNaN(stage_number) || stage_number <= 0) return { error: 'Valid stage number is required' }
     if (isNaN(required_hits_per_paper_target) || required_hits_per_paper_target <= 0) {
@@ -270,7 +290,10 @@ export async function createStageAction(matchId: string, formData: FormData) {
         description: description?.trim() || null,
         required_hits_per_paper_target,
         required_hits_per_steel_target,
-        max_points: 0
+        max_points: 0,
+        is_classifier,
+        classifier_number,
+        classifier_hhfs
       })
       .select()
       .single()
@@ -357,6 +380,26 @@ export async function updateStageAction(matchId: string, stageId: string, formDa
     const required_hits_per_paper_target = parseInt(required_hits_per_paper_target_raw || '2', 10)
     const required_hits_per_steel_target = parseInt(required_hits_per_steel_target_raw || '1', 10)
 
+    const is_classifier = formData.get('is_classifier') === 'true'
+    const classifier_number = is_classifier ? (formData.get('classifier_number') as string || null) : null
+
+    let classifier_hhfs: any = null
+    if (is_classifier) {
+      const hhf_competition = parseFloat(formData.get('classifier_hhf_competition') as string || '0')
+      const hhf_practical = parseFloat(formData.get('classifier_hhf_practical') as string || '0')
+      const hhf_pcc = parseFloat(formData.get('classifier_hhf_pcc') as string || '0')
+      const hhf_limited = parseFloat(formData.get('classifier_hhf_limited') as string || '0')
+      const hhf_production = parseFloat(formData.get('classifier_hhf_production') as string || '0')
+
+      classifier_hhfs = {
+        Competition: hhf_competition || 0,
+        Practical: hhf_practical || 0,
+        PCC: hhf_pcc || 0,
+        Limited: hhf_limited || 0,
+        Production: hhf_production || 0
+      }
+    }
+
     if (!name || name.trim() === '') return { error: 'Stage name is required' }
     if (isNaN(stage_number) || stage_number <= 0) return { error: 'Valid stage number is required' }
     if (isNaN(required_hits_per_paper_target) || required_hits_per_paper_target <= 0) {
@@ -385,7 +428,10 @@ export async function updateStageAction(matchId: string, stageId: string, formDa
       stage_number,
       description: description?.trim() || null,
       required_hits_per_paper_target,
-      required_hits_per_steel_target
+      required_hits_per_steel_target,
+      is_classifier,
+      classifier_number,
+      classifier_hhfs
     }
 
     // Handle Stage Plan File Upload

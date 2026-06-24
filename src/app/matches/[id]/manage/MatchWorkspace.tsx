@@ -55,6 +55,15 @@ interface StageItem {
   required_hits_per_steel_target: number
   max_points: number
   targets?: TargetItem[]
+  is_classifier?: boolean
+  classifier_number?: string | null
+  classifier_hhfs?: {
+    Competition?: number
+    Practical?: number
+    PCC?: number
+    Limited?: number
+    Production?: number
+  } | null
 }
 
 interface SquadItem {
@@ -110,6 +119,13 @@ export default function MatchWorkspace({ match }: MatchWorkspaceProps) {
   const [stageDesc, setStageDesc] = useState('')
   const [stagePaperHits, setStagePaperHits] = useState(2)
   const [stageSteelHits, setStageSteelHits] = useState(1)
+  const [isClassifier, setIsClassifier] = useState(false)
+  const [classifierNumber, setClassifierNumber] = useState('')
+  const [classifierHhfCompetition, setClassifierHhfCompetition] = useState('')
+  const [classifierHhfPractical, setClassifierHhfPractical] = useState('')
+  const [classifierHhfPcc, setClassifierHhfPcc] = useState('')
+  const [classifierHhfLimited, setClassifierHhfLimited] = useState('')
+  const [classifierHhfProduction, setClassifierHhfProduction] = useState('')
 
   // Target Form Fields
   const [targetNameInput, setTargetNameInput] = useState('')
@@ -165,6 +181,13 @@ export default function MatchWorkspace({ match }: MatchWorkspaceProps) {
     setStageDesc('')
     setStagePaperHits(2)
     setStageSteelHits(1)
+    setIsClassifier(false)
+    setClassifierNumber('')
+    setClassifierHhfCompetition('')
+    setClassifierHhfPractical('')
+    setClassifierHhfPcc('')
+    setClassifierHhfLimited('')
+    setClassifierHhfProduction('')
   }
 
   function openEditStage(stage: StageItem) {
@@ -175,6 +198,13 @@ export default function MatchWorkspace({ match }: MatchWorkspaceProps) {
     setStageDesc(stage.description || '')
     setStagePaperHits(stage.required_hits_per_paper_target)
     setStageSteelHits(stage.required_hits_per_steel_target)
+    setIsClassifier(!!stage.is_classifier)
+    setClassifierNumber(stage.classifier_number || '')
+    setClassifierHhfCompetition(stage.classifier_hhfs?.Competition?.toString() || '')
+    setClassifierHhfPractical(stage.classifier_hhfs?.Practical?.toString() || '')
+    setClassifierHhfPcc(stage.classifier_hhfs?.PCC?.toString() || '')
+    setClassifierHhfLimited(stage.classifier_hhfs?.Limited?.toString() || '')
+    setClassifierHhfProduction(stage.classifier_hhfs?.Production?.toString() || '')
   }
 
   async function handleSaveStage(e: React.FormEvent<HTMLFormElement>) {
@@ -525,6 +555,110 @@ export default function MatchWorkspace({ match }: MatchWorkspaceProps) {
                       </div>
                     </div>
 
+                    {/* Classifier Toggle and Form fields */}
+                    <div className="pt-3 border-t border-white/5 space-y-3">
+                      <div className="flex items-center justify-between">
+                        <div className="flex flex-col">
+                          <span className="text-[10px] font-bold uppercase text-slate-400">Classifier Stage</span>
+                          <span className="text-[9px] text-slate-500">Flags stage for dynamic competitor division classification</span>
+                        </div>
+                        <label className="relative inline-flex items-center cursor-pointer">
+                          <input
+                            type="checkbox"
+                            className="sr-only peer"
+                            checked={isClassifier}
+                            onChange={(e) => setIsClassifier(e.target.checked)}
+                          />
+                          <div className="w-9 h-5 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-slate-300 after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-amber-500 peer-checked:after:bg-slate-950 peer-checked:after:border-slate-950"></div>
+                        </label>
+                      </div>
+
+                      {/* Hidden form fields to submit is_classifier */}
+                      <input type="hidden" name="is_classifier" value={isClassifier ? "true" : "false"} />
+
+                      {isClassifier && (
+                        <div className="space-y-3 p-3 bg-amber-500/5 rounded-xl border border-amber-500/15 animate-fadeIn">
+                          <div>
+                            <label className="block text-[10px] font-bold uppercase text-amber-400 mb-1">Classifier Number / Code</label>
+                            <input
+                              type="text"
+                              name="classifier_number"
+                              placeholder="e.g. CLS-01, El Pres..."
+                              value={classifierNumber}
+                              onChange={(e) => setClassifierNumber(e.target.value)}
+                              className="w-full px-3 py-2 bg-slate-950 border border-amber-500/25 focus:border-amber-500/60 rounded-lg text-xs text-amber-200 focus:outline-none font-bold"
+                            />
+                          </div>
+
+                          <div className="space-y-2">
+                            <span className="block text-[9px] font-bold uppercase tracking-wider text-slate-400">High Hit Factors (HHF)</span>
+                            <div className="grid grid-cols-2 gap-2">
+                              <div>
+                                <label className="block text-[9px] font-semibold text-slate-400 mb-0.5">Competition</label>
+                                <input
+                                  type="number"
+                                  step="0.0001"
+                                  name="classifier_hhf_competition"
+                                  placeholder="0.00"
+                                  value={classifierHhfCompetition}
+                                  onChange={(e) => setClassifierHhfCompetition(e.target.value)}
+                                  className="w-full px-2 py-1 bg-slate-950 border border-white/5 rounded text-xs text-slate-200 focus:outline-none focus:border-amber-500/50"
+                                />
+                              </div>
+                              <div>
+                                <label className="block text-[9px] font-semibold text-slate-400 mb-0.5">Practical</label>
+                                <input
+                                  type="number"
+                                  step="0.0001"
+                                  name="classifier_hhf_practical"
+                                  placeholder="0.00"
+                                  value={classifierHhfPractical}
+                                  onChange={(e) => setClassifierHhfPractical(e.target.value)}
+                                  className="w-full px-2 py-1 bg-slate-950 border border-white/5 rounded text-xs text-slate-200 focus:outline-none focus:border-amber-500/50"
+                                />
+                              </div>
+                              <div>
+                                <label className="block text-[9px] font-semibold text-slate-400 mb-0.5">PCC</label>
+                                <input
+                                  type="number"
+                                  step="0.0001"
+                                  name="classifier_hhf_pcc"
+                                  placeholder="0.00"
+                                  value={classifierHhfPcc}
+                                  onChange={(e) => setClassifierHhfPcc(e.target.value)}
+                                  className="w-full px-2 py-1 bg-slate-950 border border-white/5 rounded text-xs text-slate-200 focus:outline-none focus:border-amber-500/50"
+                                />
+                              </div>
+                              <div>
+                                <label className="block text-[9px] font-semibold text-slate-400 mb-0.5">Limited</label>
+                                <input
+                                  type="number"
+                                  step="0.0001"
+                                  name="classifier_hhf_limited"
+                                  placeholder="0.00"
+                                  value={classifierHhfLimited}
+                                  onChange={(e) => setClassifierHhfLimited(e.target.value)}
+                                  className="w-full px-2 py-1 bg-slate-950 border border-white/5 rounded text-xs text-slate-200 focus:outline-none focus:border-amber-500/50"
+                                />
+                              </div>
+                              <div className="col-span-2">
+                                <label className="block text-[9px] font-semibold text-slate-400 mb-0.5">Production</label>
+                                <input
+                                  type="number"
+                                  step="0.0001"
+                                  name="classifier_hhf_production"
+                                  placeholder="0.00"
+                                  value={classifierHhfProduction}
+                                  onChange={(e) => setClassifierHhfProduction(e.target.value)}
+                                  className="w-full px-2 py-1 bg-slate-950 border border-white/5 rounded text-xs text-slate-200 focus:outline-none focus:border-amber-500/50"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
                     <div className="flex justify-end gap-2 pt-2">
                       <button
                         type="button"
@@ -563,9 +697,17 @@ export default function MatchWorkspace({ match }: MatchWorkspaceProps) {
                       >
                         <div className="flex justify-between items-start gap-2">
                           <div>
-                            <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">
-                              Stage {stage.stage_number}
-                            </span>
+                            <div className="flex items-center gap-1.5 flex-wrap">
+                              <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">
+                                Stage {stage.stage_number}
+                              </span>
+                              {stage.is_classifier && (
+                                <span className="inline-flex items-center gap-0.5 text-[8px] font-extrabold uppercase bg-amber-500/10 text-amber-400 px-1 py-0.2 rounded border border-amber-500/20">
+                                  <Trophy className="w-2 h-2 text-amber-400" />
+                                  Classifier
+                                </span>
+                              )}
+                            </div>
                             <h3 className="font-bold text-white group-hover:text-indigo-300 transition-colors mt-0.5">
                               {stage.name}
                             </h3>
@@ -679,6 +821,37 @@ export default function MatchWorkspace({ match }: MatchWorkspaceProps) {
                             </div>
                           </div>
                         )}
+                      </div>
+                    )}
+
+                    {selectedStage.is_classifier && (
+                      <div className="bg-amber-500/5 border border-amber-500/15 p-4 rounded-xl space-y-2.5 animate-fadeIn">
+                        <div className="flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
+                          <Trophy className="w-4 h-4 text-amber-400" />
+                          Official Classifier {selectedStage.classifier_number ? `(${selectedStage.classifier_number})` : ''}
+                        </div>
+                        <div className="grid grid-cols-5 gap-2 text-center text-[10px] font-bold text-slate-300">
+                          <div className="bg-slate-950/40 p-2 rounded-lg border border-white/5">
+                            <span className="block text-slate-500 uppercase text-[8px] tracking-widest">Competition</span>
+                            <span className="text-amber-300 text-xs mt-0.5 block">{selectedStage.classifier_hhfs?.Competition || '0.00'}</span>
+                          </div>
+                          <div className="bg-slate-950/40 p-2 rounded-lg border border-white/5">
+                            <span className="block text-slate-500 uppercase text-[8px] tracking-widest">Practical</span>
+                            <span className="text-amber-300 text-xs mt-0.5 block">{selectedStage.classifier_hhfs?.Practical || '0.00'}</span>
+                          </div>
+                          <div className="bg-slate-950/40 p-2 rounded-lg border border-white/5">
+                            <span className="block text-slate-500 uppercase text-[8px] tracking-widest">PCC</span>
+                            <span className="text-amber-300 text-xs mt-0.5 block">{selectedStage.classifier_hhfs?.PCC || '0.00'}</span>
+                          </div>
+                          <div className="bg-slate-950/40 p-2 rounded-lg border border-white/5">
+                            <span className="block text-slate-500 uppercase text-[8px] tracking-widest">Limited</span>
+                            <span className="text-amber-300 text-xs mt-0.5 block">{selectedStage.classifier_hhfs?.Limited || '0.00'}</span>
+                          </div>
+                          <div className="bg-slate-950/40 p-2 rounded-lg border border-white/5">
+                            <span className="block text-slate-500 uppercase text-[8px] tracking-widest">Production</span>
+                            <span className="text-amber-300 text-xs mt-0.5 block">{selectedStage.classifier_hhfs?.Production || '0.00'}</span>
+                          </div>
+                        </div>
                       </div>
                     )}
 

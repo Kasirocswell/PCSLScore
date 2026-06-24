@@ -16,6 +16,56 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 
+const getClassificationBadgeStyles = (cls: string) => {
+  switch (cls) {
+    case 'GM':
+      return 'bg-gradient-to-r from-red-600 to-amber-500 text-white border border-red-400 shadow-[0_0_10px_rgba(239,68,68,0.4)] animate-pulse'
+    case 'M':
+      return 'bg-gradient-to-r from-purple-600 to-indigo-500 text-white border border-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.3)]'
+    case 'A':
+      return 'bg-blue-600 text-white border border-blue-400'
+    case 'B':
+      return 'bg-emerald-600 text-white border border-emerald-400'
+    case 'C':
+      return 'bg-slate-500 text-white border border-slate-400'
+    case 'D':
+      return 'bg-amber-700 text-white border border-amber-500'
+    default:
+      return 'bg-slate-800 text-slate-400 border border-slate-700'
+  }
+}
+
+const getNextTier = (cls: string) => {
+  switch (cls) {
+    case 'U':
+      return { next: 'D', min: 0, max: 2, label: 'to D Class' }
+    case 'D':
+      return { next: 'C', min: 2, max: 40, label: 'to C Class' }
+    case 'C':
+      return { next: 'B', min: 40, max: 60, label: 'to B Class' }
+    case 'B':
+      return { next: 'A', min: 60, max: 75, label: 'to A Class' }
+    case 'A':
+      return { next: 'M', min: 75, max: 85, label: 'to Master' }
+    case 'M':
+      return { next: 'GM', min: 85, max: 95, label: 'to Grand Master' }
+    case 'GM':
+      return { next: 'MAX', min: 95, max: 100, label: 'Highest Tier' }
+    default:
+      return { next: 'D', min: 0, max: 2, label: 'to D Class' }
+  }
+}
+
+const calculateProgress = (cls: string, avg: number) => {
+  if (cls === 'GM') return 100
+  const tier = getNextTier(cls)
+  const range = tier.max - tier.min
+  if (range <= 0) return 0
+  const earned = avg - tier.min
+  const pct = (earned / range) * 100
+  return Math.min(100, Math.max(0, parseFloat(pct.toFixed(1))))
+}
+
 export const revalidate = 0 // Dynamic SSR page
 
 export default async function ShooterScoresPage() {
@@ -50,6 +100,19 @@ export default async function ShooterScoresPage() {
     .eq('profile_id', user.id)
 
   const registrations = regs || []
+
+  // 1.5 Fetch division classifications for the logged-in user
+  const { data: classData } = await supabase
+    .from('view_competitor_classifications')
+    .select('division, average_percentage, runs_count, classification')
+    .eq('profile_id', user.id)
+
+  const classifications = classData || []
+  const DIVISION_ORDER = ['Competition', 'Practical', 'PCC', 'Limited', 'Production']
+  const sortedClassifications = [...classifications].sort((a, b) => {
+    return DIVISION_ORDER.indexOf(a.division) - DIVISION_ORDER.indexOf(b.division)
+  })
+
 
   if (registrations.length === 0) {
     return (
@@ -258,6 +321,81 @@ export default async function ShooterScoresPage() {
             </div>
           </div>
         </div>
+
+        {/* OFFICIAL DIVISIONAL STATUS Progress Cards */}
+        <section className="space-y-4">
+          <div className="flex items-center justify-between">
+            <h2 className="text-xl font-bold text-white flex items-center gap-2">
+              <Award className="w-5 h-5 text-purple-400" />
+              Official Division Classifications
+            </h2>
+            <span className="hidden sm:inline text-xs text-slate-500 font-medium">
+              Based on the rolling average of your last 8 classifier runs
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {sortedClassifications.map((item) => {
+              const cls = item.classification || 'U'
+              const avg = Number(item.average_percentage || 0)
+              const runs = item.runs_count || 0
+              const progress = calculateProgress(cls, avg)
+              const tier = getNextTier(cls)
+
+              return (
+                <div 
+                  key={item.division}
+                  className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col justify-between hover:border-indigo-500/50 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] relative overflow-hidden"
+                >
+                  {/* Subtle top-corner background gradient glow */}
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-indigo-500/10 to-transparent rounded-bl-full pointer-events-none group-hover:from-indigo-500/20 transition-all duration-500" />
+
+                  <div className="space-y-3">
+                    {/* Division Title */}
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-extrabold text-slate-400 uppercase tracking-wider">
+                        {item.division}
+                      </span>
+                      <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded ${getClassificationBadgeStyles(cls)}`}>
+                        {cls}
+                      </span>
+                    </div>
+
+                    {/* Stats details */}
+                    <div className="space-y-1">
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-2xl font-black text-white font-mono">
+                          {avg.toFixed(2)}%
+                        </span>
+                      </div>
+                      <p className="text-[10px] text-slate-500 font-medium font-mono uppercase">
+                        {runs === 0 ? 'No classifier runs' : `${runs} of 8 runs logged`}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Progress bar towards next tier */}
+                  <div className="mt-4 pt-3 border-t border-white/5 space-y-1.5">
+                    <div className="flex justify-between items-center text-[10px] font-semibold text-slate-400">
+                      <span>{cls === 'GM' ? 'Highest Rank' : `${progress}%`}</span>
+                      <span className="text-slate-500">{cls === 'GM' ? 'Mastered' : tier.label}</span>
+                    </div>
+                    <div className="h-1.5 w-full bg-slate-950 rounded-full overflow-hidden border border-white/5">
+                      <div 
+                        className={`h-full rounded-full transition-all duration-500 ${
+                          cls === 'GM' 
+                            ? 'bg-gradient-to-r from-red-500 to-amber-400' 
+                            : 'bg-gradient-to-r from-indigo-500 to-cyan-400'
+                        }`}
+                        style={{ width: `${progress}%` }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </section>
 
         {/* SUMMARY STATS ROW */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">

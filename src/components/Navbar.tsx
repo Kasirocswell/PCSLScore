@@ -69,7 +69,7 @@ export default function Navbar({ user }: NavbarProps) {
                       <Calendar className="w-4 h-4 text-indigo-400" />
                       Register Match
                     </Link>
-                    <Link href="/scores" className="text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1.5 transition-colors">
+                    <Link href="/dashboard/scores" className="text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1.5 transition-colors">
                       <Trophy className="w-4 h-4 text-amber-400" />
                       My Scores
                     </Link>
@@ -162,7 +162,7 @@ export default function Navbar({ user }: NavbarProps) {
                     Register Match
                   </Link>
                   <Link
-                    href="/scores"
+                    href="/dashboard/scores"
                     onClick={() => setIsOpen(false)}
                     className="flex items-center gap-2 rounded-lg px-3 py-2 text-base font-medium text-slate-300 hover:bg-white/5 hover:text-white transition-colors"
                   >
