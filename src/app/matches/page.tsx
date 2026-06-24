@@ -41,14 +41,12 @@ export default async function MatchesPage({
   const searchQuery = typeof params.q === 'string' ? params.q.trim() : ''
   const locQuery = typeof params.loc === 'string' ? params.loc.trim() : (typeof params.zip === 'string' ? params.zip.trim() : '')
   const radiusQuery = typeof params.radius === 'string' ? params.radius.trim() : 'all'
-  const viewMode = typeof params.view === 'string' ? params.view.trim() : 'grid'
   const filterType = typeof params.type === 'string' ? params.type : 'all'
   const activeTab = typeof params.tab === 'string' ? params.tab : 'upcoming'
 
   const getQueryString = (overrides: Record<string, string>) => {
     const finalParams = {
       tab: activeTab,
-      view: viewMode,
       q: searchQuery,
       loc: locQuery,
       radius: radiusQuery,
@@ -57,11 +55,9 @@ export default async function MatchesPage({
     }
     const searchParams = new URLSearchParams()
     Object.entries(finalParams).forEach(([key, val]) => {
-      if (val && val !== 'all' && (key !== 'view' || val !== 'grid') && (key !== 'tab' || val !== 'upcoming')) {
+      if (val && val !== 'all' && (key !== 'tab' || val !== 'upcoming')) {
         searchParams.set(key, val)
       } else if (key === 'tab' && val === 'past') {
-        searchParams.set(key, val)
-      } else if (key === 'view' && val === 'map') {
         searchParams.set(key, val)
       }
     })
@@ -251,9 +247,8 @@ export default async function MatchesPage({
 
         {/* Filter Toolbar */}
         <form method="GET" className="grid grid-cols-1 md:grid-cols-12 gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
-          {/* Keep tab state and view state when applying search filters */}
+          {/* Keep tab state when applying search filters */}
           <input type="hidden" name="tab" value={activeTab} />
-          <input type="hidden" name="view" value={viewMode} />
 
           {/* Search Input */}
           <div className="md:col-span-3 relative group">
@@ -330,7 +325,6 @@ export default async function MatchesPage({
           userRole={userRole}
           todayStr={todayStr}
           activeTab={activeTab}
-          viewMode={viewMode}
           searchQuery={searchQuery}
           locQuery={locQuery}
           radiusQuery={radiusQuery}
