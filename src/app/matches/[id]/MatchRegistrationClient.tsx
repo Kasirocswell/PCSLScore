@@ -206,7 +206,7 @@ export default function MatchRegistrationClient({
     setLoading(true)
     setError(null)
 
-    const res = await joinSquadAction(match.id, squadId)
+    const res = await joinSquadAction(match.id, squadId, paymentParam === 'success')
     setLoading(false)
 
     if (res?.error) {

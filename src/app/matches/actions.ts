@@ -712,7 +712,7 @@ export async function registerForMatchAction(matchId: string, division: string) 
 }
 
 // 12. JOIN/CHANGE SQUAD
-export async function joinSquadAction(matchId: string, squadId: string | null) {
+export async function joinSquadAction(matchId: string, squadId: string | null, paymentSuccessOverride?: boolean) {
   try {
     const { user, supabase } = await verifyAuthenticatedUser()
 
@@ -740,7 +740,7 @@ export async function joinSquadAction(matchId: string, squadId: string | null) {
     }
 
     // Enforce prepayment rule
-    if (match.payment_required && registration.payment_status === 'pending' && squadId !== null) {
+    if (match.payment_required && registration.payment_status === 'pending' && squadId !== null && !paymentSuccessOverride) {
       return { error: 'Payment required to squad: Please pay the match entry fee first' }
     }
 
