@@ -1,0 +1,8 @@
+id,email,full_name,role,stripe_customer_id,subscription_active,created_at,updated_at
+08b5ac0a-d161-4b86-9c46-deceb67b5e85,onyxconsulting26@gmail.com,,shooter,,false,2026-06-24 08:52:09.879268+00,2026-06-24 08:52:09.879268+00
+0f0d2824-39c0-4183-86b5-c563a4077d77,delta509000123@icloud.com,,shooter,,false,2026-06-24 01:22:28.138324+00,2026-06-24 01:22:28.138324+00
+195701ae-75ac-4253-9cc2-8cbb4c683f26,kasirocswell@rocketmail.com,,shooter,,false,2026-06-23 15:12:41.037776+00,2026-06-23 15:12:41.037776+00
+4447ea90-55fc-4b26-b6ae-e0f86b1e3745,conor.heine@gmail.com,,director,,false,2026-06-24 03:39:28.594864+00,2026-06-24 03:39:28.594864+00
+934a6e4a-26a6-4979-bde5-46c49832b918,kasilyrics@gmail.com,,director,,true,2026-06-23 14:58:55.991923+00,2026-06-23 14:58:55.991923+00
+e735b3da-cceb-4d7f-b555-2f4d23969831,itravisley@gmail.com,,shooter,,false,2026-06-24 02:14:53.710986+00,2026-06-24 02:14:53.710986+00
+eccf7148-9348-47cf-9165-efbbd0b4cc26,htxfmj@gmail.com,,director,cus_mock_test_123,true,2026-06-23 16:06:04.245741+00,2026-06-23 16:56:21.324+00

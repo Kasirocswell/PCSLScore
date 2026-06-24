@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import {
@@ -125,7 +125,18 @@ export default function MatchRegistrationClient({
   const isRegistered = !!userRegistration
   const paymentStatus = userRegistration?.payment_status || 'pending'
   const isPaymentPending = match.payment_required && match.price > 0 && paymentStatus === 'pending'
-  const isSquaddingLocked = isPaymentPending
+  // If payment param is success, override the lock in the UI to allow squad selection immediately while webhook finishes.
+  const isSquaddingLocked = isPaymentPending && paymentParam !== 'success'
+
+  // Poll to check for payment webhook completion if user returns from Stripe but db has not updated yet
+  useEffect(() => {
+    if (paymentParam === 'success' && paymentStatus === 'pending') {
+      const interval = setInterval(() => {
+        router.refresh()
+      }, 1500)
+      return () => clearInterval(interval)
+    }
+  }, [paymentParam, paymentStatus, router])
 
   // Get selected squad item
   const selectedSquad = match.squads?.find(s => s.id === selectedSquadId)
@@ -605,7 +616,7 @@ export default function MatchRegistrationClient({
                   {/* PAYMENT BLOCK (IF PRICE & REQUIRED) */}
                   {match.payment_required && match.price > 0 && (
                     <div className="pt-4 border-t border-white/5 space-y-3">
-                      {paymentStatus === 'pending' ? (
+                      {paymentStatus === 'pending' && paymentParam !== 'success' ? (
                         <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 space-y-3 animate-fadeIn">
                           <div className="flex items-start gap-2 text-xs text-amber-300 leading-relaxed font-semibold">
                             <Lock className="w-4 h-4 shrink-0 mt-0.5" />

@@ -1,0 +1,4 @@
+id,club_id,name,description,date,location,match_type,payment_required,price,is_published,created_by,created_at,updated_at
+5dee5192-a2cc-43d1-bc2f-fe8baa8114ee,de3d06a6-bd42-411c-86e4-0e5380c81e9c,Local Match 1,,2026-06-25,"Alvin, TX",Pistol,true,15.00,true,eccf7148-9348-47cf-9165-efbbd0b4cc26,2026-06-24 13:28:09.125135+00,2026-06-24 13:28:09.125135+00
+8d53d69e-2da9-44a6-9a18-b16fcb004b3e,24d39f2a-90e6-41b9-829a-a4ff8ada8f59,PCSL 1 Gun,,2026-06-24,"Alvin, TX",2-Gun,false,0.00,true,934a6e4a-26a6-4979-bde5-46c49832b918,2026-06-23 15:09:45.254423+00,2026-06-23 15:18:32.206+00
+96a7245f-708a-4368-a643-9d64492d5f79,045edaaa-afdd-4543-84e4-07c7d1329fb2,PCSL 1 gun,,2026-06-24,1234 Alvin Tx,Pistol,false,0.00,true,eccf7148-9348-47cf-9165-efbbd0b4cc26,2026-06-23 17:28:33.565564+00,2026-06-23 17:28:33.565564+00
