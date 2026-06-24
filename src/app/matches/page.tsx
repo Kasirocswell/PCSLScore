@@ -11,6 +11,7 @@ import {
   MapPin
 } from 'lucide-react'
 import MatchRegistryClient from './MatchRegistryClient'
+import LocationInputClient from './LocationInputClient'
 
 export const revalidate = 0 // Dynamic SSR page
 
@@ -269,17 +270,8 @@ export default async function MatchesPage({
           </div>
 
           {/* Location Input */}
-          <div className="md:col-span-3 relative group">
-            <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 group-focus-within:text-indigo-400 transition-colors">
-              <MapPin className="w-4 h-4" />
-            </span>
-            <input
-              type="text"
-              name="loc"
-              defaultValue={locQuery}
-              placeholder="City or ZIP code..."
-              className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all text-sm"
-            />
+          <div className="md:col-span-3">
+            <LocationInputClient initialValue={locQuery} />
           </div>
 
           {/* Radius Selector */}
